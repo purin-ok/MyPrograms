@@ -1,0 +1,181 @@
+\documentclass{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{listings}
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex,
+    keepspaces=true,
+    language=c
+}
+\renewcommand{\lstlistingname}{リスト}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+\title{数値解析レポートNo.1}
+\author{40番 矢野 敦大}
+\date{}
+
+
+\begin{document}
+\maketitle
+    \section{任意の行列の2行を交換する}
+	作成した任意の行列の2行を交換する関数swap\_row()をリスト\ref{swap}に示す。
+	\begin{lstlisting}[caption=作成した関数swap\_row(), label=swap]
+void swap_row(double **a, int row, int col, int x, int y) {
+	if (x <= 0 || x > row || y <= 0 || y > row) {
+		puts("範囲外の行を指定しています");
+		return;
+	}
+	x--, y--;
+	double *tmp = a[x];
+	a[x] = a[y];
+	a[y] = tmp;
+}\end{lstlisting}
+
+	引数のa, row, colには、NAbasic.cのcsvReadから読み込んだ任意の行列とその行列の行数、列数が与えられる。
+	x, yには交換する行番号を与える。
+
+	このプログラムでは、まず最初に指定された行番号が行列の範囲外を指定していないかを判別している。その後行番号を配列の
+	添え字の数字に合わせるため、x, yの値をそれぞれデクリメントしている。その後、x行目とy行目のポインタを入れ替えることで、2行を
+	交換するようにした。
+
+	このプログラムを使って $
+            A = \left(
+                \begin{array}{ccc}
+                  2 & -1 & 5 \\
+                  -4 & 2 & 1 \\
+                  8 & 2 & -1
+                \end{array}
+            \right)
+        $の1, 3行目を交換した際の出力を以下に示す。
+
+\begin{verbatim}
+before
+2.000000 -1.000000 5.000000
+-4.000000 2.000000 1.000000
+8.000000 2.000000 -1.000000
+
+after
+8.000000 2.000000 -1.000000
+-4.000000 2.000000 1.000000
+2.000000 -1.000000 5.000000
+\end{verbatim}
+以上より、正しく動作していることがわかる。
+    \section{行列積を利用して内積を求める}
+	ある二つのベクトル$\bm{a}, \bm{b}$の内積は、$\bm{a}^t \bm{b}$で表すことができる。
+	これを利用して$\bm{a}\cdot \bm{b}$を求める。
+	行列積を求める関数matrix\_product()をリスト\ref{scal}に示す。
+       \begin{lstlisting}[caption=作成した関数matrix\_product(), label=scal]
+double **matrix_product(double **a, int a_row, int a_col,
+        	      double **b, int b_row, int b_col) {
+
+	double **res = allocMatrix(a_row, b_col);
+	int i, j, k;
+
+	if (a_row != b_col || a_col != b_row) {
+		puts("演算できません");
+		return res;
+	}
+	for (i = 0; i < a_row; i++) {
+		for (j = 0; j < b_col; j++) {
+			for (k = 0; k < a_col; k++) {
+				res[i][j] += a[i][k] * b[k][j];
+			}
+		}
+	}
+	return res;
+}\end{lstlisting}
+
+	引数にはベクトル$\bm{a}$を転置したものとそのサイズ、ベクトル$\bm{b}$とそのサイズを与える。この関数を用いて課題2(予備)(2)の
+	2つのベクトルの内積を計算した結果を以下に示す。計算結果はres[0][0]に格納される。
+\begin{verbatim}
+result : 22.000000
+\end{verbatim}
+    \section{2つのベクトルの成す角を求める}
+	2つのベクトル$\bm{a}, \bm{b}$の内積は2つのベクトルの成す角を$\theta$とすると、$\bm{a}\cdot \bm{b} = ab\cos\theta$
+	となるので、2つのベクトルの成す角は$\displaystyle \theta = \arccos \frac{\bm{a}\cdot \bm{b}}{ab}$となる。これを求める
+	関数calc\_angle()をリスト\ref{calc}に示す。
+       \begin{lstlisting}[caption=作成した関数scalar\_product(), label=calc]
+double norm(double *vec, int n){
+	int i;
+	double s = 0.0;
+
+	for (i = 0; i < n; i++) {
+		s += vec[i] * vec[i];
+	}
+	return sqrt(s);
+}
+
+double calc_angle(double **a, int a_row, int a_col,
+		 double **b, int b_row, int b_col) {
+
+	if (a_row != 1 || b_col != 1 || a_col != b_row) {
+		puts("演算できません");
+		return -1;
+	}
+	int n = a_row * a_col;
+	double **p = matrix_product(a, a_row, a_col, b, b_row, b_col);
+
+	return acos(p[0][0] / norm(matrix2colVector(a, a_row, a_col), n) 
+			  / norm(matrix2colVector(b, b_row, b_col), n));
+}
+	\end{lstlisting}
+	この関数を用いて課題2(予備)(2)の2つのベクトルの内積を計算した結果を以下に示す。
+
+\begin{verbatim}
+result : 1.271850[rad]
+\end{verbatim}
+    \section{感想}
+	今回の課題は理論も実装も比較的簡単だと思った。いろいろなデータに対応できるように意識してプログラムを作成した。
+	まだまだレポート課題があるので、これからも余裕をもって取り組むようにしたい。
+       
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

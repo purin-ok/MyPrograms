@@ -1,0 +1,188 @@
+\documentclass[dvipdfmx,titlepage]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{amsmath}
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex,
+    keepspaces=true,
+    language=c
+}
+\renewcommand{\lstlistingname}{リスト}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+\title{\Huge{数値解析レポートNo.1}}
+\author{\huge{43番 若月 耕紀}}
+\date{}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{行列の任意の2行を交換するプログラムを作成し，課題4のA行列の1行目と3行目を交換せよ．}
+
+作成したプログラムをリスト\ref{src:swap}に示す.
+
+\begin{lstlisting}[caption=swap\_row.c, label=src:swap]
+void swap_row(double **matrix, int row, int col, int row1, int row2){
+    if(row1 < 1 || row1 > row || row2 < 1 || row2 > row){
+        return;
+    }
+    row1--;
+    row2--;
+    double *temp = matrix[row1];
+    matrix[row1] = matrix[row2];
+    matrix[row2] = temp;
+}
+\end{lstlisting}
+
+引数にNAbasicのcsvReadから得た行列，行数，列数，交換する行番号をそれぞれ与える．
+
+このプログラムでは1未満または行列の行数より大きな行番号を入力された時のために対策をしている．また，引数を与える際には，そのままの行番号を入力するため，配列の添え字に合わせられえるようrow1，row2はデクリメントをする．
+
+交換の動作としては，各行番号のポインタを入れ替えることで正しい動作をするようにした．
+
+このプログラムを用いて課題4のA行列である
+$
+            A = \left(
+                \begin{array}{ccc}
+                  2 & -1 & 5 \\
+                  -4 & 2 & 1 \\
+                  8 & 2 & -1
+                \end{array}
+            \right)
+        $
+の1行目と3行目を交換した結果を以下に示す．
+\begin{verbatim}
+交換前
+2.000000 -1.000000 5.000000 
+-4.000000 2.000000 1.000000 
+8.000000 2.000000 -1.000000 
+
+交換後
+8.000000 2.000000 -1.000000 
+-4.000000 2.000000 1.000000 
+2.000000 -1.000000 5.000000 
+        \end{verbatim}
+
+上記より，正しく動作していることがわかる．
+
+\section{行列積を利用して，内積を求める方法を考え実装し，課題2(予備)(2)の問題で動作確認せよ．}
+
+作成したプログラムをリスト\ref{src:2}に示す.
+
+\begin{lstlisting}[caption=matrix\_product.c, label=src:2]
+double **matrix_product(double **A, int Arow, int Acol,
+                        double **B, int Brow, int Bcol) {
+
+    double **result = allocMatrix(Arow, Bcol);
+    int i, j, k;
+
+    if (Acol != Brow){
+        puts("演算ができません.");
+			return result;
+    }
+
+    for (i = 0; i < Arow; i++) {
+        for (j = 0; j < Bcol; j++) {
+            for (k = 0; k < Acol; k++) {
+                result[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+    return result;
+}
+\end{lstlisting}
+
+まず，引数にNAbasicのcsvReadから得た2つの行列とそれぞれの行数，列数を与える．
+
+今回のプログラムは行列積を利用して内積を求めるプログラムなので，ベクトルを入力する際に，行ベクトル，列ベクトルの順で入力することで，内積を求めることができる．
+
+このプログラムを用いて課題2(予備)(2)の問題で動作確認した結果を以下に示す．
+
+\begin{verbatim}
+Vector1    Vector2
+1.000000   3.000000
+5.000000   7.000000
+8.000000   -2.000000
+
+result
+22.000000
+\end{verbatim}
+
+上記より，正しく動作していることがわかる．
+
+\section{課題2(予備)の2本のベクトルがなす角を求めよ．}
+
+作成したプログラムをリスト\ref{src:3}に示す.
+
+\begin{lstlisting}[caption=formed\_angle.c, label=src:3]
+double 	vector_norm(double *vector, int len){
+    int i;
+    double s = 0.0;
+
+    for (i = 0; i < len; i++) {
+        s += vector[i] * vector[i];
+    }
+    return sqrt(s);
+}
+
+double formed_angle(double **A, int Arow, int Acol,
+                    double **B, int Brow, int Bcol) {
+
+    if (Arow != 1 || Bcol != 1 || Acol != Brow) {
+    puts("演算ができません");
+    return -1;
+    }
+    int len = Arow * Acol;
+    double **in_pro = matrix_product(A, Arow, Acol, B, Brow, Bcol);
+
+    return acos(in_pro[0][0] 
+                / vector_norm(matrix2colVector(A, Arow, Acol), len)
+                / vector_norm(matrix2colVector(B, Brow, Bcol), len));
+}
+\end{lstlisting}
+
+2つのベクトル$\bm{a}, \bm{b}$の内積は$\bm{a}\cdot \bm{b} = \left|\bm{a}\right|\left|\bm{b}\right|\cos\theta$と定義されるのでこの式を変形するとなす角$\theta$は$\displaystyle \theta = \arccos{\frac{\bm{a}\cdot \bm{b}}{\left|\bm{a}\right|\left|\bm{b}\right|}}$で求めることができる．vector\_normで各ベクトルのノルムを求め，その結果を基に計算する．
+
+このプログラムを用いて課題2(予備)の2本のベクトルがなす角を求めた結果を以下に示す．
+
+\begin{verbatim}
+Vector1   1.000000  5.000000  8.000000
+
+Vector2
+3.000000
+7.000000
+-2.000000
+
+result   1.271850[rad]
+\end{verbatim}
+
+上記より正しく動作していることがわかる．
+
+\section{感想}
+今回のレポートは授業課題の5,6週目に比べると比較的簡単だと感じた．授業課題も含めここまでの課題でプログラム上で行列やベクトルを扱うことにかなり慣れてきたと感じた．しかし，今回のレポートは取り組み始めるのが少し遅かったため，今後難しくなると予想されるレポートを期限内に終わらせるために，次回のレポートからは計画的に取り組みたいと思う．
+
+\end{document}

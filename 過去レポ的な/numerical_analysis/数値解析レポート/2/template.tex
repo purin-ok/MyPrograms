@@ -1,0 +1,454 @@
+\documentclass[dvipdfmx,titlepage]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{cases}
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex,
+    keepspaces=true,
+    language=c
+}
+\renewcommand{\lstlistingname}{リスト}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+\def\MARU#1{{\rm\ooalign{\hfil\lower.168ex\hbox{#1}\hfil \crcr\mathhexbox20D}}}
+
+\title{\Huge{数値解析レポートNo.2}}
+\author{\huge{43番 若月 耕紀}}
+\date{}
+
+\begin{document}
+\maketitle
+\newpage
+
+
+\section*{\MARU{1}
+$
+\rm{\bf{A}} = \left(
+    \protect\begin{array}{ccc}
+      2 & 1 & 1 \\
+      1 & -1 & 5 \\
+      1 & 2 & -4
+    \protect\end{array}
+  \right)$ ，
+$
+\rm{\bf{b}} = \left(
+    \protect\begin{array}{c}
+      2 \\
+      -2 \\
+      4
+    \protect\end{array}
+  \right)$のとき，$\rm{\bf{A}}\rm{\bf{x}}$=$\rm{\bf{b}}$の解$\rm{\bf{x}}$を求めよ．
+}
+
+授業課題で作成したLU分解のプログラムを使用すると，LU分解の結果は以下のようになる．
+\begin{equation}
+	L = \left(
+    \protect\begin{array}{ccc}
+      1 & 0 & 0 \\
+      0.5 & 1 & 0 \\
+      0.5 & -1 & 1
+    \protect\end{array}
+  \right)，
+	U = \left(
+    \protect\begin{array}{ccc}
+      2 & 1 & 1 \\
+      0 & -1.5 & 4.5 \\
+      0 & 0 & 0
+    \protect\end{array}
+  \right) \nonumber
+\end{equation}
+
+この時，U行列のランクが2となるので，解である$x$を求める際に0割りをすることになり，プログラムが強制終了する．対策方法としては，0割りが出現しないような行列を入力すれば良い．
+
+また解$x$は行基本変形を用いて以下のように求めることができる．
+
+\begin{equation*}
+  \left(
+    \protect\begin{array}{ccc|c}
+      2 & 1 & 1 & 2 \\
+      1 & -1 & 5 & -2 \\
+      1 & 2 & -4 & 4
+    \protect\end{array}
+  \right)\rightarrow
+  \left(
+    \protect\begin{array}{ccc|c}
+      1 & 0 & 2 & 0 \\
+      0 & 1 & -3 & 2 \\
+      0 & 0 & 0 & 0
+    \protect\end{array}
+  \right)，
+  x= \left(
+    \protect\begin{array}{ccc|c}
+      -2t \\
+		3t+2 \\
+		t
+    \protect\end{array}
+  \right)
+　\left(
+    tは任意定数
+  \right)
+\end{equation*}
+
+今回は不定解となるため，$t$を任意定数として計算している．
+
+\section*{\MARU{2}
+$
+\rm{\bf{C}} = \left(
+    \protect\begin{array}{ccc}
+      2 & -1 & 5 \\
+      -4 & 2 & 1 \\
+      8 & 2 & -1
+    \protect\end{array}
+  \right)$の逆行列を求めよ．
+}
+
+CがLU分解できるとき，$C^{-1}=U^{-1}L^{-1}P$と表すことができる．よって，$L$と$U$の逆行列を求めれば，$C$の逆行列を求めることができる．
+
+\subsection*{$U$の逆行列}
+$U$は上三角行列であるので，$U^{-1}$も上三角行列である．これらを以下のように定める．
+
+\begin{equation*}
+	U = \left(
+	\begin{array}{ccc}
+		a_{11} & a_{12} & a_{13} \\
+		0 & a_{22} & a_{23} \\
+		0 & 0 & a_{33}
+	\end{array}
+	\right), \
+	U^{-1} = \left(
+	\begin{array}{ccc}
+		a_{11}^{\prime} & a_{12}^{\prime} & a_{13}^{\prime} \\
+		0 & a_{22}^{\prime} & a_{23}^{\prime} \\
+		0 & 0 & a_{33}^{\prime}
+	\end{array}
+	\right)
+\end{equation*}
+
+$UU^{-1}=E$であるため，
+
+\begin{equation*}
+	UU^{-1} = \left(
+	\begin{array}{ccc}
+		a_{11}a_{11}^{\prime} & a_{11}a_{12}^{\prime} + a_{12}a_{22}^{\prime} & a_{11}a_{13}^{\prime} + a_{12}a_{23}^{\prime} + a_{13}a_{33}^{\prime} \\
+		0 & a_{22}a_{22}^{\prime} & a_{22}a_{23}^{\prime} + a_{23}a_{33}^{\prime} \\
+		0 & 0 & a_{33}a_{33}^{\prime}
+	\end{array}
+	\right) = \left(
+	\begin{array}{ccc}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{array}
+	\right)
+\end{equation*}
+
+となる．これを解くと，
+
+\begin{equation*}
+	U^{-1} = \left(
+	\begin{array}{ccc}
+		a_{11}^{\prime} & -a_{12}a_{11}^{\prime}a_{22}^{\prime} & -a_{12}a_{11}^{\prime}a_{23}^{\prime} - a_{13}a_{11}^{\prime}a_{33}^{\prime} \\
+		0 & a_{22}^{\prime} & -a_{23}a_{22}^{\prime}a_{33}^{\prime} \\
+		0 & 0 & a_{33}^{\prime}
+	\end{array}
+	\right)
+\end{equation*}
+
+となる．この時，
+	$\displaystyle a_{11}^{\prime} = \frac{1}{a_{11}}，
+	a_{22}^{\prime} = \frac{1}{a_{22}}，
+	a_{33}^{\prime} = \frac{1}{a_{33}}$である．
+
+\subsection*{$L$の逆行列}
+$U$と同様に以下のように定める.
+
+\begin{equation*}
+	L = \left(
+	\begin{array}{ccc}
+		b_{11} & 0 & 0 \\
+		b_{21} & b_{22} & 0 \\
+		b_{31} & b_{32} & b_{33}
+	\end{array}
+	\right), \
+	L^{-1} = \left(
+	\begin{array}{ccc}
+		b_{11}^{\prime} & 0 & 0 \\
+		b_{21}^{\prime} & b_{22}^{\prime} & 0 \\
+		b_{31}^{\prime} & b_{32}^{\prime} & b_{33}^{\prime}
+	\end{array}
+	\right)
+\end{equation*}
+
+$LL^{-1}=E$であるので，
+                
+\begin{equation*}
+	LL^{-1} = \left(
+	\begin{array}{ccc}
+		b_{11}b_{11}^{\prime} & 0 & 0 \\
+		b_{21}b_{11}^{\prime} + b_{22}b_{21}^{\prime} & b_{22}b_{22}^{\prime} & 0 \\
+		b_{31}b_{11}^{\prime} + b_{32}b_{21}^{\prime} + b_{33}b_{31}^{\prime} & b_{32}b_{22}^{\prime} + b_{33}b_{32}^{\prime} & a_{33}a_{33}^{\prime}
+	\end{array}
+	\right) = \left(
+	\begin{array}{ccc}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1
+	\end{array}
+	\right)
+\end{equation*}
+
+となる．これを解くと，
+
+\begin{equation*}
+	L^{-1} = \left(
+	\begin{array}{ccc}
+		b_{11}^{\prime} & 0 & 0 \\
+		-b_{21}b_{11}^{\prime}b_{22}^{\prime} & b_{22}^{\prime} & 0 \\
+		-b_{31}b_{11}^{\prime}b_{33}^{\prime} - b_{32}b_{21}^{\prime}b_{33}^{\prime} & -b_{32}b_{22}^{\prime}b_{33}^{\prime} & b_{33}^{\prime}
+	\end{array}
+	\right)
+\end{equation*}
+
+となる．この時，$\displaystyle
+	b_{11}^{\prime} = \frac{1}{b_{11}}，
+	b_{22}^{\prime} = \frac{1}{b_{22}}，
+	b_{33}^{\prime} = \frac{1}{b_{33}}$である．
+
+\subsection*{$C$の逆行列}
+課題5で作成したプログラムでCをLU分解すると以下のようになる．
+
+\begin{equation*}
+	L = \left(
+	\begin{array}{ccc}
+		1 & 0 & 0 \\
+		-0.5 & 1 & 0 \\
+		0.25 & -0.5 & 1
+	\end{array}
+	\right), \
+	U = \left(
+	\begin{array}{ccc}
+		8 & 2 & -1 \\
+		0 & 3 & 0.5 \\
+		0 & 0 & 5.5
+	\end{array}
+	\right)
+\end{equation*}
+
+上記を利用して，$L$と$U$の逆行列を求めると以下のようになる．
+
+\begin{equation*}
+	L^{-1} = \left(
+	\begin{array}{ccc}
+		1 & 0 & 0 \\
+		0.5 & 1 & 0 \\
+		0 & 0.5 & 1
+	\end{array}
+	\right), \
+	U^{-1} = \left(
+	\begin{array}{ccc}
+		0.125 & -0.08333 & 0.3030 \\
+		0 & 0.3333 & -0.03030 \\
+		0 & 0 & 0.1818
+	\end{array}
+	\right)
+\end{equation*}
+
+これらを利用して$C^{-1}=U^{-1}L^{-1}P$を計算すると以下のようになる．
+
+\begin{equation*}
+	C^{-1}=U^{-1}L^{-1}P = \left(
+	\begin{array}{ccc}
+		0.3030 & -0.06818 & 0.08333 \\
+		-0.03030 & 0.3182 & 0.1667 \\
+		0.1818 & 0.09090 & 0
+	\end{array}
+	\right)
+\end{equation*}
+
+\setcounter{section}{1}
+\section{2分法とよく似た方法にはさみうち法がある．はさみうち法について調査し，2分法との違いをまとめよ．また，同じ条件で10回繰り返した時の値について比較せよ．}
+
+はさみうち法とは，2分法を少し改良したものである．2分法では区間の中間を計算していたが，はさみうち法では区間の端点を結ぶ直線とx軸との交点の座標を使用する．はさみうち法は，初期値が悪いと2分法よりも収束が遅くなるが，初期値が解に近ければ収束は早くなる．
+
+はさみうちについて，作成したプログラムをリスト\ref{src:2}に示す.
+
+\begin{lstlisting}[caption=False\_Position, label=src:2]
+void False_Position(double a1, double a2, double (*f)(double x)){
+	int i;
+	double nex;
+
+	for(i = 1; 10 >= i; ++i){
+		nex = (a1 * f(a2) - a2 * f(a1)) / (f(a2) - f(a1));
+
+		printf("%2d: x=%.9f\n", i, nex);
+
+		if(0 > f(a1) * f(nex)){
+			a2 = nex;
+		}else{
+			a1 = nex;
+		}
+	}
+}
+\end{lstlisting}
+
+基本的なプログラムの構成は課題3と同じであるため，説明を省略する．変更点であるnexについては，x軸を$0\cdot x + 1 \cdot y + 0 = 0$として交点の座標を求めた．
+
+このプログラムを用いて$f(x)=x^4-3x^2+5x-9$，区間[1，3]の解を求める．実行した結果を以下に示す．
+
+\begin{verbatim}
+はさみうち法    　 　　 　2分法
+1:  x = 1.181818182     1:  x = 2.000000000
+2:  x = 1.330162049     2:  x = 1.500000000
+3:  x = 1.447303924     3:  x = 1.750000000
+4:  x = 1.536568968     4:  x = 1.875000000
+5:  x = 1.602390729     5:  x = 1.812500000
+6:  x = 1.649612800     6:  x = 1.781250000
+7:  x = 1.682775076     7:  x = 1.765625000
+8:  x = 1.705697489     8:  x = 1.757812500
+9:  x = 1.721362780     9:  x = 1.753906250
+10: x = 1.731983564     10: x = 1.751953125
+\end{verbatim}
+
+区間[1，3]での解は$x\approx 1.753663501$であるため，今回の場合では，はさみうち法の方が収束が遅かった．
+
+\section{ヤコビ法やガウス・ザイデル法が収束しない条件を，
+例をあげながら解説せよ．}
+
+ヤコビ法，ガウス・ザイデル法とは，n元連立一次方程式を反復法で解く手法の1つである．これらが真の解に収束する条件は以下のようになる．
+\begin{itemize}
+ \item 第$i$行の対角項以外の成分の絶対値の和よりも，対角項の絶対値が大きい
+\end{itemize}
+上記の条件を満たさなかった場合，ヤコビ法とガウス・ザイデル法が収束しない．よって収束しない条件は以下のようになる．
+\begin{itemize}
+ \item 第$i$行の対角項以外の成分の絶対値の和よりも，対角項の絶対値が小さい
+\end{itemize}
+
+例として，以下のように定めた場合について各方法の解の遷移を示す．
+
+\begin{equation*}
+	\rm{\bf{A}} = \left(
+	\begin{array}{ccc}
+		1 & 2 & 3 \\
+		3 & 1 & 2 \\
+		2 & 3 & 1
+	\end{array}
+	\right), \
+	\rm{\bf{b}} = \left(
+	\begin{array}{c}
+		14 \\
+		11 \\
+		11
+	\end{array}
+	\right), \
+	\rm{\bf{初期値}} = \left(
+	\begin{array}{c}
+		0 \\
+		0 \\
+		0
+	\end{array}
+	\right), \
+	\rm{\bf{正しい解}} = \left(
+	\begin{array}{c}
+		1 \\
+		2 \\
+		3
+	\end{array}
+	\right)
+\end{equation*}
+まず，ヤコビ法での解の遷移を以下に示す．
+\begin{equation*}
+            \left(
+                \begin{array}{c}
+                    0 \\
+                    0 \\
+                    0
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    14 \\
+                    11 \\
+                    11
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    -41 \\
+                    -53 \\
+                    -50
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    270 \\
+                    234 \\
+                    252
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    -1210 \\
+                    -1303 \\
+                    -1231
+                \end{array}
+            \right)\rightarrow・・・
+        \end{equation*}
+次に，ガウス・ザイデル法での解の遷移を以下に示す．
+\begin{equation*}
+            \left(
+                \begin{array}{c}
+                    0 \\
+                    0 \\
+                    0
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    14 \\
+                    -31 \\
+                    76
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    -152 \\
+                    315 \\
+                    -630
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    1274 \\
+                    -2551 \\
+                    5116
+                \end{array}
+            \right) \rightarrow \left(
+                \begin{array}{c}
+                    -10232 \\
+                    -20475 \\
+                    -40950
+                \end{array}
+            \right)\rightarrow・・・
+        \end{equation*}
+上記の結果より，収束条件を満たさない場合，どちらの方法でも，解が収束せずに発散していくことがわかる．
+
+\section{感想}
+今回のレポートでは，今まで習ったことを改めて学習することができた．授業課題として実装していないものもあったため，少し忘れている部分があり，苦労した．これから編入試験もすることになるため，課題として出ていなくても積極的に学習をし，理解を深めていきたいと思う．
+
+\end{document}
