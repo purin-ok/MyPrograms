@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  26 JAN 2023 16:57
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  26 JAN 2023 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**d:/MyPrograms/tex/信号処理プログラミング/最初レポート/ec31121m
-(d:/MyPrograms/tex/信号処理プログラミング/最初レポート/ec31121m.tex
+**d:/MyPrograms/tex/オセロプログラムのやつ/KK
+(d:/MyPrograms/tex/オセロプログラムのやつ/KK.tex
 pLaTeX2e <2021-11-15>+1 (based on LaTeX2e <2022-11-01> patch level 1)
 L3 programming layer <2023-01-16> (c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
 Document Class: jarticle 2020/09/30 v1.8f Standard pLaTeX class
@@ -116,8 +116,8 @@ File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count273
 \g__pdf_backend_link_int=\count274
 \g__pdf_backend_link_sf_int=\count275
-) (./ec31121m.aux)
-\openout1 = `ec31121m.aux'.
+) (./KK.aux)
+\openout1 = `KK.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
@@ -193,53 +193,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 58.
 [1
 
-]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 82.
- [1]
-File: EPS/rad1.eps Graphic file (type eps)
-<EPS/rad1.eps>
-File: EPS/saw1.eps Graphic file (type eps)
-<EPS/saw1.eps>
-File: EPS/sin100f3.eps Graphic file (type eps)
-<EPS/sin100f3.eps>
- [2]
-File: EPS/sin140f3_before.eps Graphic file (type eps)
-<EPS/sin140f3_before.eps>
-File: EPS/sin140f3_after.eps Graphic file (type eps)
-<EPS/sin140f3_after.eps>
-File: EPS/PCM.eps Graphic file (type eps)
-<EPS/PCM.eps>
- [3] [4]
-File: EPS/white_noise.eps Graphic file (type eps)
-<EPS/white_noise.eps>
- [5] [6] [7]
-File: EPS/point_3_noise_deleat.eps Graphic file (type eps)
-<EPS/point_3_noise_deleat.eps>
-File: EPS/sin100f3_3point.eps Graphic file (type eps)
-<EPS/sin100f3_3point.eps>
- [8] [9] [10] [11] [12] [13]
-File: EPS/ringin.eps Graphic file (type eps)
-<EPS/ringin.eps>
- [14] [15]
-File: EPS/100f100.eps Graphic file (type eps)
-<EPS/100f100.eps>
- [16] [17] (./ec31121m.aux) ) 
+] [1] (./KK.aux) ) 
 Here is how much of TeX's memory you used:
- 3795 strings out of 476550
- 56064 string characters out of 5806803
- 2101334 words of memory out of 5000000
- 24390 multiletter control sequences out of 15000+600000
- 522682 words of font info for 73 fonts, out of 8000000 for 9000
+ 3128 strings out of 476550
+ 49037 string characters out of 5806803
+ 1862334 words of memory out of 5000000
+ 23742 multiletter control sequences out of 15000+600000
+ 521280 words of font info for 67 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 72i,13n,76p,351b,1751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,13n,76p,237b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ec31121m.dvi (18 pages, 67176 bytes).
+Output written on KK.dvi (2 pages, 2176 bytes).
