@@ -43,7 +43,7 @@
 % 提出日
 \date{2023年1月31日}
 % 実験日
-\expdate{2022年8月から}
+\expdate{2022年集中講義期間}
 % 共同実験者
 % グループに分かれて実験をするテーマでは，グループメンバーの番号名前を書く．
 \coauthor{%
@@ -56,5 +56,41 @@
 %%
 \begin{document}
 \maketitle
-aa
+\section*{課題1}
+strtok2.cをstrtok3.cに改良したことによって読み込める文字数が10文字から81文字に増えた．
+\section*{課題2}
+概ね課題の仕様書のとおりに作成できた．
+\section*{課題3}
+表\ref{tab}にメイクファイル中での各記号の意味を示す．
+\begin{table}[H]
+  \caption{メイクファイル中での記号と意味}
+  \label{tab}
+  \centering
+  \begin{tabular}{l|l}
+    記号                   & 意味                                                                \\\hline\hline
+    \$?                  & ターゲットより新しい全ての依存関係の名前。\$(?) と書いても同じ意味を持つ                           \\
+    \$\%                 & ターゲットがアーカイブメンバだったときのターゲットメンバ名                                     \\
+    \$@                  & ルールのターゲットの名前。\$(@) と書いても同じ意味を持つ                                   \\
+    \$*                  & ターゲットのパターンマッチに一致した部分。 関連するファイルを作成するときなどに役立つ                       \\
+    \$+                  & ターゲットの全ての依存関係の名前 (重複があっても省略しない)。 一般的には \$\textasciicircum の方が使われる \\
+    \$\textless{}        & 依存関係の一番最初の名前。\$(\textless{}) と書いても同じ意味を持つ                         \\
+    \$\textasciicircum{} & ターゲットの依存関係の名前。\$(\textasciicircum{}) と書いても同じ意味を持つ
+  \end{tabular}
+\end{table}
+\section*{課題4}
+概ね課題の仕様書の通りに作成できた．
+\section*{リバーシプログラム}
+概ねテキストの仕様書の通り作成した．
+ただし，入力する人を信用しているためPvPの場合は間違った手を打つとパスされる．
+\section*{その他}
+端末室の環境だとコマンドプロンプトの形で開くので等幅フォントだが，
+Window11では初期状態でターミナルがコマンドプロンプトやPowerShellを開くためプロポーショナルフォントになる．
+そのため，背景変換の座標が微妙に変わってしまい自宅作業のときに支障が生まれる可能性があるため
+一言あるといいかもしれない．
+\section*{参考文献}
+\begin{enumerate}
+  \item 2022年度Ec4プログラミング演習テキスト
+  \item http://www.jsk.t.u-tokyo.ac.jp/~k-okada/makefile/
+  \item https://tex2e.github.io/blog/makefile/automatic-variables
+\end{enumerate}
 \end{document}
