@@ -254,19 +254,19 @@ for (int k = 0; k < n; k++) {
 このあとでamplitudeを表示すれば良い．
 
 \subsection{動作例}
-$sin(t)+sin(100t)$を入力信号としてDFTを通したものを図\ref{1_100}に示す．
+$sin( 2 \pi t)+sin(100 \times 2 \pi t)$を入力信号としてDFTを通したものを図\ref{1_100}に示す．
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\hsize]{img/1_100.png}
-  \caption{sin(t)+20sin(100t)}
+  \caption{$sin(2 \pi t)+sin(100 \times 2 \pi t)$を入力信号として与えた場合}
   \label{1_100}
 \end{figure}
 
-$sin(100t)$の係数を20にした$sin(t)+20sin(100t)$を入力信号としてDFTを通したものを図\ref{1_20-100}に示す．
+$sin(100 \times 2 \pi t)$の係数を20にした$sin(2 \pi t)+20sin(100 \times 2 \pi t)$を入力信号としてDFTを通したものを図\ref{1_20-100}に示す．
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\hsize]{img/1_20-100.png}
-  \caption{sin(t)+20sin(100t)}
+  \caption{$sin( 2 \pi t)+20sin(100 \times 2 \pi t)$を入力信号として与えた場合}
   \label{1_20-100}
 \end{figure}
 以上の結果からDFTのアルゴリズムは問題ないことがわかる．
@@ -285,6 +285,13 @@ $sin(100t)$の係数を20にした$sin(t)+20sin(100t)$を入力信号としてDF
   \item それぞれの問に対する返答に周波数と音声の長さという2値のパラメータにおいて
         比較し，どのような違いがあるか評価する．
 \end{enumerate}
+
+\section{結果}
+縦軸に話すスピード，横軸に周波数成分をおいた
+
+
+\section{考察}
+
 
 \section*{参考文献}
 \begin{enumerate}
