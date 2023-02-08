@@ -4,7 +4,8 @@
 #include <string.h>
 
 #define BUF 80
-#define DATANUM 1000
+#define DATANUM 20000
+#define AMP 48000
 
 int main(int argc, char **argv) {
   FILE *fp;
@@ -28,13 +29,14 @@ int main(int argc, char **argv) {
   for (n = 0; n < DATANUM;) {
     if (fgets(buf, sizeof(buf), fp) == NULL) break;
     if (buf[0] == '#') continue;
-    tm[n] = atof(strtok(buf, ","));
-    amp[n] = atof(strtok(NULL, "\r\n\0"));
+    // tm[n] = atof(strtok(buf, ","));
+    amp[n] = atof(strtok(buf, "\r\n\0"));
+    // printf("%f\f", amp[n]);
     n++;
   }
   fclose(fp);
 
-  dt = (tm[1] - tm[0]) / DATANUM;  // 標本化間隔dt[s]
+  dt = 1 / AMP;  // 標本化間隔dt[s]
 
   // for (i = 0; i < n * 0.5; i++) {
   //   for (j = 0, re = 0, im = 0; j < n; j++) {
@@ -50,15 +52,16 @@ int main(int argc, char **argv) {
     real[k] = 0;
     imag[k] = 0;
     for (int j = 0; j < n; j++) {
-      real[k] += amp[j] * cos(2 * M_PI * k * j / n) * dt;
-      imag[k] += amp[j] * sin(2 * M_PI * k * j / n) * dt;
+      real[k] += amp[j] * cos(2 * M_PI * k * j / n) / AMP;
+      imag[k] += amp[j] * sin(2 * M_PI * k * j / n) / AMP;
     }
+    // printf("a");
     amplitude[k] = sqrt(real[k] * real[k] + imag[k] * imag[k]);
   }
-
+  // printf("\n");
   // 結果の表示
   for (int k = 0; k < n / 2; k++) {
-    printf("%d, %f\n", k, amplitude[k]);
+    printf("%d, %f\n", k * AMP / n, amplitude[k]);
   }
 
   return 0;
