@@ -1,0 +1,4 @@
+serch D:/MyPrograms/tex/外山/csv/yuuka1_folse_spe.csv
+serch D:/MyPrograms/tex/外山/csv/yuuka2_true_spe.csv
+serch D:/MyPrograms/tex/外山/csv/yuuka3_folse_spe.csv
+serch D:/MyPrograms/tex/外山/csv/yuuka4_true_spe.csv
