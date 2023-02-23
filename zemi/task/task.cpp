@@ -3,6 +3,7 @@
 #include "../atk_lab/header/01.hpp"
 #include "../atk_lab/header/IPbasic.hpp"
 
+#define ROW 25
 #define SITA 180
 int main(int argc, char** argv) {
   // 引数処理
@@ -50,7 +51,7 @@ int main(int argc, char** argv) {
   }
 
   for (j = 0; (j < ymax && getline(input_file, line)); j++) {
-    std::istringstream iss(line);
+    istringstream iss(line);
     for (i = 0; (i < xmax && getline(iss, buf, ' ')); i++) {
       matrix[j][i] = stoi(buf);
     }
@@ -62,7 +63,7 @@ int main(int argc, char** argv) {
 
   // ここから直線検出
   // 初期化
-  int row = sqrt(xmax * xmax + ymax * ymax);
+  int row = ceil(sqrt(xmax * xmax + ymax * ymax));
   int k = 0, distance = 0, rmax, sitamax;
   int** rsita;
 
@@ -82,15 +83,16 @@ int main(int argc, char** argv) {
     for (i = 0; i < xmax; i++) {  // すべての座標に対して
       if (matrix[j][i] == 1) {    // 点があるなら
         for (k = 0; k < SITA; k++) {
-          distance = round((xmax / 2 - i) * cos(k * M_PI / 180) +
-                           (ymax / 2 - j) * sin(k * M_PI / 180));
-          rsita[distance + row / 2][k] += 1;
+          distance = round(i * cos(k * M_PI / 180) + j * sin(k * M_PI / 180));
+          if (distance < 0) {
+            distance *= -1;
+          }
+          rsita[distance][k] += 1;
         }
       }
     }
   }
 
-  cout << distance + row / 2 << endl;
   int max_rsita = 0;
 
   for (j = 0; j < row; j++) {
@@ -103,12 +105,10 @@ int main(int argc, char** argv) {
     cout << endl;
   }
 
-  cout << max_rsita << endl;
-
   for (j = 0; j < row; j++) {
     for (i = 0; i < SITA; i++) {
       if (max_rsita == rsita[j][i]) {
-        cout << "r = " << j - row / 2 << ", θ = " << i << "°" << endl;
+        cout << "r = " << j << ", θ = " << i << "°" << endl;
       }
     }
   }
@@ -117,6 +117,10 @@ int main(int argc, char** argv) {
   for (i = 0; i < ymax; i++) {
     delete[] matrix[i];
   }
+  for (i = 0; i < row; i++) {
+    delete[] rsita[i];
+  }
+  delete[] rsita;
   delete[] matrix;
   return EXIT_SUCCESS;
 }
