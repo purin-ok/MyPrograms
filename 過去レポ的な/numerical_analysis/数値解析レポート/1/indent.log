@@ -1,12 +1,12 @@
 INFO:  latexindent.exe version 3.20.1, 2023-01-07, a script to indent .tex files
        latexindent.exe lives here: C:/texlive/2022/bin/win32/
-       Mon Jan 30 14:02:06 2023
-       Filename: d:/MyPrograms/tex/OR/__latexindent_temp_tym.tex
+       Fri Mar  3 00:34:07 2023
+       Filename: d:/MyPrograms/ß|IÈ/suuchi/suuchi_report_4/__latexindent_temp_report4.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
        -c|--cruft: cruft directory
-INFO:  Directory for backup files and d:/MyPrograms/ß|IÈ/suuchi/suuchi_report_4//indent.log:
-       d:/MyPrograms/ß|IÈ/suuchi/suuchi_report_4/
+INFO:  Directory for backup files and d:/MyPrograms/ß|IÈ/numerical_analysis/lðÍ|[g/1//indent.log:
+       d:/MyPrograms/ß|IÈ/numerical_analysis/lðÍ|[g/1/
 INFO:  YAML settings read: defaultSettings.yaml
        Reading defaultSettings.yaml from C:/texlive/2022/bin/win32/defaultSettings.yaml
        Reading defaultSettings.yaml (2nd attempt) from C:/texlive/2022/bin/win32/../../texmf-dist/scripts/latexindent/defaultSettings.yaml
@@ -16,9 +16,9 @@ INFO:  YAML reading settings
        latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
        see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  YAML settings read: -y switch
-       YAML setting: defaultIndent:'  '
-       single-quoted string found in -y switch: '  ', substitute to   
-       Updating mainSettings with defaultIndent:   
+       YAML setting: defaultIndent:'\t'
+       single-quoted string found in -y switch: '\t', substitute to 	
+       Updating mainSettings with defaultIndent: 	
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation
 INFO:  Phase 3: indenting objects
