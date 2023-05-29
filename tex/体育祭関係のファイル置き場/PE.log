@@ -1,0 +1,215 @@
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.5.20)  9 OCT 2021 08:51
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**PE.tex
+(./PE.tex
+pLaTeX2e <2019-04-06> (based on LaTeX2e <2018-12-01>)
+(c:/TeX/w32tex/share/texmf-dist/tex/platex/base/jarticle.cls
+Document Class: jarticle 2019/04/02 v1.8b Standard pLaTeX class
+\c@@paper=\count83
+(c:/TeX/w32tex/share/texmf-dist/tex/platex/base/jsize10.clo
+File: jsize10.clo 2019/04/02 v1.8b Standard pLaTeX file (size option)
+)
+\c@part=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 614.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count92
+)
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 99.
+
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2017/06/24 v5.0g Graphics/color driver for dvipdfmx
+))
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
+)
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/here/here.sty)
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count93
+\float@exts=\toks16
+\float@box=\box43
+\@float@everytoks=\toks17
+\@floatcapt=\box44
+) (./PE.aux)
+\openout1 = `PE.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+ [1
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
+
+(c:/TeX/w32tex/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 49.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 49.
+ [1]
+File: open_close.pdf Graphic file (type pdf)
+<open_close.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 79--80
+ [][] 
+ []
+
+[2] [3
+
+] [4]
+File: syugo.pdf Graphic file (type pdf)
+<syugo.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 152--153
+ [][] 
+ []
+
+[5]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 163.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 163.
+File: box2.pdf Graphic file (type pdf)
+<box2.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 187--188
+ [][] 
+ []
+
+[6
+
+] [7]
+File: borrow.pdf Graphic file (type pdf)
+<borrow.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 254--255
+ [][] 
+ []
+
+[8
+
+] [9] [10] [11
+
+]
+File: ballin2.pdf Graphic file (type pdf)
+<ballin2.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 315--316
+ [][] 
+ []
+
+[12] [13] [14
+
+]
+File: bread.pdf Graphic file (type pdf)
+<bread.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 392--393
+ [][] 
+ []
+
+[15] [16] [17] [18
+
+]
+File: rire3.pdf Graphic file (type pdf)
+<rire3.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 487--488
+ [][] 
+ []
+
+[19] [20]
+File: line.pdf Graphic file (type pdf)
+<line.pdf>
+
+Overfull \hbox (14.43306pt too wide) in paragraph at lines 530--531
+ [][] 
+ []
+
+[21
+
+]
+Overfull \hbox (100.20634pt too wide) in paragraph at lines 539--555
+[][][][] 
+ []
+
+[22
+
+]
+Overfull \hbox (58.90366pt too wide) in paragraph at lines 582--609
+ [][][][] 
+ []
+
+[23] [24] [25
+
+] (./PE.aux) ) 
+Here is how much of TeX's memory you used:
+ 778 strings out of 493216
+ 9924 string characters out of 6145930
+ 83282 words of memory out of 5000000
+ 4803 multiletter control sequences out of 15000+600000
+ 11487 words of font info for 46 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 25i,7n,21p,214b,343s stack positions out of 5000i,500n,10000p,500000b,80000s
+
+Output written on PE.dvi (26 pages, 36732 bytes).
