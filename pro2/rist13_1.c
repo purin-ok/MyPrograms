@@ -25,8 +25,8 @@ void resize(int w, int h) {
 }
 
 void init() { /* 初期化命令 */
-
   glClearColor(0.0, 0.0, 0.0, 1.0);
+  gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
 }
 
 int main(int argc, char** argv) {

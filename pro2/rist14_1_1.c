@@ -1,6 +1,11 @@
-#include <GL/glut.h>
+/*
+  演習８
+*/
 
+#include <GL/glut.h>
+#include <math.h>
 void display() { /* 描画命令 */
+  int i, j;
 
   glClear(GL_COLOR_BUFFER_BIT);
   glBegin(GL_LINES);
@@ -14,6 +19,14 @@ void display() { /* 描画命令 */
   glVertex3d(0, 0, 0);
   glVertex3d(0, 0, 1);
   glEnd();
+
+  glColor3d(0, 1, 1);
+
+  glBegin(GL_LINES);
+
+  glutWireTetrahedron();
+
+  glEnd();
   glFlush();
 }
 
@@ -21,11 +34,12 @@ void resize(int w, int h) {
   glViewport(0, 0, w, h);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
+
   glOrtho(-2, 2, -2, 2, -2, 2);
 }
 
 void init() { /* 初期化命令 */
-
+  // gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
   glClearColor(0.0, 0.0, 0.0, 1.0);
 }
 

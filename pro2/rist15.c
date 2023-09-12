@@ -1,6 +1,11 @@
-#include <GL/glut.h>
+/*
+  演習12
+*/
 
+#include <GL/glut.h>
+#include <math.h>
 void display() { /* 描画命令 */
+  int i, j;
 
   glClear(GL_COLOR_BUFFER_BIT);
   glBegin(GL_LINES);
@@ -14,28 +19,53 @@ void display() { /* 描画命令 */
   glVertex3d(0, 0, 0);
   glVertex3d(0, 0, 1);
   glEnd();
+
+  glColor3d(0, 1, 1);
+
+  glBegin(GL_LINES);
+
+  glutWireTetrahedron();
+
+  glEnd();
   glFlush();
 }
 
 void resize(int w, int h) {
+  double wd, hd;
   glViewport(0, 0, w, h);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
   glOrtho(-2, 2, -2, 2, -2, 2);
 }
 
-void init() { /* 初期化命令 */
+static void timer(int dummy) { /*タイマコールバック関数*/
+  glutTimerFunc(100, timer, 0);
+  glMatrixMode(GL_MODELVIEW);
+  glRotated(3.0, 0.0, 0.0, 1.0);
+  glutPostRedisplay();
+}
 
+void idle() { /*コールバック関数*/
+
+  glutPostRedisplay();
+}
+
+void init() { /* 初期化命令 */
+  gluLookAt(1, 1, 1, 0, 0, 0, 0, 1, 0);
   glClearColor(0.0, 0.0, 0.0, 1.0);
 }
 
 int main(int argc, char** argv) {
   glutInit(&argc, argv);
 
+  glutInitWindowSize(640, 480);
   glutInitDisplayMode(GLUT_RGBA);
   glutCreateWindow(argv[0]);
   glutDisplayFunc(display);
+  glutReshapeFunc(idle);
+  glutTimerFunc(100, timer, 0);
   glutReshapeFunc(resize);
+
   init();
   glutMainLoop();
 
