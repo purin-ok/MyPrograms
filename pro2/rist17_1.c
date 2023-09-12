@@ -86,12 +86,8 @@ void mouse(int btn, int state, int x, int y) {
 }
 
 static void timer(int dummy) { /*タイマコールバック関数*/
+  glutTimerFunc(100, timer, 0);
 
-  if (isAnime == 1) {  // isAnime==1と同じ意味
-    glutTimerFunc(100, timer, 0);
-  } else if (isAnime == 0) {
-    glutTimerFunc(100, NULL, 0);
-  }
   glMatrixMode(GL_MODELVIEW);
   if (axis == 'x') {
     glRotated(3.0, 1.0, 0.0, 0.0);
@@ -110,13 +106,12 @@ int main(int argc, char** argv) {
   glutInitDisplayMode(GLUT_RGBA);
   glutCreateWindow(argv[0]);
   glutDisplayFunc(display);
-  glutReshapeFunc(idle);
-  if (isAnime == 1) {  // isAnime==1と同じ意味
-    glutTimerFunc(100, timer, 0);
-  } else if (isAnime == 0) {
-    glutTimerFunc(100, NULL, 0);
+  if (isAnime == 1) {
+    glutIdleFunc(idle);
+  } else {
+    glutIdleFunc(NULL);
   }
-
+  glutTimerFunc(100, timer, 0);
   glutReshapeFunc(resize);
   glutKeyboardFunc(keyin);
   glutMouseFunc(mouse);
