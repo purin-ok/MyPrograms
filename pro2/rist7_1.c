@@ -3,7 +3,7 @@
 #include <GL/glut.h>
 #include <math.h>
 
-#define NUM 6.0
+#define NUM 4.0
 void display() { /* 描画命令 */
   int i;
   double theta, dt, x, y;
@@ -27,10 +27,14 @@ void display() { /* 描画命令 */
 }
 
 void resize(int w, int h) {
+  double wd, hd;
   glViewport(0, 0, w, h);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluOrtho2D(-w / 200.0, w / 200.0, -h / 200.0, h / 200.0);
+  wd = (double)w;
+  hd = (double)h;
+  (w < h) ? gluOrtho2D(-wd / wd, wd / wd, -hd / wd, hd / wd)
+          : gluOrtho2D(-wd / hd, wd / hd, -hd / hd, hd / hd);
 }
 
 void init() { /* 初期化命令 */
