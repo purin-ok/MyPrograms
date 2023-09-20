@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  15 SEP 2023 14:41
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  20 SEP 2023 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -254,29 +254,29 @@ File: l3backend-dvips.def 2023-03-30 L3 backend support: dvips
 ) (./outline.aux)
 \openout1 = `outline.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd)
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 58.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 58.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
  [1
 
 
@@ -291,10 +291,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--210
 Here is how much of TeX's memory you used:
  2845 strings out of 478133
  42667 string characters out of 5841535
- 1860481 words of memory out of 5000000
+ 1861481 words of memory out of 5000000
  23159 multiletter control sequences out of 15000+600000
  525294 words of font info for 86 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,16n,62p,259b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,16n,62p,332b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline.dvi (2 pages, 9700 bytes).
+Output written on outline.dvi (2 pages, 9620 bytes).
