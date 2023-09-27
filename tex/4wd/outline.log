@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  27 SEP 2023 13:18
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  27 SEP 2023 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -278,24 +278,21 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 59.
 
-Overfull \hbox (0.31502pt too wide) in paragraph at lines 108--113
+Overfull \hbox (0.31502pt too wide) in paragraph at lines 114--119
 []\OT1/cmr/m/n/10 intel Re-alSense \JY1/mc/m/n/10 で撮影し ， \OT1/cmr/m/n/10 cube-mos Skele-ton Track-
  []
-
-
-LaTeX Warning: Empty `thebibliography' environment on input line 212.
 
 [1
 
 
 ] (./outline.aux) ) 
 Here is how much of TeX's memory you used:
- 2842 strings out of 478133
- 42638 string characters out of 5841535
- 1857481 words of memory out of 5000000
- 23156 multiletter control sequences out of 15000+600000
+ 2843 strings out of 478133
+ 42646 string characters out of 5841535
+ 1858481 words of memory out of 5000000
+ 23157 multiletter control sequences out of 15000+600000
  525294 words of font info for 86 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  55i,16n,62p,282b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline.dvi (1 page, 6316 bytes).
+Output written on outline.dvi (1 page, 7460 bytes).
