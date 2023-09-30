@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  30 SEP 2023 15:48
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  1 OCT 2023 03:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -254,50 +254,52 @@ File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
 ) (./outline.aux)
 \openout1 = `outline.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 59.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 59.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 61.
+File: img/RGBcamera.jpg Graphic file (type bmp)
+<img/RGBcamera.jpg>
 
-Overfull \hbox (1.49712pt too wide) in paragraph at lines 110--112
-[]\OT1/cmr/m/n/10 RGB \JY1/mc/m/n/10 カメラを用いる方法では \OT1/cmr/m/n/10 Open-Pose \JY1/mc/m/n/10 と \OT1/cmr/m/n/10 3d-pose-
+Overfull \hbox (4.17299pt too wide) in paragraph at lines 142--148
+[]\OT1/cmr/m/n/10 kinectSDK \JY1/mc/m/n/10 とは \OT1/cmr/m/n/10 Mi-crosoft Kinect for Win-dows Soft-
  []
 
 [1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
-[]\JY1/mc/m/n/9 モバイルモ ーシ ョ ンキ ャ プチ ャ ー \OT1/cmr/m/n/9 mo-
+Overfull \hbox (3.078pt too wide) in paragraph at lines 285--287
+[]\OT1/cmr/m/n/9 Intel\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``''\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 https://www.intelrealsense.com/skeleton-
  []
 
 [2] (./outline.aux) ) 
 Here is how much of TeX's memory you used:
- 2849 strings out of 476550
- 42682 string characters out of 5806803
- 1868334 words of memory out of 5000000
- 23430 multiletter control sequences out of 15000+600000
+ 2863 strings out of 476550
+ 42869 string characters out of 5806803
+ 1866334 words of memory out of 5000000
+ 23439 multiletter control sequences out of 15000+600000
  525294 words of font info for 86 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,16n,62p,265b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,16n,62p,267b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline.dvi (2 pages, 14484 bytes).
+Output written on outline.dvi (2 pages, 16900 bytes).
