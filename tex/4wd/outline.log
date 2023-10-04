@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  2 OCT 2023 14:46
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  4 OCT 2023 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -242,20 +242,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: dvipdfmx.def on input line 149.
  (c:/texlive/2023/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 で
-       きる
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2023-03-30 L3 backend support: dvips
 \l__pdf_internal_box=\box126
 \g__pdf_backend_object_int=\count284
@@ -264,97 +251,55 @@ File: l3backend-dvips.def 2023-03-30 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count285
 \g__pdf_backend_link_int=\count286
 \g__pdf_backend_link_sf_int=\count287
-)
-No file outline.aux.
+) (./outline.aux)
 \openout1 = `outline.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-[1
-
-] (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+ (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd)
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 69.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 69.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <5> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 80.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <5> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 80.
-
-
-LaTeX Warning: Citation `CV' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation `キャプチャ' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation `turugi' on page 2 undefined on input line 81.
-
-
-LaTeX Warning: Citation `baseline' on page 2 undefined on input line 121.
-
-
-LaTeX Warning: Citation `openpose' on page 2 undefined on input line 121.
-
-
-LaTeX Warning: Citation `ビデオ' on page 2 undefined on input line 122.
-
-
-LaTeX Warning: Reference `RGB' on page 2 undefined on input line 122.
-
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 61.
 File: img/RGBcamera.jpg Graphic file (type bmp)
 <img/RGBcamera.jpg>
 
-LaTeX Warning: Citation `kinectSDK' on page 2 undefined on input line 149.
-
-
-Overfull \hbox (4.17299pt too wide) in paragraph at lines 152--158
+Overfull \hbox (4.17299pt too wide) in paragraph at lines 199--201
 []\OT1/cmr/m/n/10 kinectSDK \JY1/mc/m/n/10 とは \OT1/cmr/m/n/10 Mi-crosoft Kinect for Win-dows Soft-
  []
 
-[2
+[1
+
 
 ]
-
-LaTeX Warning: Citation `mocopi' on page 3 undefined on input line 177.
-
-
-Overfull \hbox (3.078pt too wide) in paragraph at lines 295--297
-[]\OT1/cmr/m/n/9 Intel\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``''\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 https://www.intelrealsense.com/skeleton-
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
+[]\OT1/cmr/m/n/9 Google\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``me-di-apipe''\JY1/mc/m/n/9 ，
  []
 
-[3] (./outline.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[2] (./outline.aux) ) 
 Here is how much of TeX's memory you used:
- 2863 strings out of 478133
- 42893 string characters out of 5841535
- 1853481 words of memory out of 5000000
- 23173 multiletter control sequences out of 15000+600000
- 525603 words of font info for 87 fonts, out of 8000000 for 9000
+ 2862 strings out of 478133
+ 42878 string characters out of 5841535
+ 1860481 words of memory out of 5000000
+ 23171 multiletter control sequences out of 15000+600000
+ 525294 words of font info for 86 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,16n,62p,284b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,16n,62p,286b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline.dvi (3 pages, 15972 bytes).
+Output written on outline.dvi (2 pages, 17996 bytes).
