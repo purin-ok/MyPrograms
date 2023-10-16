@@ -1,0 +1,2 @@
+GNU make
+http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/gnu-make/getting-started.html

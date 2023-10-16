@@ -1,0 +1,158 @@
+% lualatex
+\documentclass[a4paper, 10pt]{ltjsarticle}
+\usepackage{geometry}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb, mathtools}
+\usepackage{bm}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{luatexja-fontspec}
+
+\geometry{left=25mm,right=25mm,top=25mm,bottom=30mm}
+\setmonofont{Ricty}
+
+\renewcommand{\prepartname}{課題}
+\renewcommand{\postpartname}{}
+
+\newcommand{\ora}[1]{\overrightarrow{#1}}
+
+\titleformat*{\section}{\normalsize}
+\renewcommand{\thesection}{\textbf{\arabic{section}.}}
+\titleformat*{\subsection}{\normalsize}
+\renewcommand{\thesubsection}{\textbf{\arabic{section}.\arabic{subsection}.}}
+
+\newcommand{\homework}{\part{}\setcounter{section}{0}}
+\newcommand{\question}[1]{\section{#1}}
+\newcommand{\subquestion}[1]{\subsection{#1}}
+\newcommand{\exercises}[3]{\noindent\textsf{◇演習#1．#2：}\quad#3}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\newcommand{\Figref}[1]{\figurename~\ref{#1}}
+\newcommand{\Tblref}[1]{\tablename~\ref{#1}}
+\newcommand{\Equref}[1]{式(\ref{#1})}
+\newcommand{\Lstref}[1]{\lstlistingname~\ref{#1}}
+
+\renewcommand{\lstlistingname}{リスト}
+\lstset{
+    language = C,
+    basicstyle = \ttfamily\small,
+    commentstyle = \ttfamily\small\color[gray]{0.3},
+    keywordstyle = \ttfamily\bfseries\small,
+    identifierstyle = \ttfamily\small,
+    numberstyle = \ttfamily\small,
+    numbers = left,
+    frame = single,
+    xrightmargin = 0\zw,
+    xleftmargin = 2\zw,
+    stepnumber = 1,
+    numbersep = 1\zw,
+    lineskip = -0.5ex,
+	breaklines = true,
+	tabsize = 4
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 自己評価Sの演習
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textsf{\LARGE 自己評価Sの演習}
+\vspace{\baselineskip}
+
+\input{ex.tex}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 課題
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textsf{\LARGE 課題}
+
+% 課題I
+\input{hw1.tex}
+
+% 課題II
+\input{hw2.tex}
+
+% 課題III
+\input{hw3.tex}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 感想，改善案，参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent{\textsf{\large 感想}}
+\vspace{0.5\baselineskip}
+
+課題で調べごとをするときに，できるだけ英語の文献を参考にするようにした．
+本科目の目的とは関係ないが，英語の苦手意識を少しでも軽減できたり，
+英語の文献の検索や読む練習になったりするので努力した．
+また，日本語でまとめているサイトではなく公式のサイトを参考にする場合
+しっかりとした情報が得られてよかった．
+これから更に英語の文献に触れる機会が増えると思うので英語に慣れていきたい．
+演習や課題の手応えはちょうどよくスムーズに進んでよかった．
+受講して非常に良かった．（受講しない場合は研究室を破門されるが...）
+
+\vspace{0.5\baselineskip}
+\noindent{\textsf{\large 改善案}}
+\vspace{0.5\baselineskip}
+
+課題III-5はリストを写すだけなので演習にするべきだと思う．
+関数\texttt{abc}や\texttt{abc}関数や\texttt{abc*}の表記の違いがわかりにくいです．
+違いがないなら統一したほうが良いのではないでしょうか．
+
+\renewcommand{\refname}{\large{\textsf{参考文献・URL}}}
+\begin{thebibliography}{99}
+	\bibitem{textbook}{
+		高橋章，R01-Ec5 プログラミング演習IVテキスト
+	}
+	\bibitem{Make}{
+		GNU Make，
+		\texttt{http://www.gnu.org/software/make/}
+	}
+	\bibitem{Grep}{
+		GNU Grep，
+		\texttt{http://www.gnu.org/software/grep/}
+	}
+	\bibitem{touch}{
+		touch，\\
+		\texttt{http://www.gnu.org/software/coreutils/manual/html\_node/touch-invocation.html}
+	}
+	\bibitem{isl}{
+		変数のスコープ，
+		\texttt{http://www.isl.ne.jp/pcsp/beginC/C\_Language\_09.html}
+	}
+	\bibitem{atmarkit}{
+		Cにおける識別子の有効範囲と変数の生存期間，\\
+		\texttt{https://www.atmarkit.co.jp/ait/articles/1104/26/news107.html}
+	}
+	\bibitem{Star}{
+		Star Polygon，
+		\texttt{http://mathworld.wolfram.com/StarPolygon.html}
+	}
+	\bibitem{Complete}{
+		Complete Graph，
+		\texttt{http://mathworld.wolfram.com/CompleteGraph.html}
+	}
+	\bibitem{Utah}{
+		University of Utah School of Computing，
+		\texttt{https://www.cs.utah.edu/about/history/\#phong-ref}
+	}
+	\bibitem{Bui}{
+		Illumination for Computer Generated Pictures，Bui Tuong Phong，\\
+		\texttt{https://users.cs.northwestern.edu/\~{}ago820/cs395/Papers/Phong\_1975.pdf}
+	}
+	\bibitem{Phong}{
+		Phongの反射モデル，
+		\texttt{https://knzw.tech/raytracing/?page\_id=240}
+	}
+\end{thebibliography}
+
+\end{document}

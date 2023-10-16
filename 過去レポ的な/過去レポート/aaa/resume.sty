@@ -1,0 +1,71 @@
+%% 平成22年度 卒研中間報告書・概要集スタイルファイル暫定版
+%% Ver.0.1 <2010/09/09, ataka@nagaoka-ct.ac.jp>
+%
+\RequirePackage{fancybox}
+%
+% 用紙サイズ(美文書 p.220)
+\setlength\textwidth{\paperwidth}
+\addtolength\textwidth{-50mm}
+\if@twocolumn \@tempdima=2zw \else \@tempdima=1zw \fi
+\divide\textwidth\@tempdima
+\multiply\textwidth\@tempdima
+\setlength\oddsidemargin{0pt}
+\setlength\evensidemargin{0pt}
+\setlength\textheight{\paperheight}
+\addtolength\textheight{-50mm}
+\setlength\topmargin{0pt}
+\setlength\headheight{0pt}
+\setlength\headsep{0pt}
+%
+% タイトル
+\def\idnum#1{\long\def\@idnum{#1}}% 研究番号
+\def\@idnum{}
+\def\classnum#1{\long\def\@classnum{#1}}% 出席番号
+\def\@classnum{}
+\def\labo#1{\long\def\@labo{#1}}% 所属研究室
+\def\@labo{}
+\def\advisor#1{\long\def\@advisor{#1}}% 指導教員
+\def\@advisor{}
+% $(texmf)/ptex/platex/base/jarticle
+\renewcommand{\maketitle}{\par
+  \begingroup
+    \if@twocolumn
+      \ifnum \col@number=\@ne \@maketitle
+      \else \twocolumn[\@maketitle\vspace\baselineskip]%
+      \fi
+    \else
+      \newpage
+      \global\@topnum\z@   % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+     %\thispagestyle{jpl@in}\@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\p@thanks\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\@idnum\@empty
+  \global\let\@classnum\empty
+  \global\let\@labo\empty
+  \global\let\@advisor\empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+  \global\let\idnum\relax
+  \global\let\classnum\relax
+  \global\let\labo\lelax
+  \global\let\advisor\relax
+}
+\def\@maketitle{%
+  \begin{Sbox}\begin{minipage}{\linewidth}
+    {\Large\bfseries\@idnum\hskip1zw\begin{tabular}[t]{l}\@title\end{tabular}}\par
+    {\hfill\@classnum\hskip1zw\@author （\@labo ／\@advisor ）}
+  \end{minipage}\end{Sbox}%
+  \fbox{\TheSbox}%
+}
+\endinput

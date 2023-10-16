@@ -1,0 +1,9 @@
+﻿GLdouble n;
+GLdouble v1[3], v2[3];
+GLdouble tmp[3];
+
+vect_sub(vP[1], vP[0], v1);
+vect_sub(vP[2], vP[1], v2);
+vect_outerproduct(v1, v2, tmp);
+n = vect_norm(temp);
+vect_scale(1.0 / n, tmp, nV);

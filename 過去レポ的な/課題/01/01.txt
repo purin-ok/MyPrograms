@@ -1,0 +1,37 @@
+ライブラリ
+
+GLEW
+https://glew.sourceforge.net/
+
+GLEWとは，グラフィックスハードウェアの拡張機能を使用可能にするライブラリである．特にWindowsでは，もともとサポートしているOpenGLのバージョンが1.1のため，新しい機能を使用することができない．そのため，GLEWを用いてグラフィックスハードウェアが持つ全ての機能を使えるようにする．
+
+
+
+GLFW
+https://www.glfw.org/
+
+GLFWとは，デスクトップでのOpenGL，OpenGL ES，Valukan開発用のオープンソースのマルチプラットフォームライブラリである．ウィンドウやコンテキストを作成し，入力を管理するためのシンプルなAPIを提供する．
+
+
+
+GLUI
+https://github.com/libglui/glui/wiki
+https://forest.watch.impress.co.jp/article/1999/07/13/glui.html
+
+GLUIとは，ダイアログウィンドウやダイアログウィンドウで使用されるボタンやチェックボックスなどのコントロールをOpenGLで作成できるライブラリである．
+
+
+
+
+プログラミング技術
+
+vukan
+https://www.dospara.co.jp/5info/cts_str_pc_vulkan
+
+Vukanとは，主に使用されるグラフィックスAPIのことで，直接GPUにアクセスできる構造によって，これまでのグラフィックスAPIに比べてより速い描画をすることが可能となる．
+
+OpenGL ES
+https://www.khronos.org/opengles/
+
+WebGL
+https://wgld.org/

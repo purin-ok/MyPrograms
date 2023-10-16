@@ -1,0 +1,133 @@
+#include <stdlib.h>
+#include <GL/glut.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+#define ID_B 1
+#define ID_L 2
+#define ID_U 3
+#define RADIUS_B 0.5
+#define HEIGHT_B 0.3
+#define WIDTH_L 0.2
+#define HEIGHT_L 0.8
+#define WIDTH_U 0.2
+#define HEIGHT_U 0.5
+
+#define SPEED 5.0
+
+GLfloat rotAng[3];
+
+GLUquadricObj* myQuad;
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(1, 1, 1, 0, 0.5, 0, 0, 1, 0);
+    glRotated(rotAng[0], 0, 1, 0);
+    glCallList(ID_B);
+    glTranslated(0, HEIGHT_B, 0);
+    glRotated(rotAng[1], 0, 0, 1);
+    glCallList(ID_L);
+    glTranslated(0, HEIGHT_L, 0);
+    glRotated(rotAng[2], 0, 0, 1);
+    glCallList(ID_U);
+    glutSwapBuffers();
+}
+
+
+void init() {
+    glClearColor(0.0, 0.0, 0.0, 1.0);
+    myQuad = gluNewQuadric();
+    gluLookAt(3, 3, 0.5, 0, 0, 0, 0, 0, 3);
+
+    glNewList(ID_B, GL_COMPILE);
+    glColor3f(1.0, 0.0, 0.0);
+    glPushMatrix();
+    glRotated(90.0, 1.0, 0.0, 0.0);
+    gluCylinder(myQuad, RADIUS_B, RADIUS_B, HEIGHT_B, 10, 2);
+    glPopMatrix();
+    glEndList();
+
+    glNewList(ID_L, GL_COMPILE);
+    glColor3f(0.0, 1.0, 0.0);
+    glPushMatrix();
+    glTranslated(0.0, 0.5 * HEIGHT_L, 0.0);
+    glScalef(WIDTH_L, HEIGHT_L, WIDTH_L);
+    glutWireCube(1.0);
+    glPopMatrix();
+    glEndList();
+
+    glNewList(ID_U, GL_COMPILE);
+    glColor3f(0.0, 0.0, 1.0);
+    glPushMatrix();
+    glTranslated(0.0, 0.5 * HEIGHT_U, 0.0);
+    glScalef(WIDTH_U, HEIGHT_U, WIDTH_U);
+    glutWireCube(1.0);
+    glPopMatrix();
+    glEndList();
+}
+
+static void timer(int dummy) {
+    glutTimerFunc(100, timer, 0);
+    glMatrixMode(GL_MODELVIEW);
+    glutPostRedisplay();
+}
+
+void keyin(unsigned char key, int x, int y) {
+    switch (key) {
+    case 'e': exit(0);
+
+    case 'x':
+        rotAng[0] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'z':
+        rotAng[0] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 's':
+        rotAng[1] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'a':
+        rotAng[1] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'w':
+        rotAng[2] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'q':
+        rotAng[2] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    default: break;
+    }
+}
+
+void resize(int w, int h) {
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(-2.0, 2.0, -2.0, 2.0, -4.0, 4.0);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE);
+    glutCreateWindow(argv[0]);
+    glutDisplayFunc(display);
+    glutReshapeFunc(resize);
+    glutKeyboardFunc(keyin);
+    glutInitWindowSize(640, 480);
+    init();
+    glutMainLoop();
+    return 0;
+}

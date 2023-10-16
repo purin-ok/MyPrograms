@@ -1,0 +1,18 @@
+﻿GLdouble nV[4][3];
+
+void display() {
+    int i, j;
+    glClear(
+        GL_COLOR_BUFFER_BIT
+        | GL_DEPTH_BUFFER_BIT
+    );
+    glBegin(GL_TRIANGLES);
+    for(i = 0; i < 4; i++) {
+        glNORMAL3dv(nV[i]);
+        for(j = 0; j < 3; j++) {
+            glVertex3dv(vP[tP[i][j]]); 
+        }
+    }
+    glEnd();
+    glutSwapBuffers();
+}

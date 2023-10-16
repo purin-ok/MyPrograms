@@ -1,0 +1,4 @@
+﻿static void timer(int dummy) {
+    glutTimerFunc(100, timer, 0);
+    glutPostRedisplay();
+}

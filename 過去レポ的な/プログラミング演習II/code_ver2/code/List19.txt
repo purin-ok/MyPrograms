@@ -1,0 +1,8 @@
+﻿glNewList(ID_L, GL_COMPILE);
+glColor3f(0.0, 1.0, 0.0);
+glPushMatrix();
+glTranslatef(0.0, 0.5 * HEIGHT_L, 0.0);
+glScalef(WIDTH_L, HEIGHT_L, WIDTH_L);
+glutWireCube(1.0);
+glPopMatrix();
+glEndList();

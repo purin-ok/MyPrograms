@@ -1,0 +1,87 @@
+
+\documentclass[twocolumn]{jsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{listings,jlisting}
+\usepackage{resume}
+
+
+\lstset{%
+  breaklines=true,
+  language=c,
+  basicstyle=\ttfamily\small,%
+  commentstyle={\itshape},%
+  classoffset=1,
+  keywordstyle={\bfseries},%
+  stringstyle={\ttfamily},
+  frame={tbrl},
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,%
+  stepnumber=1,
+  numberstyle=\small,%
+  tabsize=4,
+  lineskip=-0.5ex,
+  linewidth=0.45\textwidth,
+  xleftmargin=2zw,
+}
+
+
+\begin{document}
+\section{課題1}
+\subsection{課題1-1}
+プログラミングのツール：BCCにはMAKEユーティリティの他，grepやtouchなどプログラム開発を行う際に役に立つコマンドラインツールが含まれている．それぞれの機能や利用法について学習せよ．
+
+\subsubsection{grep}
+
+テキストファイルから一致する文字列を検索するためのコマンド．
+オプションを用いることで行頭や行末を検索するなどの検索法の指定ができる．
+
+\subsubsection{touch}
+
+指定したファイルのタイムスタンプを更新する．オプションを使用することで特定の日時を指定することが可能．指定されたファイルが存在しない場合は新規に作成する．
+
+
+\subsection{課題1-2}
+C 言語：変数の「有効範囲（スコープ）」， 「記憶域期間（記憶寿命）」について学習し，一般的な（ロー
+カル）変数とグローバル変数，スタティック変数の違いを整理せよ．
+
+有効範囲とは変数が利用できる範囲のことであり，記憶域機関とは変数がメモリに存在している期間である．
+ローカル変数の有効範囲は宣言された関数内である．他の関数でも変数を利用した場合はグローバル変数として宣言すればよい．
+ローカル変数は関数が終了するとメモリ上から消去されてしまうが，スタティック変数を用いることでプログラム実行中変数が保存されるようになる．
+
+
+\subsection{課題1-3}
+
+\lstinputlisting[caption=星型正多角形の描画, label=src:star]{star.c}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

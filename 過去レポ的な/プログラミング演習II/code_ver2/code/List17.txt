@@ -1,0 +1,10 @@
+﻿void mouse(
+    int btn, int state, int x, int y
+) {
+    if (
+        (btn == GLUT_LEFT_BUTTON) 
+        &&
+        (state == GLUT_DOWN)) {
+            exit(0);
+    }
+}

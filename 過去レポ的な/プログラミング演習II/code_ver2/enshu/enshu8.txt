@@ -1,0 +1,62 @@
+﻿//6mentai
+void display() {
+    int i, j;
+    GLdouble p[8][3];
+    p[4][2] = p[3][1] = p[0][1] = p[0][2] = p[6][0] = p[5][0] = p[5][2] = p[2][0] = p[2][1] = p[1][0] = p[1][1] = p[1][2] = sqrt(3.0) / 3;
+    p[7][0] = p[7][1] = p[7][2] = p[4][0] = p[4][1] = p[3][0] = p[3][2] = p[0][0] = p[6][1] = p[6][2] = p[5][1] = p[2][2] = -sqrt(3.0) / 3;
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_LINES);
+    glColor3d(1, 0, 0);
+    glVertex3d(0, 0, 0);
+    glVertex3d(1, 0, 0);
+    glColor3d(0, 1, 0);
+    glVertex3d(0, 0, 0);
+    glVertex3d(0, 1, 0);
+    glColor3d(0, 0, 1);
+    glVertex3d(0, 0, 0);
+    glVertex3d(0, 0, 1);
+    glEnd();
+    for (i = 0; i < 4; i++) {
+        glBegin(GL_LINE_STRIP);
+        glColor3d(1, 1, 1);
+        glVertex3dv(p[(i + 5) % 4 + 4]);
+        glVertex3dv(p[i + 4]);
+        glVertex3dv(p[i]);
+        glVertex3dv(p[(i + 1) % 4]);
+        glEnd();
+    }
+    glFlush();
+}
+
+//8mentai
+void display() {
+    int i, j;
+    GLdouble p[6][3];
+    p[0][0] = p[1][2] = p[4][1] = 1.0;
+    p[2][0] = p[3][2] = p[5][1] = -1.0;
+    p[0][1] = p[0][2] = p[2][1] = p[2][2] = p[1][0] = p[1][1] = p[3][0] = p[3][1] = p[4][0] = p[4][2] = p[5][0] = p[5][2] = 0.0;
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_LINES);
+    glColor3d(1, 0, 0);
+    glVertex3d(0, 0, 0);
+    glVertex3d(1, 0, 0);
+    glColor3d(0, 1, 0);
+    glVertex3d(0, 0, 0);
+    glVertex3d(0, 1, 0);
+    glColor3d(0, 0, 1);
+    glVertex3d(0, 0, 0);
+    glVertex3d(0, 0, 1);
+    glEnd();
+    for (i = 0; i < 4; i++) {
+        glBegin(GL_LINES);
+        glColor3d(1, 1, 1);
+        glVertex3dv(p[i]);
+        glVertex3dv(p[4]);
+        glVertex3dv(p[i]);
+        glVertex3dv(p[5]);
+        glVertex3dv(p[i]);
+        glVertex3dv(p[(i + 1) % 4]);
+        glEnd();
+    }
+    glFlush();
+}

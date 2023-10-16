@@ -1,0 +1,9 @@
+﻿void resize(int w, int h) {
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(
+        -w / 200.0, w / 200.0,
+        -h / 200.0, h / 200.0
+    );
+}

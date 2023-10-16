@@ -1,0 +1,127 @@
+\documentclass{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{cases}
+\usepackage{siunitx}
+\usepackage[hyphens]{url}
+\usepackage{listings}
+\usepackage{jlisting}
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex,
+    keepspaces=true,
+    language=c
+}
+\renewcommand{\lstlistingname}{リスト}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+\title{\vspace{-3cm}ネットワークプログラミング レポート}
+\author{Ec5 40番 若月 耕紀}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+本レポートでは，ネットワークプログラミングのロボットプログラムについての動作を記す．
+
+\section{プログラムの動作}
+作成したロボットプログラムの動作について以下に示す．
+
+\subsection{自身やエネルギータンクの情報取得}
+
+目標とするエネルギータンクを決めるために，自身の位置情報と，フィールドのエネルギータンクの情報を取得する．取得する情報は，自身の座標，各エネルギータンクの座標と得点とする．自身の情報を取得するコードとエネルギータンクの情報を取得するコードをリスト1，2に示す．
+
+\begin{lstlisting}[caption=自身の情報を取得するコード(一部抜粋)]
+String[] str_ship = line.split(" ");
+if(str_ship[0].equals(name)){
+	ship_x = Integer.parseInt(str_ship[1]);
+	ship_y = Integer.parseInt(str_ship[2]);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=エネルギータンクの情報を取得するコード(一部抜粋)]
+String[] str_energy = line.split(" ");
+energyX[energyVal] = Integer.parseInt(str_energy[0]);
+energyY[energyVal] = Integer.parseInt(str_energy[1]);
+energyP[energyVal] = Integer.parseInt(str_energy[2]);
+\end{lstlisting}
+
+\subsection{目標の決定}
+
+今回作成したプログラムでは，基本的には自身に最も近いエネルギータンクを目標とする．ただし，2点間の距離を算出する際に，エネルギータンクのポイントに応じて距離を短くするように減算を行う．また，境界を越えると反対側に出ることを考慮して計算する．
+
+目標とするエネルギータンクの座標を取得するコードをリスト3に示す．
+
+\begin{lstlisting}[caption=目標とするエネルギータンクの座標を取得するコード(一部抜粋)]
+if(energyVal > 1){
+	x = 128 - Math.abs(128 - Math.abs(ship_x - energyX[0]));
+	y = 128 - Math.abs(128 - Math.abs(ship_y - energyY[0]));
+	r1 = (x * x) + (y * y) - (energyP[0] * energyP[0] * weight);
+	for(i = 1, j = 0; i < energyVal; i++){
+		x = 128 - Math.abs(128 - Math.abs(ship_x - energyX[i]));
+		y = 128 - Math.abs(128 - Math.abs(ship_y - energyY[i]));
+		r2 = (x * x) + (y * y) - (energyP[i] * energyP[i] * weight);
+		if(r1 > r2){
+			r1 = r2;
+			j = i;
+		}
+	}
+}else{
+	j = 0;
+}
+TargetEnergyX = energyX[j];
+TargetEnergyY = energyY[j];
+\end{lstlisting}
+
+\subsection{移動について}
+
+自身の座標とエネルギータンクの座標を長方形(正方形)の対角の頂点として考える．この時，長方形に近い形であれば，上下または左右に大きく移動させ，正方形に近い形であれば，斜めに移動させる．
+
+移動する方向を決める際には，目標を決定する際と同様に，境界を越えたら反対側に出ることを考慮する．移動方向を決める条件分岐のコードをリスト4に示す．
+
+\begin{lstlisting}[caption=移動方向を決める条件分岐のコード(一部抜粋)]
+x = ship_x - TargetEnergyX;
+y = ship_y - TargetEnergyY;
+if(Math.abs(Math.abs(x) - Math.abs(y)) >= shapeError){/長方形に近い場合
+	if((Math.abs(x) - Math.abs(y)) >= 0){/横に長い場合
+		if(Math.abs(x) <= 128){/順方向
+			if((x) <= 0){/右側
+		}
+	}else{/縦に長い場合
+		if(Math.abs(y) <= 128){/順方向
+			if((y) <= 0){/上側
+	}
+}else{/正方形に近い場合
+	/左右判定
+	if(Math.abs(x) <= 128){/順方向
+		if((x) <= 0){/右側
+	/上下判定
+	if(Math.abs(y) <= 128){/順方向
+		if((y) <= 0){/上側
+}
+\end{lstlisting}
+
+\end{document}

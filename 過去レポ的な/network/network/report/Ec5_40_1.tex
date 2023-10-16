@@ -1,0 +1,67 @@
+\documentclass{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{cases}
+\usepackage{siunitx}
+\usepackage[hyphens]{url}
+\usepackage{listings}
+\usepackage{jlisting}
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex,
+    keepspaces=true,
+    language=c
+}
+\renewcommand{\lstlistingname}{リスト}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+\title{\vspace{-3cm}ネットワークプログラミング レポート}
+\author{Ec5 40番 若月 耕紀}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+本レポートでは，ネットワークプログラミングのロボットプログラムについての動作を記す．
+
+\section{プログラムの動作}
+作成したロボットプログラムの動作について以下に示す．
+
+\subsection{自身やエネルギータンクの情報取得}
+
+目標とするエネルギータンクを決めるために，自身の位置情報と，フィールドのエネルギータンクの情報を取得する．取得する情報は，自身の座標，各エネルギータンクの座標と得点とする．
+
+\subsection{目標の決定}
+
+今回作成したプログラムでは，基本的には自身に最も近いエネルギータンクを目標とする．ただし，2点間の距離を算出する際に，エネルギータンクのポイントに応じて距離を短くするように減算を行う．また，境界を越えると反対側に出ることを考慮して計算する．
+
+\subsection{移動について}
+
+自身の座標とエネルギータンクの座標を長方形(正方形)の対角の頂点として考える．この時，長方形に近い形であれば，上下または左右に大きく移動させ，正方形に近い形であれば，斜めに移動させる．
+
+移動する方向を決める際には，目標を決定する際と同様に，境界を越えたら反対側に出ることを考慮する．
+
+\end{document}

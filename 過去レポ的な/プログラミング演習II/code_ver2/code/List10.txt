@@ -1,0 +1,8 @@
+﻿void display() {
+    static double rotAng = 0.0;
+    int i;
+    double theta, dt, x, y;
+
+    glFlush();
+    rotAng += 3.0 * M_PI / 180.0;
+}

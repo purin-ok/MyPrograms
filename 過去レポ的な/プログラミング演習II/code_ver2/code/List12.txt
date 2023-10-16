@@ -1,0 +1,54 @@
+﻿#include <GL/glut.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+void display(void) {
+    double x, y;
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3d(0.0, 0.0, 0.0);
+    glBegin(GL_LINES);
+    glVertex2d(0.0, 0.0);
+    glVertex2d(2.0 * M_PI, 0.0);
+    glVertex2d(0.0, -1.0);
+    glVertex2d(0.0, 1.0);
+    for (x = 1; x <= 2.0; x += 1.0) {
+        glVertex2d(x * M_PI, -0.05);
+        glVertex2d(x * M_PI, 0.05);
+    }
+    for (y = -1; y <= 1; y += 2) {
+        glVertex2d(-0.05, y);
+        glVertex2d(0.05, y);
+    }
+    glEnd();
+    glColor3d(1.0, 0.0, 0.0);
+    glBegin(GL_LINE_STRIP);
+    for (x = 0; x < 2 * M_PI; x += 0.2) {
+        y = sin(x);
+        glVertex2d(x, y);
+    }
+    glEnd();
+    glFlush();
+}
+
+void resize(int w, int h) {
+    glViewport(0, 0, w, h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(-0.5, 6.5, -1.5, 1.5);
+}
+
+void init(void) {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitWindowSize(700, 300);
+    glutInitDisplayMode(GLUT_RGBA);
+    glutCreateWindow(argv[0]);
+    glutDisplayFunc(display);
+    glutReshapeFunc(resize);
+    init();
+    glutMainLoop();
+    return 0;
+}

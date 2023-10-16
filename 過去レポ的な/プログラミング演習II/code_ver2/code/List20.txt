@@ -1,0 +1,17 @@
+﻿GLfloat rotAng[3]; 
+
+void display() { 
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(1,1,1, 0,0,0, 0,1,0);
+    glRotated(rotAng[O], 0, 1, 0);
+    glCallList(ID_B);
+    glTranslated(0, HEIGHT_B, 0);
+    glRotated(rotAng[1], 0, 0, 1);
+    glCallList(ID_L);
+    glTranslated(0, HEIGHT_L, 0);
+    glRotated(rotAng[2], 0, 0, 1);
+    glCallList(ID_U);
+    glutSwapBuffers();
+}

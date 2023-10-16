@@ -1,0 +1,255 @@
+
+\documentclass[twocolumn]{jsarticle}% 2 段組(奥村先生のjsclass使用：推奨)
+
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{h28ec-exp2}
+\usepackage{amsmath}
+\usepackage{listings,jlisting}
+\usepackage{resume}
+
+
+\lstset{%
+  breaklines=true,
+  language=c,
+  basicstyle=\ttfamily\small,%
+  commentstyle={\itshape},%
+  classoffset=1,
+  keywordstyle={\bfseries},%
+  stringstyle={\ttfamily},
+  frame={tbrl},
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,%
+  stepnumber=1,
+  numberstyle=\small,%
+  tabsize=4,
+  lineskip=-0.5ex,
+  linewidth=0.45\textwidth,
+  xleftmargin=2zw,
+}
+
+
+\begin{document}
+\section{課題1}
+\subsection{課題1-1}
+BCC に含まれるプログラム開発を行う際に役立つコマンドラインツールを示す．
+
+\subsubsection{grep}
+ファイルや標準入力に含まれる文字列を検索する．このコマンドは以下のようにして使用する．
+\begin{lstlisting}[numbers=none]
+grep [-<オプション>] <検索文字列> [<ファイル>...]
+\end{lstlisting}
+また，検索文字列に指定できる正規表現を表\ref{tb:grep}に示す．
+
+\renewcommand{\arraystretch}{0.8}
+\begin{table}[htbp]
+  \caption{検索文字列正規表現} \label{tb:grep}
+  \begin{center}
+    \begin{tabular}{l|p{6cm}}\hline
+記号 & 説明 \\\hline
+      %--------------------------
+\verb|^| & 行頭\\
+\verb|$| & 行末に一致\\
+\verb|.| & 任意の 1 文字\\
+\verb|*| & 前の文字が任意の数現れたあと任意の文字がゼロ個以上現れるものに一致\\
+\verb|+| & 前の文字が任意の数現れたあと任意の文字が1個以上現れるものに一致\\
+\verb|{}| & 複数の文字や表現のグループ化\\
+\verb|[]| & かっこ内に現れる任意の1文字にのみ一致\\
+\verb|[^]| & かっこ内に現れない任意の1文字に一致\\
+\verb|[-]| & かっこ内に現れる-で区切られた文字の範囲の任意の1文字に一致\\
+\verb|\| & 次の文字をワイルドカードではなくそのままの文字として扱う\\
+      %--------------------------
+    \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\subsubsection{touch}
+ファイルのタイムスタンプを更新する．指定され
+たファイルが存在しない場合は，新規ファイルが作
+成される．また，*や\verb|?|などのワイルドカードを含む
+ファイル名の指定もできる．このコマンドは以下の
+ようにして使用する．
+
+\begin{lstlisting}[numbers=none]
+touch [<オプション>] <ファイル名> [<ファイル名>...] 
+\end{lstlisting}
+
+\subsection{課題1-2}
+ローカル変数は宣言された関数内でのみ参照で
+き，記憶域期間は関数が終了するまでとなる．対し
+てグローバル変数はプログラム内のどの関数からで
+も参照でき，プログラムが終了するまで内容が保持
+される．スタティック変数は宣言された関数内での
+み参照できる点ではローカル変数と同じだが，初期
+化は一回しか行われず，関数が終了しても内容が保
+持される性質を持つ．
+
+\subsection{課題1-3}
+星型正多角形を描き回転させるプログラムをソー
+スコード\ref{src:star}に示す．半径1の円に沿った頂点を一つずつ飛ばして線を結んで描画すること
+で，星型正多角形を描くように実装した．
+
+\lstinputlisting[caption=星型正多角形の描画, label=src:star]{star.c}
+
+\subsection{課題1-4}
+ソースコード\ref{src:star}を変更して，完全グラフを描き
+回転させるようにしたプログラムをソースコード
+\ref{src:star2}に示す．各頂点から線で結ばれていない他の
+頂点へ線を引き，完全グラフを描画するように実装
+した．
+\newpage
+\lstinputlisting[caption=完全グラフの描画, label=src:star2]{star2.c}
+
+\subsection{課題1-5}
+カージオイドのグラフを描画するプログラムの描
+画部をソースコード\ref{src:5-a}に示す．また，サイクロイド
+の描画部分をソースコード\ref{src:5-b}，4尖点の内サイクロ
+イドの描画部分をソースコード\ref{src:5-c}に示す．カージ
+オイドと4尖点の内サイクロイドの描画部分におい
+ては三角関数の呼び出しがなるべく少なくなるよう
+に工夫した．それぞれのプログラムにおいて，ソー
+スコード\ref{src:memori}のようなコードで目盛りの文字を描画
+した． ( 軸の長さや文字の位置，「PI」の表示は適宜
+変更した．) それぞれの描画結果を図\ref{fig:5-a}，\ref{fig:5-b}，\ref{fig:5-c} に
+示す．
+
+\lstinputlisting[caption=カージオイドの描画部分, label=src:5-a]{q5_a.c}
+\lstinputlisting[caption=サイクロイドの描画部分, label=src:5-b]{q5_b.c}
+\vspace{1cm}
+\lstinputlisting[caption=4尖点の内サイクロイドの描画部分, label=src:5-c]{q5_c.c}
+
+\lstinputlisting[caption=目盛り文字の表示, label=src:memori]{memori.c}
+\newpage
+\begin{figure}[htbp]
+ \begin{minipage}{0.49\hsize}
+  \begin{center}
+   \includegraphics[width=\textwidth]{g5-a.png}
+  \end{center}
+  \caption{カージオイドグラフの出力}
+  \label{fig:5-a}
+ \end{minipage}
+ \begin{minipage}{0.49\hsize}
+  \begin{center}
+   \includegraphics[width=\textwidth]{g5-b.png}
+  \end{center}
+  \caption{サイクロイドグラフの出力}
+  \label{fig:5-b}
+ \end{minipage}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{center}
+   \includegraphics[width=0.15\textwidth]{g5-c.png}
+  \end{center}
+  \caption{4尖点の内サイクロイドグラフの出力}
+  \label{fig:5-c}
+\end{figure}
+
+\section{課題2}
+\subsection{課題2-1}
+正四面体ABCDについて$\triangle{BCD}$の重心Gを原点Oと一致させ，GAをx軸，GBをy軸とする座標系を考える．
+正四面体の一辺の長さをwとするとき．各頂点の3次元座標は以下のようになる．
+
+\begin{align*}
+点A&:\left(\sqrt{\frac{2}{3}}w, 0, 0\right)&点B&:\left(0, \frac{\sqrt{3}}{3}w, 0\right)\\
+点C&:\left(0, -\frac{\sqrt{3}}{6}w, \frac{1}{2}w\right)&点D&:\left(0, -\frac{\sqrt{3}}{6}w, -\frac{1}{2}w\right)
+\end{align*}
+
+\subsection{課題2-2}
+前問の正四面体を原点Oを中心とする半径1の球に内接させるために，三角錐(正四面体)の重心を$G^\prime$と置くと，
+三平方の定理より式(\ref{eq:sanhe})となる．この方程式について代入し，wについて解くと式(\ref{eq:ans})となる．
+\begin{eqnarray}
+GB^2 + GG^\prime = BG^{{\prime}2}\label{eq:sanhe}\\
+\left(\frac{\sqrt{3}w}{3}\right)^2 + \left(\frac{1}{3}\right) = 1\\
+w=\sqrt{\frac{2\sqrt{6}}{3}}\label{eq:ans}
+\end{eqnarray}
+\newpage
+よって，各頂点の座標は次のようになる．また，この座標はテキストリスト14と等しい．
+
+\begin{align*}
+点A&:\left(1, 0, 0\right)&点B&:\left(-\frac{1}{3}, \frac{2\sqrt{2}}{3}, 0\right)\\
+点C&:\left(-\frac{1}{3}, -\frac{\sqrt{2}}{3}, \frac{\sqrt{6}}{3}\right)&点D&:\left(-\frac{1}{3}, -\frac{\sqrt{2}}{3}, -\frac{\sqrt{6}}{3}\right)
+\end{align*}
+
+\subsection{課題2-3}
+キー入力によって台座の回転と，各関節の傾斜角を制御できるロボットアームのプログラムの変更部をソースコード\ref{src:robo}に示す．
+符号なしshort型の変数の各ビットをフラグとすることで，メモリの削減を図った．
+\lstinputlisting[caption=制御可能なロボットアーム, label=src:robo]{s2-3.c}
+
+\subsection{課題2-4}
+タイマーコールバックを使って，アームロボットを制御するプログラムをソースコード\ref{src:robo2}に示す．
+Zボタンのフラグを新たに定義し，Zボタンを押すことでダンスの再生・一時停止ができるようにした．
+三角関数を用いることでなめらかな動作になるように工夫した．
+
+\section{課題3}
+\subsection{課題3-1}
+空間中の任意の3点$P_i = (x_i, y_i, z_i), i=1,2,3$から$\triangle{P_1P_2P_3}$の単位法線ベクトルをすべて求める．
+まず，$\triangle{P_1P_2P_3}$の辺のうち，２つの辺のベクトルを求める．
+\begin{eqnarray}
+\overrightarrow{P_1P_2} = \vec{P_2} - \vec{P_1}\nonumber\\
+\overrightarrow{P_2P_3} = \vec{P_3} - \vec{P_2}\nonumber
+\end{eqnarray}
+この２つのベクトルから全ての単位法線ベクトル$\vec{n}$を求める式は以下のようになる．
+\begin{equation}
+\vec{n}=\pm\frac{\overrightarrow{P_1P_2} \times \overrightarrow{P_2P_3}}{|\overrightarrow{P_1P_2} \times \overrightarrow{P_2P_3}|}\nonumber
+\end{equation}
+
+\subsection{課題3-2}
+空間中の任意の3点$P_i = (x_i, y_i, z_i), i=1,2,3$が与えられたとき，$\triangle{P_1P_2P_3}$の3点を反時計回りにたどる向きのベクトルから単位法線ベクトルを求めると，その単位法線ベクトルは面の表側を向くので，これによりその面の裏表を判別できる．
+
+\subsection{課題3-3}
+Phongのモデルでの環境反射による光の強度$I_a$は単純に環境反射係数と環境照明の積で表される．
+拡散反射による光の強度$I_d$は拡散反射係数$k_d$，光源への方向ベクトルL，物体表面の方向ベクトルN，光源の拡散反射成分$i_d$とすると
+$I_d = k_d(L{\cdot}N)i_d$で計算される．
+鏡面反射による光の強度$I_s$は鏡面反射係数$k_s$，鏡面反射方向ベクトルR，視点への方向ベクトルI，光源の鏡面反射成分$i_s$，物体の光沢度$\alpha$としたとき
+$I_s = k_d(R{\cdot}I)^{\alpha}i_s$で計算される．
+
+これらの値から光の強度$I_p$が$I_p = I_a + I_s + I_s$と計算されるモデルがPhongの反射モデルである．
+
+\subsection{課題3-4}
+正四面体をスムースシェーディングで表示するプログラムをソースコード\ref{src:s3-4}に示す．
+頂点が含まれるすべての面の法線ベクトルから平均を得ることで，頂点の法線ベクトルを求めた．
+
+\subsection{課題3-5}
+テキストのリスト27を参考に，アームロボットを白色の光源でシェーディング表示するように変更したコードの追加部をソースコード\ref{src:robo3}に示す．
+
+\onecolumn
+\section{感想}
+3次元の描画プログラムを作成することはもっと難しいものだと考えていたが，OpenGLを使うことで簡単な物体なら手軽に描画できることがわかった．また，回転情報や移動情報が蓄積されることで，オブジェクト同士の連結処理もスムーズに書けることに感動した．
+
+\section{今後の改善案}
+コラム程度でも画像表示の方法やヒントが書いてあると，全体の総合課題の完成度が上がるのではないかと思います．
+
+\lstinputlisting[caption=ダンスをするロボットアーム, label=src:robo2, linewidth=\textwidth]{s2-4.c}
+\lstinputlisting[caption=正四面体のスムースシェーディング, label=src:s3-4, linewidth=\textwidth]{s3-4.c}
+\lstinputlisting[caption=アームロボットのシェーディング表示, label=src:robo3, linewidth=\textwidth]{s3-5.c}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
