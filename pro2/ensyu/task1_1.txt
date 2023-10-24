@@ -1,0 +1,5 @@
+OpenGL関連技術:本テキストで扱うGLUT，GLUの他にOpenGLに関連するライブラリとしてGLEW，GLFW，GLUIなどがある．
+様々な実行環境で2D/3DCGを実現するためのプログラミング技術としてVulkan，OpenGL ES，WebGLなどがある．
+これらについて，機能や各ライブラリの関係性などを調査して整理してみよ．
+
+vulkan:API
