@@ -1,5 +1,8 @@
-\documentclass[]{jsarticle}
+\documentclass[]{jarticle}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{listings}
+\usepackage{here}
+\usepackage{amsmath}
 \usepackage{fancyvrb}
 \usepackage{bm}
 \usepackage{listings,jvlisting} %日本語のコメントアウトをする場合jvlisting（もしくはjlisting）が必要
@@ -29,9 +32,259 @@
 \textgt{OpenGL関連技術:}本テキストで扱うGLUT，GLUの他にOpenGLに関連するライブラリとしてGLEW，GLFW，GLUIなどがある．
 様々な実行環境で2D/3DCGを実現するためのプログラミング技術としてVulkan，OpenGL ES，WebGLなどがある．
 これらについて，機能や各ライブラリの関係性などを調査して整理してみよ．
+%
+\subsubsection{GLEW}
+GLEWとは，グラフィックスハードウェアの拡張機能を使用可能にするライブラリである．
+特に Windowsでは，もともとサポートしているOpenGLのバージョンが1.1のため，新しい機能を使用することができない．
+そのため，GLEW を用いてグラフィックスハードウェアが持つ全ての機能を使えるようにする．
+%
+\subsubsection{GLFW}
+GLFWとは，デスクトップでのOpenGL，OpenGL ES，Vulkan開発用のオープンソースのマルチプラットフォームライブラリである．
+ウィンドウやコンテキストを作成し，入力を管理するためのシンプルなAPIを提供する．
+%
+\subsubsection{GLUI}
+GLUIとは，ダイアログウィンドウで使用されるボタンやチェックボックスなどのコントロールをOpenGLで作成できるライブラリである．
+%
+\subsubsection{Vulkan}
+Vukanとは，グラフィックスAPIのことで，直接GPUにアクセスできる構造によって，これまでのグラフィックスAPIに比べてより速い描画をすることが可能となる．
+%
+\subsubsection{OpenGL ES}
+OpenGL ESとは，電化製品や車両などの組み込みおよびモバイルシステムで，高度な2D，3DグラフィックスをレンダリングするためのクロスプラットフォームAPIである．
+% 
+\subsubsection{WebGL}
+WebGLとは，ウェブブラウザ上でOpenGL ES相当の描画処理を行うことができる低レベルのAPIである．
+JavaScriptのAPIとして実装されているため，改めてプラグイン等をインストールすることなく実行できる．
+%
+%
 \subsection{課題I-2}
+\textgt{プログラミングのツール:}GCCに含まれるmakeユーティリティ，デバッガの機能や機能や利用法について学習せよ．
+また，コマンドラインからのプログラムの開発では，grepやtouchなどのツールがあると便利である．
+更に最近ではクロスプラットフォーム開発を支援するCMake，バージョン管理を支援するSubversionやGitなどを利用することも一般化している．
+これらの機能や利用法について学習せよ．
+% 
+\subsubsection{makeユーティリティ}
+makeとは大規模プログラムのコンパイルを簡略化するツールである．
+makefileにファイルの関係を記述することで各ファイルの更新を取得し，必要なものだけをコンパイルすることができる．
+以下のコマンドでmakefile を実行することができる．
+\begin{lstlisting}[]
+  make
+\end{lstlisting}
+% 
+\subsubsection{grep}
+grepとは，テキストファイルの中から正規表現と一致する行を検索し，出力するコマンドである．
+以下のコマンドでgrepを使用することができる．
+\begin{lstlisting}[]
+grep [オプション] [検索文字列(正規表現)] [ファイル名]
+\end{lstlisting}
+% 
+\subsubsection{touch}
+touchとはファイルの最終更新日を変更するコマンドである．以下のコマンドでtouchを使用することができる．
+\begin{lstlisting}[]
+touch [オプション] ファイル1 ファイル2 …
+\end{lstlisting}
+% 
+\subsubsection{CMake}
+CMakeとは，ソフトウェアをビルドやテスト，パッケージ化するために設計されたオープンソースのクロスプラットフォームツールである．プラットフォームやコンパイラに依存しないシンプルな設定ファイルを使用することでソフトウェアのコンパイルプロセスを制御し，makefileとワークスペースを生成するために使用される．
+% 
+\subsubsection{Subversion}
+Subversionとは，データの安全な避難所としての信頼性を特徴とするオープンソースの集中型バージョン管理システムである．個人から大規模なエンタープライズオペレーションまで，さまざまなユーザやプロジェクトのニーズをサポートすることができる．
+% 
+\subsubsection{Git}
+Gitとは，小規模なプロジェクトから大規模なプロジェクトまで，効率的に処理できるように設計されたオープンソースの分散型バージョン管理システムである．非常に高速なパフォーマンスを備えた小さなフットプリントを備えている．
+%
+% 
 \subsection{課題I-3}
+\textgt{C言語:}変数の「有効範囲(スコープ)」，「記憶域期間(記憶寿命)」について学習し，
+一般的な(ローカル)変数とグローバル関数，スタティック変数の違いについて学習せよ．
+% C言語での変数は，その宣言を書く場所によって有効範囲(スコープ)が異なる．
+% 
+\subsubsection{有効範囲(スコープ)}
+「有効範囲(スコープ)」とは，変数などに与えられる識別子が通用する範囲のこと．
+
+\subsection{記憶域期間(記憶寿命)}
+「記憶域期間(記憶寿命)」には自動記憶域期間と静的記憶域期間がある．
+
+自動記憶域期間とはautoを使用して宣言した変数が持つ記憶域期間のことで，
+オブジェクトは宣言したブロックに入ったときから終了するまで生存する．
+
+静的記憶域期間とは，ファイル有効範囲のオブジェクトかstaticを使用して宣言したときにオブジェクトが持つ記憶域期間のことで，
+プログラムの開始から終了するまで生存する．
+
+\subsubsection{ローカル変数}
+main関数など，宣言された関数内でのみ値を保持し，呼び出しできる変数．
+宣言された関数外で呼び出すことはできない．
+% 
+\subsubsection{グローバル変数}
+main関数を代表とするような関数の外で宣言されたもの．
+プログラム内ならどこからでもアクセスできる．
+% 
+\subsubsection{スタティック変数}
+静的記憶域期間を持つ変数．プログラムが始まってから終わるまで値を保持し続ける．
+strtok関数などに用いられていて，strtok関数の扱いに注意が必要な原因である．
+% 
+%
 \subsection{課題I-4}
+星型正多角形を描き，回転させるプログラムを作成せよ．
+\subsubsection{プログラム}
+星形正多角形を描き，回転させるプログラムの主要部をソースコード\ref{star}に示す．
+\begin{lstlisting}[caption=星形正多角形の描画と回転,label=star]
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3d(1.0, 1.0, 1.0);
+
+    dt = 2.0 * M_PI / NUM;
+    theta = rotAng;
+    
+    for (i = 0; i < NUM; i++) {
+        x[i] = cos(theta);
+        y[i] = sin(theta);
+        theta += dt;
+    }
+
+    for (i = 0; i < NUM; i++) {
+        glBegin(GL_LINES);
+        glVertex2d(x[i], y[i]);
+        glVertex2d(x[(i + 2) % NUM], y[(i + 2) % NUM]);
+        glEnd();
+    }
+
+    glFlush();
+    rotAng += 3.0 * M_PI / 180.0;
+}
+\end{lstlisting}
+定数NUMを変更することで，星型正多角形の角の数を変えることができる．
+
+星型正多角形を描くには，全頂点において，2つ隣の頂点に線を引くことで描画することができる．そのため，あらかじめ線を引く頂点の座標を配列に格納し，GL\_LINESを用いることで線を引く．変数thetaをインクリメントすることで全頂点においてこの作業を行う．
+
 \subsection{課題I-5}
+完全グラフを描き，回転させるプログラムを作成せよ．
+\subsubsection{プログラム}
+完全グラフを描き，回転させるプログラムの主要部をソースコード\ref{superstar}に示す．
+\begin{lstlisting}[caption=完全グラフの描画と回転,label=superstar]
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3d(1.0, 1.0, 1.0);
+
+    dt = 2.0 * M_PI / NUM;
+    theta = rotAng;
+
+    for (i = 0; i < NUM; i++) {
+        x[i] = cos(theta);
+        y[i] = sin(theta);
+        theta += dt;
+    }
+
+    for (i = 0; i < NUM; i++) {
+        for (j = i + 1; j < NUM; j++) {
+            glBegin(GL_LINES);
+            glVertex2d(x[i], y[i]);
+            glVertex2d(x[j], y[j]);
+            glEnd();
+        }
+    }
+
+    glFlush();
+    rotAng += 3.0 * M_PI / 180.0;
+}
+\end{lstlisting}
+定数NUMを変更することで，完全グラフの角の数を変えることができる．
+
+完全グラフを描くには，全頂点において，他の頂点全てに線を引くことで描画することができる．
+そのため，あらかじめ線を引く頂点の座標を配列に格納し，GL\_LINESを用いることで線を引く．
+その際，すでに線を引いてある2点間について，重ねて線を引かないよう，15行目に書いてあるようにループ数を減らしていく．
+変数thetaをインクリメントすることで全頂点においてこの作業を行う．
 \subsection{課題I-6}
+リスト12を解析し，数学関数を描くプログラムを作成せよ．
+\subsubsection{カージオイド}
+カージオイドを描画するプログラムの主要部をソースコード\ref{cardioid}に示す．
+\begin{lstlisting}[caption=カージオイドの描画,label=cardioid]
+  void display(void){
+    glColor3d(0.0, 0.0, 1.0);
+    glBegin(GL_LINE_STRIP);
+    
+    for (theta = 0; theta <= 2 * M_PI; theta += 2 * M_PI / 100) {
+      x = cos(theta) * (1 + cos(theta));
+      y = sin(theta) * (1 + cos(theta));
+      glVertex2d(x, y);
+    }
+    
+    glEnd();
+    glFlush();
+  }
+\end{lstlisting}
+
+\subsubsection{サイクロイド}
+サイクロイドを描画するプログラムの主要部をソースコード\ref{cycloid}に示す．
+\begin{lstlisting}[caption=サイクロイドの描画,label=cycloid]
+  void display(void){
+    glColor3d(0.0, 0.0, 1.0);
+    glBegin(GL_LINE_STRIP);
+    
+    for (theta = 0; theta <= 2 * M_PI; theta += 2 * M_PI / 100) {
+      x = theta - sin(theta);
+      y = 1 - cos(theta);
+      glVertex2d(x, y);
+    }
+    
+    glEnd();
+    glFlush();
+  }
+\end{lstlisting}
+
+\subsubsection{4尖点の内サイクロイド}
+4尖点の内サイクロイドを描画するプログラムの主要部を\ref{hypocycloid}に示す．
+\begin{lstlisting}[caption=4尖点の内サイクロイドの描画,label=hypocycloid]
+  void display(void){
+    glColor3d(0.0, 0.0, 1.0);
+    glBegin(GL_LINE_STRIP);
+    
+    for (theta = 0; theta <= 2 * M_PI; theta += 2 * M_PI / 100) {
+      x = (cos(theta)) * (cos(theta)) * (cos(theta));
+      y = (sin(theta)) * (sin(theta)) * (sin(theta));
+      glVertex2d(x, y);
+    }
+    
+    glEnd();
+    glFlush();
+  }
+\end{lstlisting}
+
+\section{課題II}
+\subsection{課題II-1}
+\subsection{課題II-2}
+\subsection{課題II-3}
+\subsection{課題II-4}
+
+\section{課題III}
+\subsection{課題III-1}
+\subsection{課題III-2}
+\subsection{課題III-3}
+\subsection{課題III-4}
+\subsection{課題III-5}
+\section{感想}
+今まで学習していた内容もしっかり扱った上で，更に進んだ内容を学べれて良かったと感じる．
+色々なことが重なってしまったことでこの科目のみに集中できる時間をあまり取れなかったことが悔やまれる．
+総合制作はこのレポートとは違い，ギリギリにならない様に進めていきたい．
+
+\section{改善案}
+科目名から授業で扱う内容がなんとなくわかると良いと思った．
+「プログラミング演習II」ではプログラミングをすることしか分からず，ややもったいないと感じる．
+
+\section*{参考文献}
+\begin{enumerate}
+  \item 高橋章,R05-Ec5プログラミング演習I\hspace{-1.2pt}Iテキスト
+  \item https://tokoik.github.io/GLFWdraft.pdf
+  \item https://www.glfw.org/
+  \item https://forest.watch.impress.co.jp/article/1999/07/13/glui.html
+  \item https://www.dospara.co.jp/5info/cts\_str\_pc\_vulkan
+  \item https://www.khronos.org/opengles/
+  \item https://wgld.org/
+  \item https://docs.oracle.com/cd/E19957-01/806-4833/Make.html
+  \item https://eng-entrance.com/linux-command-grep
+  \item https://atmarkit.itmedia.co.jp/ait/articles/1606/14/news013.html
+  \item https://cmake.org/
+  \item https://subversion.apache.org/
+  \item https://git-scm.com/
+  \item http://ki-www.cvl.iis.u-tokyo.ac.jp/thesis/senior/inaguma.pdf
+\end{enumerate}
 \end{document}
