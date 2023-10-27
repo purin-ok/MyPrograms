@@ -1,10 +1,7 @@
 \documentclass[]{jarticle}
 \usepackage[dvipdfmx]{graphicx}
-\usepackage{listings}
-\usepackage{here}
 \usepackage{amsmath}
-\usepackage{fancyvrb}
-\usepackage{bm}
+\usepackage{amssymb, mathtools}
 \usepackage{listings,jvlisting} %日本語のコメントアウトをする場合jvlisting（もしくはjlisting）が必要
 %ここからソースコードの表示に関する設定
 \lstset{
@@ -101,7 +98,7 @@ Gitとは，小規模なプロジェクトから大規模なプロジェクト�
 \subsubsection{有効範囲(スコープ)}
 「有効範囲(スコープ)」とは，変数などに与えられる識別子が通用する範囲のこと．
 
-\subsection{記憶域期間(記憶寿命)}
+\subsubsection{記憶域期間(記憶寿命)}
 「記憶域期間(記憶寿命)」には自動記憶域期間と静的記憶域期間がある．
 
 自動記憶域期間とはautoを使用して宣言した変数が持つ記憶域期間のことで，
@@ -154,7 +151,9 @@ void display() {
 \end{lstlisting}
 定数NUMを変更することで，星型正多角形の角の数を変えることができる．
 
-星型正多角形を描くには，全頂点において，2つ隣の頂点に線を引くことで描画することができる．そのため，あらかじめ線を引く頂点の座標を配列に格納し，GL\_LINESを用いることで線を引く．変数thetaをインクリメントすることで全頂点においてこの作業を行う．
+星型正多角形を描くには，全頂点において，2つ隣の頂点に線を引くことで描画することができる．
+そのため，あらかじめ線を引く頂点の座標を配列に格納し，GL\_LINESを用いることで線を引く．
+変数thetaをインクリメントすることで全頂点においてこの作業を行う．
 
 \subsection{課題I-5}
 完全グラフを描き，回転させるプログラムを作成せよ．
@@ -251,20 +250,319 @@ void display() {
 
 \section{課題II}
 \subsection{課題II-1}
+正四面体$ABCD$について，$\triangle BCD$の重心$G$を原点$O$と一致させ，$GA$を$x$軸，$GB$Windowsでは$y$軸とする座標系を考える．
+正四面体の一辺の長さを$w$とするとき，拡張点の三次元座標を導出せよ．
+\subsubsection{導出}
+$\triangle$BCDの高さは一辺が$w$の正三角形なので，$\sqrt{3}w/2$となる．
+$\triangle$GBDが二等辺三角形となる．三平方の定理を用いて
+$\triangle$GBDの等辺の長さは$w/\sqrt{3}$となる．
+これらのことから正四面体の高さは三平方の定理を用いて，$\sqrt{2/3}w$となる．
+よって各頂点の位置は次となる．
+\begin{align*}
+  \bm{a} & = \left(\sqrt{\frac{2}{3}}w, 0, 0\right)             &
+  \bm{b} & = \left(0, \frac{w}{\sqrt{3}}, 0\right)              &
+  \bm{c} & = \left(0, -\frac{w}{2\sqrt{3}}, \frac{w}{2}\right)  &
+  \bm{d} & = \left(0, -\frac{w}{2\sqrt{3}}, -\frac{w}{2}\right)
+\end{align*}
+
 \subsection{課題II-2}
+前問で求めた結果をもとに，原点Oを中心とする半径$1$の球に
+内接する正四面体の頂点がテキストのリスト14のように定まることを導出せよ．
+\subsubsection{導出}
+正四面体の重心$\bm{g}'$が原点と一致させるために前問の正四面体を移動させる．
+重心$\bm{g}'$は，
+\begin{align*}
+  \bm{g}' = \frac{\bm{a} + \bm{b} + \bm{c} + \bm{d}}{4}
+  = \left(\frac{1}{4}\sqrt{\frac{2}{3}}w, 0, 0\right)
+\end{align*}
+移動後の各頂点を$\bm{a}'$，$\bm{b}'$，$\bm{c}'$，$\bm{d}'$とすると各頂点の位置は，
+\begin{align*}
+  \bm{a}'                                                                           & = \bm{a} - \bm{g}'
+  = \left(\frac{1}{2}\sqrt{\frac{3}{2}}w, 0, 0\right)                               &
+  \bm{b}'                                                                           & = \bm{b} - \bm{g}'
+  = \left(-\frac{1}{4}\sqrt{\frac{2}{3}}w, \frac{w}{\sqrt{3}}, 0\right)                                  \\
+  \bm{c}'                                                                           & = \bm{c} - \bm{g}'
+  = \left(-\frac{1}{4}\sqrt{\frac{2}{3}}w, -\frac{w}{2\sqrt{3}}, \frac{w}{2}\right) &
+  \bm{d}'                                                                           & = \bm{d} - \bm{g}'
+  = \left(-\frac{1}{4}\sqrt{\frac{2}{3}}w, -\frac{w}{2\sqrt{3}}, -\frac{w}{2}\right)
+\end{align*}
+半径$1$の球に内接するとき$\bm{a}'=(1,0,0)$となるので$w=2\sqrt{2/3}$となる．
+よって各頂点の位置は，
+\begin{align*}
+  \bm{a}' & = \left(1, 0, 0\right)                                                &
+  \bm{b}' & = \left(-\frac{1}{3}, \frac{2\sqrt{2}}{3}, 0\right)                   &
+  \bm{c}' & = \left(-\frac{1}{3}, -\frac{\sqrt{2}}{3}, \frac{\sqrt{6}}{3}\right)  &
+  \bm{d}' & = \left(-\frac{1}{3}, -\frac{\sqrt{2}}{3}, -\frac{\sqrt{6}}{3}\right)
+\end{align*}
+この位置から各頂点の値がテキストのリスト14のように定まることがわかる．
+
 \subsection{課題II-3}
+テキストの\textbf{9.2}のアームロボットについて，キー入力で台座の回転と，
+各関節の傾斜角を制御できるような対話プログラムを作成してみよう．
+\subsubsection{プログラム}
+アームロボットの各パーツの登録部分を\ref{armtouroku}に示す．
+また，キーボードコールバック関数を\ref{armkeycall}に示す．
+
+\begin{lstlisting}[caption=ロボットアームの情報,label=armtouroku]
+void init() {
+    glClearColor(1.0, 1.0, 1.0, 1.0);
+    myQuad = gluNewQuadric();
+
+    glNewList(ID_B, GL_COMPILE);
+    glColor3f(0.0, 0.0, 0.0);
+    glPushMatrix();
+    glRotated(90.0, 1.0, 0.0, 0.0);
+    gluCylinder(myQuad, RADIUS_B, RADIUS_B, HEIGHT_B, 10, 2);
+    glPopMatrix();
+    glEndList();
+
+    glNewList(ID_L, GL_COMPILE);
+    glColor3f(0.0, 0.0, 1.0);
+    glPushMatrix();
+    glTranslated(0.0, 0.5 * HEIGHT_L, 0.0);
+    glScalef(WIDTH_L, HEIGHT_L, WIDTH_L);
+    glutWireCube(1.0);
+    glPopMatrix();
+    glEndList();
+
+    glNewList(ID_U, GL_COMPILE);
+    glColor3f(1.0, 0.0, 0.0);
+    glPushMatrix();
+    glTranslated(0.0, 0.5 * HEIGHT_U, 0.0);
+    glScalef(WIDTH_U, HEIGHT_U, WIDTH_U);
+    glutWireCube(1.0);
+    glPopMatrix();
+    glEndList();
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=キーボードコールバック関数,label=armkeycall]
+void keyin(unsigned char key, int x, int y) {
+    switch (key) {
+    case 'x':
+        rotAng[0] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'z':
+        rotAng[0] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 's':
+        rotAng[1] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'a':
+        rotAng[1] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'w':
+        rotAng[2] += SPEED;
+        glutPostRedisplay();
+        break;
+
+    case 'q':
+        rotAng[2] -= SPEED;
+        glutPostRedisplay();
+        break;
+
+    default: break;
+    }
+}
+\end{lstlisting}
+
 \subsection{課題II-4}
+タイマーコールバックを使って，アームロボットを制御するようなプログラムを作成してみよう．
+アームロボットが踊っているかのように見せるには，どんな工夫ができるだろう．
+
+\subsubsection{プログラム}
+実装したタイマコールバック関数をソースコード\ref{timercallbuck}に示す．
+\begin{lstlisting}[caption=タイマコールバック関数,label=timercallbuck]
+static void timer(int dummy) {
+    glutTimerFunc(100, timer, 0);
+    glMatrixMode(GL_MODELVIEW);
+
+    rotAng[0] += 30;
+    rotAng[1] += (rand() % 10) * cos(time / 5);
+    rotAng[2] += (rand() % 100) * cos(time);
+    time++;
+
+    glutPostRedisplay();
+}
+\end{lstlisting}
 
 \section{課題III}
 \subsection{課題III-1}
+空間中の任意の$3$点$\mathrm{P}_{i}(x_{i},y_{i},z_{i})$，$i=1,2,3$
+が与えられたとき，$\triangle\mathrm{P}_{1}\mathrm{P}_{2}\mathrm{P}_{3}$
+の単位法線ベクトルをすべて求める式を導出せよ．
+\subsubsection{導出}
+2つのベクトルの外積は，その2つのベクトルが成す平面の法線ベクトルになる．
+$\overrightarrow{P_1 P_2}$，$\overrightarrow{P_2 P_3}$を2つのベクトルとし，$\triangle{P_1P_2P_3}$をベクトルの成す平面とすると，$\overrightarrow{P_1 P_2}\times\overrightarrow{P_2 P_3}$によって，$\triangle{P_1P_2P_3}$の単位法線ベクトルを全て求めることができる．
+
+$\triangle{P_1P_2P_3}$の全ての単位法線ベクトルを$\overrightarrow{n}$とすると，以下のようになる．
+$$
+  \overrightarrow{n} = \pm\frac{\overrightarrow{P_1 P_2}\times\overrightarrow{P_2 P_3}}{|\overrightarrow{P_1 P_2}\times\overrightarrow{P_2 P_3}|}
+$$
+
 \subsection{課題III-2}
+空間中の任意の$3$点$\mathrm{P}_{i}(x_{i},y_{i},z_{i})$，$i=1,2,3$
+が与えられたとき，$\triangle\mathrm{P}_{1}\mathrm{P}_{2}\mathrm{P}_{3}$
+のどちらが表（CCW）で，どちらが裏（CW）と判定できるか，判定方法を導出せよ．
+
+\subsubsection{導出}
+空間中の任意の3点が与えられたとき，
+$\triangle{P_1P_2P_3}$の3点を反時計回りにたどる向きのベクトルから単位法線ベクトルを求めると，
+その単位法線ベクトルは面の表側を向く．
+これにより面の表裏を判別できる．
+
 \subsection{課題III-3}
+Phongの照光モデルについて，詳しく調べよ．
+\subsubsection{結果}
+Phongモデルとは，物体の反射特性を数式で表現した最初のモデルである．Phongモデルでは，拡散反射成分は入射角の余弦と入射光の強さに比例するとされている．以下に式を示す．
+\begin{eqnarray*}
+  I_d = I_i k_d \cos\alpha = I_i k_d (L・N)
+\end{eqnarray*}
+
+ここで，$I_d$は拡散反射光の強さ，$I_i$は入射光の強さ，$k_d$は拡散反射率，$\alpha$は入射角，$L$は光源方向ベクトル，$N$は表面法線ベクトルを示す．
+
+また，Phongモデルは，鏡面反射光の強さは入射角の余弦の$n$乗と鏡面反射率に比例するとされている．以下に式を示す．
+\begin{eqnarray*}
+  S = I_i W \cos^n\gamma
+\end{eqnarray*}
+
+ここで$S$は鏡面反射光の強さ，$n$はハイライトの特性，$\gamma$は光源の反射ベクトルと視線ベクトルのなす角を示す．また，厳密には鏡面反射率は光の波長によって異なるが，一定値$W$とされている．
+
+そして，拡散，鏡面反射，環境光の3要素を考慮した場合の光の強さは次式のように表される．
+\begin{eqnarray*}
+  I = k_d \cos\alpha + I_i W \cos^n \gamma + I_a k_a
+\end{eqnarray*}
+
+ここで，$I$は視点に入射する光の強さで，$I_a$は環境光の強さ，$k_a$は環境光定数を示している．
+
 \subsection{課題III-4}
+
+\subsubsection{プログラム}
+頂点の法線ベクトルは，重心からその頂点に向かう向きとなる．
+よって，原点を中心とする半径1の円に内接する正多面体の頂点の法線ベクトルは，その頂点の位置ベクトルと一致する．正四面体，正六面体，正八面体を描画するプログラムの主要部を
+ソースコード\ref{seisimentai},\ref{seirokumentai},\ref{seihatimentai}にそれぞれ示す．
+
+\begin{lstlisting}[caption=正四面体を描画するプログラム,label=seisimentai]
+  GLdouble vP[4][3]={{1.000,0.000,0.000},{-0.333,0.943,0.000}
+  ,{-0.333,-0.471,0.816},{-0.333,-0.471,-0.816}};
+  int tP[4][3]={{0,1,2},{0,3,1},{0,2,3},{1,3,2}};
+  
+  void display(void){
+    int i,j;
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+  
+    glBegin(GL_TRIANGLES);
+    for(i=0;i<4;i++){
+      for(j=0;j<3;j++){
+        glNormal3dv(vP[tP[i][j]]);
+        glVertex3dv(vP[tP[i][j]]);
+      }
+    }
+    glEnd();
+    glutPostRedisplay();
+    glutSwapBuffers();
+  
+  }
+  \end{lstlisting}
+\begin{lstlisting}[caption=正六面体を描画するプログラム,label=seirokumentai]
+  GLdouble vP[8][3]={{-0.577,-0.577,0.577},{0.577,-0.577,0.577}
+  ,{0.577,-0.577,-0.577},{-0.577,-0.577,-0.577},{-0.577,0.577,0.577}
+  ,{0.577,0.577,0.577},{0.577,0.577,-0.577},{-0.577,0.577,-0.577}};
+  int tP[6][4]={{3,2,1,0},{0,1,5,4},{1,2,6,5},{4,5,6,7},{3,7,6,2},{0,4,7,3}};
+  
+  
+  void display(void){
+    int i,j;
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+  
+    glBegin(GL_QUADS);
+    for(i=0;i<6;i++){
+      for(j=0;j<4;j++){
+        glNormal3dv(vP[tP[i][j]]);
+        glVertex3dv(vP[tP[i][j]]);
+      }
+    }
+    glEnd();
+    glutPostRedisplay();
+    glutSwapBuffers();
+  
+  }
+  \end{lstlisting}
+\begin{lstlisting}[caption=正八面体を描画するプログラム,label=seihatimentai]
+  GLdouble vP[6][3]={{1,0,0},{0,1,0},{0,0,1},{-1,0,0},{0,-1,0},{0,0,-1}};
+  int tP[8][3]={{0,1,2},{5,1,0},{3,1,5},{2,1,3},{2,4,0},{0,4,5},{5,4,3},{3,4,2}};
+  
+  
+  void display(void){
+    int i,j;
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+  
+    glBegin(GL_TRIANGLES);
+    for(i=0;i<8;i++){
+      for(j=0;j<3;j++){
+        glNormal3dv(vP[tP[i][j]]);
+        glVertex3dv(vP[tP[i][j]]);
+      }
+    }
+    glEnd();
+    glutPostRedisplay();
+    glutSwapBuffers();
+  
+  }
+  \end{lstlisting}
+\texttt{vP}に頂点の位置，\texttt{tP}にトポロジ情報を格納している．
+正六面体，正八面体の頂点の位置，トポロジ情報は，演習19で求めたものである．
+法線ベクトルの指定には，\texttt{vP}をそのまま利用している。
 \subsection{課題III-5}
+リスト27のロケットをアームロボットに変更した．各パーツの回転角度を格納するためのrotAngをグローバル変数として定義し，display関数内にはglRotatedを加えた．また，タイマーコールバック関数を用いて課題II-4のように踊って見えるようにした．変更したプログラムをソースコード\ref{real}に示す．
+\begin{lstlisting}[caption=リスト27の変更部分,label=real]
+GLdouble rotAng[3] = { 0 };
+
+void display(void) {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(1.0, 1.0, 1.0, 0.0, 0.5, 0.0, 0.0, 1.0, 0.0);
+	glRotated(rotAng[0], 0, 1, 0);
+	glCallList(ID_B);
+	glTranslatef(0.0, HEIGHT_B, 0.0);
+	glRotated(rotAng[1], 0, 0, 1);
+	glCallList(ID_L);
+	glTranslatef(0.0, HEIGHT_L, 0.0);
+	glRotated(rotAng[2], 0, 0, 1);
+	glCallList(ID_U);
+	glutSwapBuffers();
+}
+
+static void timer(int dummy) {
+	glutTimerFunc(100, timer, 0);
+	glMatrixMode(GL_MODELVIEW);
+
+	rotAng[0] += 30;
+	rotAng[1] += (rand() % 10) * cos(time / 5);
+	rotAng[2] += (rand() % 100) * cos(time);
+	time++;
+
+	glutPostRedisplay();
+}
+\end{lstlisting}
+
 \section{感想}
 今まで学習していた内容もしっかり扱った上で，更に進んだ内容を学べれて良かったと感じる．
 色々なことが重なってしまったことでこの科目のみに集中できる時間をあまり取れなかったことが悔やまれる．
-総合制作はこのレポートとは違い，ギリギリにならない様に進めていきたい．
+総合制作はこのレポートとは違い，ギリギリで低品質なものにならない様に進めていきたい．
 
 \section{改善案}
 科目名から授業で扱う内容がなんとなくわかると良いと思った．
