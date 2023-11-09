@@ -6,20 +6,24 @@
 #define NUM 4
 
 GLdouble field[NUM + 1][NUM + 1];
-GLdouble field_col[NUM][NUM][3] = {0};
+GLdouble field_col[NUM][NUM][3] = {0.0};
 
 void display() { /* 描画命令 */
   int i, j;
   double theta, dt, x, y;
 
   glClear(GL_COLOR_BUFFER_BIT);
-  glColor3d(0.0, 0.0, 0.0);
-
+  glColor3d(1.0, 0.0, 0.0);
+  field_col[2][1][0] = 1.0;
   // 四角形の描画
   glBegin(GL_QUADS);
   for (i = 0; i < NUM; i++) {
     for (j = 0; j < NUM; j++) {
       glColor3dv(field_col[i][j]);
+      glVertex2d(2.0 * (i + 0.0) / NUM - 1.0, 2.0 * (j + 0.0) / NUM - 1.0);
+      glVertex2d(2.0 * (i + 0.0) / NUM - 1.0, 2.0 * (j + 1.0) / NUM - 1.0);
+      glVertex2d(2.0 * (i + 1.0) / NUM - 1.0, 2.0 * (j + 1.0) / NUM - 1.0);
+      glVertex2d(2.0 * (i + 1.0) / NUM - 1.0, 2.0 * (j + 0.0) / NUM - 1.0);
     }
   }
   glEnd();
