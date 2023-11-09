@@ -124,7 +124,10 @@ void mouse(int btn, int state, int x, int y) {
     // printf("%d,%d,%d,%d\n", j, i, x, y);
 
     // 対応する場所の色変更
+    // field_col[i][j][2] = field_col[i][j][1];
+    // field_col[i][j][1] = field_col[i][j][0];
     field_col[i][j][0] = ((int)(field_col[i][j][0] + 1.0)) % 2;
+
     glutIdleFunc(idle);
   }
 
