@@ -2,12 +2,15 @@
 #include <GL/glut.h>
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define NUM 4
 #define MaxWindowNum 4
 
 GLdouble field_ans[NUM][NUM][3] = {0.0};
 GLdouble field_col[NUM][NUM][3] = {0.0};
+int color_table[NUM][NUM] = {0.0};
 
 // WindowID
 int WindowID[MaxWindowNum];
@@ -17,13 +20,6 @@ void display1() { /* お手本画面の描画命令 */
 
   glClear(GL_COLOR_BUFFER_BIT);
   glColor3d(1.0, 0.0, 0.0);
-
-  // 値の作成
-  for (i = 0; i < NUM; i++) {
-    for (j = 0; j < NUM; j++) {
-      field_ans[i][j][0] = rand() % 2;
-    }
-  }
 
   // 四角形の描画
   glBegin(GL_QUADS);
@@ -37,6 +33,10 @@ void display1() { /* お手本画面の描画命令 */
     }
   }
   glEnd();
+
+  // 外枠
+  // glBegin(GL_QUAD_);
+  // glEnd();
   glFlush();
 }
 
@@ -45,7 +45,7 @@ void display2() { /* 操作画面の描画命令 */
 
   glClear(GL_COLOR_BUFFER_BIT);
   glColor3d(1.0, 0.0, 0.0);
-  // field_col[2][2][1] = 1.0;
+
   // 四角形の描画
   glBegin(GL_QUADS);
   for (i = 0; i < NUM; i++) {
@@ -58,6 +58,9 @@ void display2() { /* 操作画面の描画命令 */
     }
   }
   glEnd();
+
+  // glBegin(GL_QUAD_)
+
   glFlush();
 }
 
@@ -110,7 +113,7 @@ void keyin(unsigned char key, int x, int y) {
 }
 
 void mouse(int btn, int state, int x, int y) {
-  int i, j;
+  int i, j, k;
   double lx, ly;
 
   if ((btn == GLUT_LEFT_BUTTON) &&
@@ -123,10 +126,23 @@ void mouse(int btn, int state, int x, int y) {
     j = ((480.0 - y) / 480.0) * NUM;
     // printf("%d,%d,%d,%d\n", j, i, x, y);
 
+    // 4色バージョン//できてない
+    // // 色情報変化させるやつ
+    // color_table[i][j] = (color_table[i][j] + 1) % 4;
+    // // 対応する場所の色変更
+    // field_col[i][j][(color_table[i][j] + 2) % 4] = 0.0;
+    // if (color_table[i][j]) {
+    //   field_col[i][j][color_table[i][j] - 1] = 1.0;
+    // }
+
+    // 8色バージョン
+    // 色情報を変化させるやつ
+    color_table[i][j] = (color_table[i][j] + 1) % 8;
+
     // 対応する場所の色変更
-    // field_col[i][j][2] = field_col[i][j][1];
-    // field_col[i][j][1] = field_col[i][j][0];
-    field_col[i][j][0] = ((int)(field_col[i][j][0] + 1.0)) % 2;
+    field_col[i][j][0] = color_table[i][j] % 2;
+    field_col[i][j][1] = (color_table[i][j] / 2) % 2;
+    field_col[i][j][2] = color_table[i][j] / 4;
 
     glutIdleFunc(idle);
   }
@@ -141,6 +157,25 @@ void init() { /* 初期化命令 */
 }
 
 int main(int argc, char** argv) {
+  int i, j, k;
+  srand((unsigned int)time(NULL));
+
+  // 値の作成
+  for (i = 0; i < NUM; i++) {
+    for (j = 0; j < NUM; j++) {
+      // 4色やる方
+      // k = rand() % 4;
+      // if (k) {
+      //   field_ans[i][j][k - 1] = 1.0;
+      // }
+
+      // 8色やる方
+      for (k = 0; k < 3; k++) {
+        field_ans[i][j][k] = rand() % 2;
+      }
+    }
+  }
+
   glutInit(&argc, argv);
 
   // お手本画面
