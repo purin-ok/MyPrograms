@@ -1,5 +1,3 @@
-// import java.io.*;
-
 class M3_1 {
   public static void main(String args[]) {
     int n, i, num_max, tmp;
