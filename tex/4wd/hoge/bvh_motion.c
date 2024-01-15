@@ -43,7 +43,7 @@ int main() {
   //   data[i] = (double *)calloc(MOCOPI, sizeof(double));
   // }
   i = 0;
-  j = 0;
+  j = 1;
   //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
   while (fgets(tmp, STR, fp1) != NULL) {
     tmp_tok = strtok(tmp, " ");
@@ -53,7 +53,7 @@ int main() {
       data[i][j] = atof(tmp_tok);
       j++;
     } while (j < MOCOPI);
-    j = 0;
+    j = 1;
     i++;
   }
 
