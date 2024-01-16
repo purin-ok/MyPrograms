@@ -6,10 +6,12 @@
 int main() {
   int i = 0, j, k, frame;
   double time;
-  double data[410][MOCOPI];
+  double **data;
+  // double data[410][MOCOPI];
   char tmp[STR], *tmp_tok;
   FILE *fp1, *fp2;
-  char file_name[] = "MCPM_20240114_211646.BVH";
+  char file_name[] = "MCPM_20240117_012204.BVH";
+  char csv_name[] = "02.csv";
   fp1 = fopen(file_name, "r");
   if (fp1 == NULL) {
     printf("%s file not open!\n", file_name);
@@ -38,10 +40,10 @@ int main() {
   }
 
   // 動的に確保
-  // data = (double **)calloc(frame, sizeof(double *));
-  // for (i = 0; i < frame; i++) {
-  //   data[i] = (double *)calloc(MOCOPI, sizeof(double));
-  // }
+  data = (double **)calloc(frame, sizeof(double *));
+  for (i = 0; i < frame; i++) {
+    data[i] = (double *)calloc(MOCOPI, sizeof(double));
+  }
   i = 0;
   j = 1;
   //	NULLポインタの終端までファイルから文字を1行ずつ読み込む
@@ -57,7 +59,14 @@ int main() {
     i++;
   }
 
-  fp2 = fopen("01.csv", "w");
+  fp2 = fopen(csv_name, "w");
+  if (fp2 == NULL) {
+    printf("%s file not open!\n", csv_name);
+    return -1;
+  } else {
+    printf("%s file opened!\n", csv_name);
+  }
+
   for (j = 0; j < 26; j++) {  // 関節数
     fprintf(fp2, "%d_X座標, ", j);
     fprintf(fp2, "%d_Y座標, ", j);
