@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  9 JAN 2024 00:25
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  19 JAN 2024 03:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -216,6 +216,12 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@delta=\dimen189
 \TX@cols=\count283
 \TX@ftn=\toks26
+) (c:/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip57
+\multirow@cntb=\count284
+\multirow@dima=\skip58
+\bigstrutjot=\dimen190
 ) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
@@ -232,8 +238,8 @@ Package graphics Info: Driver file: dvipdfmx.def on input line 107.
  (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
 ))
-\Gin@req@height=\dimen190
-\Gin@req@width=\dimen191
+\Gin@req@height=\dimen191
+\Gin@req@width=\dimen192
 ) (c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
  (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -245,12 +251,12 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
 \l__pdf_internal_box=\box126
-\g__pdf_backend_object_int=\count284
+\g__pdf_backend_object_int=\count285
 \l__pdf_backend_content_box=\box127
 \l__pdf_backend_model_box=\box128
-\g__pdf_backend_annotation_int=\count285
-\g__pdf_backend_link_int=\count286
-\g__pdf_backend_link_sf_int=\count287
+\g__pdf_backend_annotation_int=\count286
+\g__pdf_backend_link_int=\count287
+\g__pdf_backend_link_sf_int=\count288
 ) (./outline2.aux)
 \openout1 = `outline2.aux'.
 
@@ -277,37 +283,29 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 62.
-File: img/media.png Graphic file (type bmp)
-<img/media.png>
- [1
+
+Overfull \hbox (14.10014pt too wide) in paragraph at lines 111--123
+ [][] 
+ []
+
+File: img/app3.jpg Graphic file (type bmp)
+<img/app3.jpg>
+[1
 
 
 ]
-File: img/app3.jpg Graphic file (type bmp)
-<img/app3.jpg>
-
-Overfull \hbox (0.22256pt too wide) in paragraph at lines 230--238
-[]\OT1/cmr/m/n/10 Nuitrack \JY1/mc/m/n/10 は \OT1/cmr/m/n/10 Re-alSense D400 \JY1/mc/m/n/10 シリ ーズや \OT1/cmr/m/n/10 Orbbec As-
- []
-
-
-Overfull \hbox (7.60522pt too wide) in paragraph at lines 287--289
-[]\OT1/cmr/m/n/10 mocopi \JY1/mc/m/n/10 を装着してラジオ体操をしてる人を \OT1/cmr/m/n/10 Re-alSense
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--381
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
 []\OT1/cmr/m/n/9 Google\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``me-di-apipe''\JY1/mc/m/n/9 ，
  []
 
 [2] (./outline2.aux) ) 
 Here is how much of TeX's memory you used:
- 2879 strings out of 476550
- 43027 string characters out of 5806803
- 1868334 words of memory out of 5000000
- 23450 multiletter control sequences out of 15000+600000
+ 2945 strings out of 476550
+ 44269 string characters out of 5806803
+ 1871334 words of memory out of 5000000
+ 23514 multiletter control sequences out of 15000+600000
  526540 words of font info for 91 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 57i,16n,62p,251b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,16n,62p,245b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline2.dvi (2 pages, 16964 bytes).
+Output written on outline2.dvi (2 pages, 16284 bytes).
