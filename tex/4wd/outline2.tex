@@ -4,7 +4,10 @@
 \usepackage{outline-ec}
 \usepackage{amsmath,amssymb,verbatim,ascmac,multicol}
 \usepackage{tabularx}
-\usepackage{multirow}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+%\usepackage{multirow}
 % dvioutで確認する場合は以下を有効にする
 %\usepackage[dviout]{graphicx,color}
 % pdf化する場合は以下を有効にする
@@ -137,37 +140,56 @@ MediaPipeはGoogleが提供しているライブメディアやストリーミ�
 % 図\ref{RGB}に示す
 全身の33個の関節の三次元位置または上半身の25個の関節の三次元位置を予測できる．
 
-% \begin{figure}[b!]
-%   \centering
-%   \includegraphics[width=7cm]{img/media.png}
-%   \caption{MediaPipe Poseで取得できる関節位置}
-%   \label{RGB} %%%後で変える
-% \end{figure}
+\begin{figure*}[t]
+  \begin{tabular}{cc}
+    \begin{minipage}[]{0.3\hsize}
+      \centering
+      \includegraphics[height=45mm]{img/media.png}
+      \subcaption{MediaPipe Poseで取得できる関節位置}
+      \label{RGB} %%%後で変える
+    \end{minipage}
+    \hspace{0.03\columnwidth} % ここで隙間作成
+    \begin{minipage}[]{0.3\hsize}
+      \centering
+      \includegraphics[height=45mm]{img/nuitrack.png}
+      \subcaption{Nuitrackで取得できる関節位置}
+      \label{RGBD} %%%後で変える
+    \end{minipage}
+    \hspace{0.03\columnwidth} % ここで隙間作成
+    \begin{minipage}[]{0.3\hsize}
+      \centering
+      \includegraphics[height=45mm]{img/TechSpec_02.png}
+      \subcaption{mocopiで取得できる関節位置}
+      \label{mocopi} %%%後で変える
+    \end{minipage}
+    \caption{取得できる骨格}
+  \end{tabular}
+\end{figure*}
 
 \subsection{RGBDカメラで行う三次元骨格推定}
 % 入力をRGBDカメラにする場合，kinectSDK\cite{kinectSDK}などのハードウェアの公式から出ているソフトウェアやOpenNI\cite{openni}などのオープンソースを処理に用いることによって三次元骨格推定を行うことができる．
-RGBDカメラを入力装置として用いる際の関係を図\ref{app}に示す．
+% RGBDカメラを入力装置として用いる際の関係を図\ref{app}に示す．
 kinectSDK\cite{kinectSDK}のようなデバイス専用のソフトウェアや，Nuitrack\cite{nuitrack}などのオープンソースを開発ライブラリに用いて処理することによってアプリケーションを作成できる．
 
-\begin{figure}[t!]
-  \centering
-  \includegraphics[width=6cm]{img/app3.jpg}
-  \caption{RGBDカメラを入力装置として用いる際の関係}
-  \label{app}
-\end{figure}
+% \begin{figure*}[t!]
+% \centering
+% \includegraphics[width=6cm]{img/app3.jpg}
+% \caption{RGBDカメラを入力装置として用いる際の関係}
+% \label{app}
+% \end{figure}
 
 代表的なRGBDカメラと開発ライブラリの組み合わせを表\ref{RGBD}に示す．
 
-\begin{table}[t!]
-  \centering
-  \caption{RGBDカメラと開発ライブラリの組み合わせ}
-  \begin{tabular}{l|l}\hline
-    カメラ       & 開発ライブラリ          \\\hline
-    kinect2   & kinectSDK，OpenNI \\
-    RealSense & Nuitrack         \\\hline
-  \end{tabular}
-  \label{RGBD}
-\end{table}
+% \begin{table}[t!]
+%   \centering
+%   \caption{RGBDカメラと開発ライブラリの組み合わせ}
+%   \begin{tabular}{l|l}\hline
+%     カメラ       & 開発ライブラリ          \\\hline
+%     kinect2   & kinectSDK，OpenNI \\
+%     RealSense & Nuitrack         \\\hline
+%   \end{tabular}
+%   \label{RGBD}
+% \end{table}
 
 % kinectSDKはMicrosoft Kinect for Windows Software Development Kit の略で，Microsoft社から公式にリリースされた開発キットである．
 % Windows上でkinect2を動かすのに必要なドライバやドキュメントなどが同梱されている．
@@ -185,14 +207,7 @@ kinectSDK\cite{kinectSDK}のようなデバイス専用のソフトウェアや�
 % --------------------------------------------------------------------------
 % 第2節 第3小節
 %
-% \subsection{}
-%
-
-%
-% --------------------------------------------------------------------------
-% 第2節 第4小節
-%
-\subsection{画像処理データの比較方法}
+\subsection{慣性式モーションキャプチャによる三次元骨格推定}
 %
 画像処理の精度を比較する際，画像処理による方法で取得したデータを基準にするのは特定の骨格推定の方法に有利な結果が出てしまう可能性がある．
 そのため，基準とするデータは画像処理に頼らない独立した方法で取得する必要があるなどの理由からモーションキャプチャデバイスmocopi\cite{mocopi}を用いる．
@@ -200,12 +215,18 @@ kinectSDK\cite{kinectSDK}のようなデバイス専用のソフトウェアや�
 mocopiとは，市販のモーションキャプチャデバイスで両手，両足，頭，腰の計6か所に小型センサを装着してリアルタイムに三次元計測を行うことができる．
 6つの小型センサで測定しているため肘や膝などの関節部の屈曲を正確に表現することはできないが，mocopiのセンサはそれぞれ3つの自由度を持つ加速度センサと角度センサで測定しており，
 機械学習を用いることで，肘や膝などの関節部を含めた全身の推定を実現している．
+%
+% --------------------------------------------------------------------------
+% 第2節 第4小節
+%
+\subsection{キャリブレーション}
+%
+計測方法によりスケール，処理により発生する遅延によるフレームのズレ，座標系が違うため統一しなければ定量的な比較が行えない．
+そのため，これらを統一するためのキャリブレーションを行う必要がある．
 
-また，計測方法によりスケールが違うため両手を水平に広げた状態の両手首の距離を元にキャリブレーションを行い，へそを原点とした右手座標系に変換しスケールを統一する．%%%これが本当にここでいいのか謎
-
-本研究では，全身運動をしている人物一人に対して計測を行い，
-mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所に関して，画像処理を用いて行った三次元骨格推定で得られた座標との誤差や時間変動を比較することで精度を評価する．
-また，計測は動作の緩急とオクルージョンというカメラに対し手前にある物体が後ろにある物体を隠す状態になり十分に計測できない場合の有無について，それぞれの動作を満たす運動に対して行う．
+キャリブレーションの方法として，計測する運動をする前に両手を水平に広げその時の両手首の長さを元にスケールを合わせる．
+次に，両手を合わせ両手首の座標が最接近した時点を基準としてフレームのズレを合わせる．
+最後に，へその座標を原点として頭に向かう方向をz軸，右手首から左手首に向かう方向をx軸，これらの軸と直行する方向をy軸として座標系を定める．
 %
 % --------------------------------------------------------------------------
 % 第2節 第5小節
@@ -252,7 +273,7 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
 % --------------------------------------------------------------------------
 % 第3節
 %
-\section{まとめ}
+\section{研究結果}
 %
 
 
@@ -261,28 +282,22 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
 % --------------------------------------------------------------------------
 % 第3節 第1小節
 %
-% \subsection{研究の進め方}
+\subsection{実験方法}
 %
 % mocopiを装着して学校体操をしている人をRGBカメラ，kinect2，RealSenseで同時に撮影する．
 % それぞれのカメラで撮影した映像から三次元骨格推定を行い，推定した骨格とmocopiで測定した骨格の両手，両足，頭，腰の座標のズレを誤差として精度の計測を行う．
-
+mocopiを装着し，
 %
 %
 % --------------------------------------------------------------------------
 % 第3節 第2小節
 %
-% \subsection{研究方法や装置の概略}
+\subsection{実験結果}
 %
 % ・撮影機材や開発環境について記述
 % 本研究では，開発環境としてmocopiとOpenPoseを使用する．
 
-% mocopi\cite{mocopi}とは，市販のモーションキャプチャデバイスで両手，両足，頭，腰の計6か所に小型センサを装着してリアルタイムに三次元計測を行うことができる．
-% mocopiのセンサはそれぞれ3つの自由度を持つ加速度センサと角度センサ
-% 現在は，OpenPoseによる姿勢推定を進めている．
-% 今後はRGBカメラによる方法の他にRealSenseで撮影した動画から三次元骨格推定を行う測定プログラムをSDKやライブラリを用いて開発し，mocopiから得られた骨格データと比較分析する．
-% その後，一台のカメラと画像処理で行える三次元骨格推定の方法についてリサーチしつつ逐次実装し，比較対象を増やす．
 %
-% ・mokopiに付いて記述
 %
 
 
@@ -293,7 +308,6 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
 %
 % \subsection{進捗状況}
 %
-% 現在は，OpenPoseによる姿勢推定を進めている．今後は記述した方法だけでなく，他にも単一のカメラで三次元骨格推定ができる方法がないかリサーチしつつ，オクルージョンへの対応，高速化，組み込みPCでの実装を目指していく．
 %
 % --------------------------------------------------------------------------
 % 第3節 第4小節
@@ -306,9 +320,9 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
 %
 %
 % --------------------------------------------------------------------------
-% 第3節
+% 第4節
 %
-% \section{まとめと今後の予定}
+\section{まとめ}
 %
 
 % 学校体操や空手の型などの，体を大きく動かし，関節の位置や体の相対関係が正しく測定できるようにする．
@@ -324,7 +338,7 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
     }
     \bibitem{CV}{
       平尾 公男ら，``多関節 CG モデルと距離画像による上半身の姿勢推定''，Technical report of IEICE.
-      PRMU, VOL.104, No.573, 79-84, 2004.
+      PRMU, VOL.104, No.573, 79--84, 2004.
     }
     \bibitem{キャプチャ}{
       白鳥 貴亮ら，``モーションキャプチャと音楽情報を用いた舞踊動作解析手法''，電子情報通信学会論文誌D，Vol.J88-D2，No.8，pp.1662-1671，2005.
@@ -339,7 +353,7 @@ mocopiのセンサの位置に当たる両手，両足，頭，腰の計6か所�
     % }
     \bibitem{ビデオ}{
       安達 康平ら，``ビデオからの3次元姿勢を用いた行動認識における精度向上の試み''，研究報告モバイルコンピューティングとパーベイシブシステム（MBL），
-      2020-MBL-94，47，1-7，2020.
+      2020-MBL-94，47，1--7，2020.
     }
     \bibitem{kinectSDK}{
       谷尻 豊寿，``体の動きがコントローラ　C++でkinectプログラミング　KINECTセンサ画像処理プログラミング''，株式会社　カットシステム，2011.
