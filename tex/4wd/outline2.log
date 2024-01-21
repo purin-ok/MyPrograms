@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  21 JAN 2024 16:36
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  21 JAN 2024 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -338,7 +338,7 @@ Overfull \hbox (468.09908pt too wide) in paragraph at lines 144--167
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
 []\OT1/cmr/m/n/9 Google\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``me-di-apipe''\JY1/mc/m/n/9 ，
  []
 
@@ -352,4 +352,4 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  55i,16n,63p,300b,746s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on outline2.dvi (2 pages, 16712 bytes).
+Output written on outline2.dvi (2 pages, 16636 bytes).
