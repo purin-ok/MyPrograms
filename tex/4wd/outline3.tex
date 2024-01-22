@@ -1,0 +1,61 @@
+\documentclass[titlepage]{jarticle}
+%\usepackage{type1cm}
+\usepackage{outline-ec}
+\usepackage{amsmath,amssymb,verbatim,ascmac,multicol}
+\usepackage{tabularx}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+%\usepackage{multirow}
+% dvioutで確認する場合は以下を有効にする
+%\usepackage[dviout]{graphicx,color}
+% pdf化する場合は以下を有効にする
+\usepackage[dvipdfmx]{graphicx,color}
+%
+% --------------------------------------------------------------------------
+% 図表番号の後の：を削除
+%
+\makeatletter
+\long\def\@makecaption#1#2{% #1=図表番号，#2=キャプション本文
+  \sbox\@tempboxa{#1 \hskip0.5zw #2}% 図表番号とキャプションの間のスペース 0.5zw
+  \ifdim \wd\@tempboxa >\hsize
+    #1 #2\par
+  \else
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+  \fi}
+\makeatother
+
+\氏名{本間 三暉}			%% 自分の氏名
+\出席番号{35}					%% 出席番号
+\研究室名{視覚情報処理研究室}			%% 研究室名
+\指導教官{高橋 章}			%% 指導教員名
+
+\発表番号{B\;--\;2}
+\研究題目{単一視点による人物の全身運動の三次元計測について}
+
+\アブストラクト{
+a
+}
+
+\begin{document}
+\maketitle
+
+\section{研究背景・目的}
+最近
+\section{研究内容}
+
+\section{研究結果}
+
+\section{まとめ}
+
+\begin{thebibliography}{99}
+  \small{
+
+
+
+
+
+  }
+\end{thebibliography}
+\rightline{URLは2023年10月4日にアクセス}
+\end{document}
