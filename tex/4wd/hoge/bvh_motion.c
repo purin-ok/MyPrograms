@@ -10,8 +10,8 @@ int main() {
   // double data[410][MOCOPI];
   char tmp[STR], *tmp_tok;
   FILE *fp1, *fp2;
-  char file_name[] = "MCPM_20240117_012204.BVH";
-  char csv_name[] = "02.csv";
+  char file_name[] = "Thand.BVH";
+  char csv_name[] = "Thand.csv";
   fp1 = fopen(file_name, "r");
   if (fp1 == NULL) {
     printf("%s file not open!\n", file_name);
