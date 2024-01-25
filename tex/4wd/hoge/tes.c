@@ -10,8 +10,8 @@ int main() {
   // double data[410][MOCOPI];
   char tmp[STR], *tmp_tok;
   FILE *fp1, *fp2;
-  char file_name[] = "1.BVH";
-  char csv_name[] = "1.csv";
+  char file_name[] = "Thand.BVH";
+  char csv_name[] = "Thand1.csv";
   fp1 = fopen(file_name, "r");
   if (fp1 == NULL) {
     printf("%s file not open!\n", file_name);
@@ -67,30 +67,15 @@ int main() {
     printf("%s file opened!\n", csv_name);
   }
 
-  for (j = 0; j < 26; j++) {  // 関節数
-    fprintf(fp2, "%d_X座標, ", j);
-    fprintf(fp2, "%d_Y座標, ", j);
-    fprintf(fp2, "%d_Z座標, ", j);
-    fprintf(fp2, "%d_X回転, ", j);
-    fprintf(fp2, "%d_Y回転, ", j);
-    fprintf(fp2, "%d_Z回転, ", j);
-    // for (k = 0; k < 6; k++) {  // チャンネル数
-    // }
-    // }
-  }
-  fprintf(fp2, "%d_X座標, ", j);
-  fprintf(fp2, "%d_Y座標, ", j);
-  fprintf(fp2, "%d_Z座標, ", j);
-  fprintf(fp2, "%d_X回転, ", j);
-  fprintf(fp2, "%d_Y回転, ", j);
-  fprintf(fp2, "%d_Z回転\n", j);
+  double lo = data[0][14] - data[0][18];
+  printf("%f", lo);
   //////////////////////////////////////////////////////////////////
   // 出力
   for (i = 0; i < frame; i++) {
     for (j = 0; j < MOCOPI - 1; j++) {  // 関節数*チャンネル数
-      fprintf(fp2, "%lf ,", data[i][j]);
+      fprintf(fp2, "%lf ,", data[i][j] / lo);
     }
-    fprintf(fp2, "%lf\n", data[i][j]);
+    fprintf(fp2, "%lf\n", data[i][j] / lo);
   }
 
   fclose(fp1);
