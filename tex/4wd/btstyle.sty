@@ -1,0 +1,102 @@
+%% btstyle.sty
+%% <2021-04-16>
+
+% 便利（その他）
+\usepackage{expl3}
+\usepackage{xparse}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bxtexlogo}
+\usepackage{xcolor}
+\usepackage[nobreak]{cite}
+\usepackage{hyperref}
+\ifdefined\kanjiskip \usepackage{pxjahyper}\fi
+
+% 数式
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+\DeclareSIUnit[number-unit-product=]\percent{\char`\%}
+
+% 図
+\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage{gnuplot-lua-tikz}
+
+% 表
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% リスト
+\usepackage{listings}
+\ExplSyntaxOn
+\tl_set:cn { fnum@lstlisting } { \lstlistingname\thelstlisting }
+\tl_set:Nn \lstlistingname { リスト }
+\@ifclassloaded{atkart}{%
+  \bool_if:NT \g_atk_english_caption_bool
+    {
+      \tl_set:cn { fnum@lstlisting } { \lstlistingname\nobreakspace\thelstlisting }
+      \tl_set:Nn \lstlistingname { Listing }
+    }
+}{}
+\ExplSyntaxOff
+\lstset{
+  basicstyle   = \ttfamily\scriptsize,
+  commentstyle = \color[gray]{0.375},
+  keywordstyle = \bfseries,
+  numberstyle  = \ttfamily\scriptsize,
+  numbers      = left,
+  numbersep    = 5pt,
+  xrightmargin = 10pt,
+  xleftmargin  = 15pt,
+  frame        = tb,
+  breaklines   = true,
+  tabsize      = 4,
+}
+
+% \zw と \zh の定義
+\providecommand{\zw}{zw}
+\providecommand{\zh}{zh}
+
+% subcaption もどきの定義
+\newcounter{subcaption}
+\setcounter{subcaption}{0}
+\renewcommand{\thesubcaption}{\alph{subcaption}}
+\newcommand*{\subcaption}[1]{%
+  \refstepcounter{subcaption}%
+  \begin{center}%
+    \ifdefined\jlreqsetup \sffamily\gtfamily\bfseries\fi%
+    \small%
+    (\thesubcaption)\hspace{1\zw}#1%
+  \end{center}%
+}
+\let\@originalcaption\caption
+\renewcommand*{\caption}[1]{%
+  \setcounter{subcaption}{0}%
+  \@originalcaption{#1}%
+}
+
+% \ref の拡張
+\newcommand*{\subref}[1]{(\ref{#1})}
+\newcommand*{\Figref}[1]{\mbox{\figurename\ref{#1}}}
+\newcommand*{\Tblref}[1]{\mbox{\tablename\ref{#1}}}
+\newcommand*{\Lstref}[1]{\mbox{\lstlistingname\ref{#1}}}
+\newcommand*{\Eqnref}[1]{\mbox{式(\ref{#1})}}
+\ExplSyntaxOn
+\@ifclassloaded{atkart}{%
+  \bool_if:NT \g_atk_english_caption_bool
+    {
+      \renewcommand*{\Figref}[1]{\figurename\nobreakspace\ref{#1}}
+      \renewcommand*{\Tblref}[1]{\tablename\nobreakspace\ref{#1}}
+      \renewcommand*{\Lstref}[1]{\lstlistingname\nobreakspace\ref{#1}}
+      \renewcommand*{\Eqnref}[1]{equation\nobreakspace(\ref{#1})}
+    }
+}{}
+\ExplSyntaxOff
+
+% 右上に cite を書くコマンド
+\newcommand*{\citess}[1]{\textsuperscript{\cite{#1}}}
+
+% コマンド表示用コマンド（Com，Com*）
+\NewDocumentCommand\Com{s m}{\mbox{\texttt{\IfBooleanF{#1}{\textbackslash}#2}}}
