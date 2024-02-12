@@ -1,7 +1,7 @@
 HIERARCHY
 ROOT root
 {
-  OFFSET 0 90.5966 0 //
+  OFFSET 0 90.5966 0 
   CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
   JOINT torso_1
   {

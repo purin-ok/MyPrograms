@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  7 FEB 2024 00:32
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  8 FEB 2024 00:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,7 +682,11 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 7.
 
-No file template.aux.
+
+LaTeX Warning: Unused global option(s):
+    [luaLatex].
+
+(./template.aux)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -708,13 +712,11 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 Package hyperref Info: Link coloring OFF on input line 7.
+ (./template.out) (./template.out)
 \@outlinefile=\write4
 \openout4 = `template.out'.
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-(c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+ (c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 7.
@@ -800,16 +802,16 @@ Package rerunfilecheck Warning: File `template.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `template.out':
-(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
 (rerunfilecheck)             After:  A8A47BD6FE70315F7C88E3BC07CA406A;103.
  ) 
 Here is how much of TeX's memory you used:
- 29653 strings out of 476550
- 609444 string characters out of 5806803
+ 29659 strings out of 476550
+ 609522 string characters out of 5806803
  1853334 words of memory out of 5000000
  49838 multiletter control sequences out of 15000+600000
  578439 words of font info for 77 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  100i,5n,118p,932b,980s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on template.dvi (5 pages, 15832 bytes).
+Output written on template.dvi (5 pages, 15932 bytes).
