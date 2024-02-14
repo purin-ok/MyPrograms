@@ -115,10 +115,10 @@ mocopiのモーションデータはBVHファイルで出力される．
 本研究では画像入力装置としてRGBDカメラであるIntel RealSense D415(以下RealSense)を使用する．
 カメラの解像度は最大1280$\times$720\,px，フレームレートは60\,fpsであり，デプスセンサの測定範囲は50\,cmから3\,mである．
 \begin{figure}[b]
-    \centering
-    \includegraphics[width=10cm]{img/image_3D.jpg}
-    \caption{画像処理による骨格推定の様子}
-    \label{image_3D}
+  \centering
+  \includegraphics[width=10cm]{img/image_3D.jpg}
+  \caption{画像処理による骨格推定の様子}
+  \label{image_3D}
 \end{figure}
 
 画像処理による方法として2つの方法を実装する．
@@ -128,27 +128,27 @@ mocopiのモーションデータはBVHファイルで出力される．
 2つ目はカラー画像とデプス情報を入力として3DiVi Incが提供するライブラリNuitrackを用いることで図\ref{RGBD}に示す19個の関節の三次元骨格情報を取得する方法である．
 
 \begin{figure}[t]
+  \centering
+  \begin{minipage}[]{0.45\hsize}
     \centering
-    \begin{minipage}[]{0.45\hsize}
-        \centering
-        \includegraphics[width=6cm]{img/TechSpec_02.png}
-        \subcaption{mocopiで取得できる関節位置}
-        \label{mocopi}
-    \end{minipage}
-    \begin{minipage}[]{0.45\hsize}
-        \centering
-        \includegraphics[width=6cm]{img/media.png}
-        \subcaption{MediaPipe Poseで取得できる関節位置}
-        \label{RGB}
-    \end{minipage}\\
-    \begin{minipage}[]{0.45\hsize}
-        \centering
-        \includegraphics[width=6cm]{img/nuitrack.png}
-        \subcaption{Nuitrackで取得できる関節位置}
-        \label{RGBD}
-    \end{minipage}
-    \caption{取得できる骨格}
-    \label{sokutei}
+    \includegraphics[width=6cm]{img/TechSpec_02.png}
+    \subcaption{mocopiで取得できる関節位置}
+    \label{mocopi}
+  \end{minipage}
+  \begin{minipage}[]{0.45\hsize}
+    \centering
+    \includegraphics[width=6cm]{img/media.png}
+    \subcaption{MediaPipe Poseで取得できる関節位置}
+    \label{RGB}
+  \end{minipage}\\
+  \begin{minipage}[]{0.45\hsize}
+    \centering
+    \includegraphics[width=6cm]{img/nuitrack.png}
+    \subcaption{Nuitrackで取得できる関節位置}
+    \label{RGBD}
+  \end{minipage}
+  \caption{取得できる骨格}
+  \label{sokutei}
 \end{figure}
 
 \section{キャリブレーション}\label{kyari}
@@ -170,19 +170,19 @@ mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi
 右手の軌跡が青，左手の軌跡が橙である．
 
 \begin{figure}[h]
+  \centering
+  \begin{minipage}{10cm}
     \centering
-    \begin{minipage}{10cm}
-        \centering
-        \includegraphics[width=10cm]{img/1_mocopi.png}
-        \caption{mocopiで得た両手首の位置情報}
-        \label{fig:1_mocopi}
-    \end{minipage}\\
-    \begin{minipage}{10cm}
-        \centering
-        \includegraphics[width=10cm]{img/1_media.png}
-        \caption{mediapipeで得た両手首の位置情報}
-        \label{fig:1_media}
-    \end{minipage}
+    \includegraphics[width=10cm]{img/1_mocopi.png}
+    \caption{mocopiで得た両手首の位置情報}
+    \label{fig:1_mocopi}
+  \end{minipage}\\
+  \begin{minipage}{10cm}
+    \centering
+    \includegraphics[width=10cm]{img/1_media.png}
+    \caption{mediapipeで得た両手首の位置情報}
+    \label{fig:1_media}
+  \end{minipage}
 \end{figure}
 今回行った運動では，へそより前に右手首が存在しているため，z軸方向の値が負になることはありえない．
 また，へその前まで腕を持ってきているので，正しく計測できていれば原点を中心とした半径位置の円に似た軌道を描くはずである．
@@ -193,34 +193,36 @@ MediaPipe Poseはノイズはあるが，ある程度正確に測定できるこ
 mocopiは実際の骨格の三次元位置より，動作の滑らかさを優先していることがわかった．
 動かした際の人間らしくない動きをなくすためだと考えられる．
 
-\chapter{まとめと今後の課題}
+\chapter{まとめ}
 本研究では，キャリブレーションの方法として2つのポーズを続けて行い，3種類の手法を定量的に比較するためのキャリブレーションを試みた．
 RGBカメラによる方法では機械学習を用いて奥行き情報を取得できる方法を用いたが，慣性式モーションキャプチャデバイスで取得した骨格データよりノイズが大きくなることが確認できた．
-
 また，mocopiによる方法では各骨格の三次元位置より動作の滑らかさを優先している事がわかった．
 
+% 今後の課題として，RGBDカメラを用いて撮影したデータから推定した座標データに対してキャリブレーションを行った場合についても．
 % RGBDによる方法では現在問題の修正中であるがRGBDによる方法を用いることで．デプス情報を元に正しく測定できるのではないかと考えられる．
+\section*{謝辞}
+本研究におきまして，視覚情報処理研究室の高橋章教授から多大なるご指導，ご助力を賜りましたことを深く感謝するとともに，心から御礼申し上げます．
+また，ご協力いただいた同研究室の各氏にも感謝します．
 
-
-\addcontentsline{toc}{chapter}{参考文献} %章立てせずに目次に追加するおまじない
+% \addcontentsline{toc}{chapter}{参考文献} %章立てせずに目次に追加するおまじない
 % \renewcommand{\bibname}{参考文献} %これがないと，タイトルが「関連図書」になってしまう
 \begin{thebibliography}{99}
-    \small{
-        \bibitem{turugi}{
-            剱 一輝，``柔道競技の3Dアーカイブ化''，令和4年度長岡高専専攻科論文，2023.
-        }
-        \bibitem{mediapipe}{
-            Google，``mediapipe''，\\
-            \url{https://developers.google.com/mediapipe}
-        }
-        \bibitem{depth}{
-            北川リサ，伊藤貴之，``競技かるたにおける払いの動作の三次元ボーン表示による可視化''，情報処理学会第85回全国大会，
-            2023，1，139 -- 140，2023.
-        }
-        % \bibitem{open}{
-        %   サンプル画像``single.jpeg'',\url{https://github.com/spmallick/learnopencv/blob/master/OpenPose/single.jpeg}
-        % }
+  \small{
+    \bibitem{turugi}{
+      剱 一輝，``柔道競技の3Dアーカイブ化''，令和4年度長岡高専専攻科論文，2023.
     }
+    \bibitem{mediapipe}{
+      Google，``mediapipe''，\\
+      \url{https://developers.google.com/mediapipe}
+    }
+    \bibitem{depth}{
+      北川リサ，伊藤貴之，``競技かるたにおける払いの動作の三次元ボーン表示による可視化''，情報処理学会第85回全国大会，
+      2023，1，139 -- 140，2023.
+    }
+    \bibitem{BVH}{
+      ``'',\url{}
+    }
+  }
 \end{thebibliography}
 \bibliography{bibtexファイル名} %bibtexファイルの読み込み
 \bibliographystyle{junsrt} %本文に\cite{}を入れることで，参考文献表示
@@ -230,12 +232,12 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
 BVHファイルはモーションキャプチャデータファイルフォーマットである．
 BVHファイルの特徴を以下にまとめる．
 \begin{itemize}
-    \item テキスト形式で記述
-    \item 右手座標系で，XYZ各軸の扱い（どの軸が鉛直方向に対応するか等）は任意
-    \item 関節ノードに関する情報を記述
-    \item 関節回転はオイラー角形式で記述
-    \item 回転角度の単位はdegree
-    \item スケルトン階層を表すHIERARCHYと，動作データを表すMOTIONの二つから構成
+  \item テキスト形式で記述
+  \item 右手座標系で，XYZ各軸の扱い（どの軸が鉛直方向に対応するか等）は任意
+  \item 関節ノードに関する情報を記述
+  \item 関節回転はオイラー角形式で記述
+  \item 回転角度の単位はdegree
+  \item スケルトン階層を表すHIERARCHYと，動作データを表すMOTIONの二つから構成
 \end{itemize}
 mocopiから出力されたBVHファイルは，右手座標系でY軸が座標系内の鉛直方向としている．
 mocopiで計測したモーションデータの出力ファイルであるBVHファイルをリスト\ref{BVH}に示す．
