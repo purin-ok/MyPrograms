@@ -24,6 +24,9 @@
 
 \usepackage{caption}
 \captionsetup{font=small, labelfont=small}
+\captionsetup{compatibility=false}
+\captionsetup[subfigure]{labelformat=simple}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 
 \lstset{
     basicstyle={\ttfamily},
@@ -56,7 +59,7 @@
 
 \reportname{令和5年度電子制御工学科卒業論文}
 \reporttitle{単一視点による\\人物の全身運動の三次元計測について}
-\reportdate{2024/02/13}
+\reportdate{2024/02/22}
 \autheraff{
 長岡工業高等専門学校\\
 電子制御工学科\\
@@ -77,19 +80,19 @@
 \pagenumbering{arabic}
 
 \chapter{はじめに}
-人の動きなどのノンバーバルな情報をコミュニケーションに用いたり，技術の継承や伝統芸能をディジタルアーカイブに利用したりするために，
+人の動きなどのノンバーバルな情報をコミュニケーションに用いたり，技術の継承や伝統芸能のディジタルアーカイブに利用したりするために，
 カメラの二次元画像から三次元の骨格情報を推測する技術が求められている．
 本研究室では柔道の三次元の動きを複数視点の動画から推測する研究\cite{turugi}が行われた．
 しかし，この方法では複数台のカメラを設置し，キャリブレーションを行うため，十分な広さを持つ測定空間が必要である．
-また，近年物体までの奥行きの情報(デプス)を取得できるカメラが市販されている．
-機械学習によって単眼カメラから深度推定を行う方法も提案されている\cite{depth}．
+また，近年技術開発が進んだことにより，物体までの奥行きの情報(デプス)を取得できるカメラが市販されたり，
+機械学習によって単眼カメラから深度推定を行う方法\cite{depth}が提案されたりしている．
 
 そこで本研究では機械学習を活用して一台の入力装置で三次元骨格推定を行う手法として，
 RGB画像を入力する方法とRGB画像に加えてデプス情報を入力する方法を実装する．
 さらに慣性式モーションキャプチャデバイスによる計測結果と比較するための座標系及び時間のキャリブレーション方法を検討する．
 
 \chapter{研究内容・方法}
-人の動作の三次元骨格推定を行う方法として，画像処理による方法やモーションセンサによる方法がある．
+人の動作の三次元骨格推定を行う方法として，画像処理による方法やモーションセンサによる方法がある．それぞれの方法について簡単にまとめたものを表\ref{3D_1}に示す．
 画像処理による三次元骨格推定は撮影するカメラに，色情報を記録できる一般的なRGBカメラを用いる方法と，
 物体のデプスも取得可能なRGBDカメラを用いる方法がある(\ref{3Dskeleton})．
 
@@ -100,26 +103,32 @@ RGB画像を入力する方法とRGB画像に加えてデプス情報を入力�
 %%%あまりにも急展開
 
 本研究では，市販の入力デバイスを使用する3つの推定方法を実装して性能を比較評価する．
-
+\begin{table}[b!]
+  \centering
+  \caption{動作を計測する方法の種類と特徴}
+  \begin{tabular}{l|ll|ll}
+    \hline
+                  & \multicolumn{2}{c|}{\small{カメラ}}       & \multicolumn{2}{c}{\small{モーションセンサ}}                                                  \\ \cline{2-5}
+                  & \multicolumn{1}{c|}{\small{RGB}}       & \small{RGBD}                         & \multicolumn{1}{c|}{\small{光学式}} & \small{慣性式} \\ \hline
+    \small{センサ装着} & \multicolumn{1}{c|}{\small{不要}}        & \small{不要}                           & \multicolumn{1}{c|}{\small{必要}}  & \small{必要}  \\
+    \small{外から撮影} & \multicolumn{1}{c|}{\small{必要}}        & \small{必要}                           & \multicolumn{1}{c|}{\small{必要}}  & \small{不要}  \\
+    \small{必要台数}  & \multicolumn{1}{c|}{\small{1$\sim$数台}} & \small{1台}                           & \multicolumn{1}{c|}{\small{複数}}  & \small{0}   \\ \hline
+  \end{tabular}
+  \label{3D_1}
+\end{table}
 \section{慣性式モーションキャプチャの三次元骨格推定}\label{motion}
-慣性式モーションキャプチャデバイスとしてmocopiを用いる．mocopiのモーションデータのフレームレートは60\,fpsである．
+慣性式モーションキャプチャデバイスとしてmocopi\cite{mocopi}を用いる．mocopiのモーションデータのフレームレートは60\,fpsである．
 センサは3つの自由度を持つ角度センサと加速度センサを搭載している．
 両手，両足，頭，腰の計6ヶ所にセンサを装着してリアルタイムに三次元計測を行うことができる．
 センサを装着しない肘や膝などの関節部を直接測定することはできないが，
 機械学習を用いることで図\ref{mocopi}に示すような27個の関節位置を推定している．
 
-mocopiのモーションデータはBVHファイルで出力される．
+mocopiのモーションデータはBVHファイルで出力される．(付録\ref{BVH_file}を参照)
 
 \section{画像処理による三次元骨格推定}\label{3Dskeleton}
 画像処理を用いて三次元骨格推定をしている様子を図\ref{image_3D}に示す．
 本研究では画像入力装置としてRGBDカメラであるIntel RealSense D415(以下RealSense)を使用する．
 カメラの解像度は最大1280$\times$720\,px，フレームレートは60\,fpsであり，デプスセンサの測定範囲は50\,cmから3\,mである．
-\begin{figure}[b]
-  \centering
-  \includegraphics[width=10cm]{img/image_3D.jpg}
-  \caption{画像処理による骨格推定の様子}
-  \label{image_3D}
-\end{figure}
 
 画像処理による方法として2つの方法を実装する．
 
@@ -147,10 +156,15 @@ mocopiのモーションデータはBVHファイルで出力される．
     \subcaption{Nuitrackで取得できる関節位置}
     \label{RGBD}
   \end{minipage}
-  \caption{取得できる骨格}
+  \caption{各ライブラリで取得できる骨格の関節位置}
   \label{sokutei}
 \end{figure}
-
+\begin{figure}[b]
+  \centering
+  \includegraphics[width=10cm]{img/image_3D.png}
+  \caption{画像処理による骨格推定の様子}
+  \label{image_3D}
+\end{figure}
 \section{キャリブレーション}\label{kyari}
 推定方法によって骨格座標のスケールや基準となる座標系が違うので定量的に比較評価するためには座標系を統一する必要がある．
 そこで計測開始時に，両腕を水平に上げるポーズを取ることにする．水平に上げた両手首の距離を元にスケールを合わせる．
@@ -219,8 +233,11 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
       北川リサ，伊藤貴之，``競技かるたにおける払いの動作の三次元ボーン表示による可視化''，情報処理学会第85回全国大会，
       2023，1，139 -- 140，2023.
     }
+    \bibitem{mocopi}{
+      SONY，``モバイルモーションキャプチャーmocopi''，\url{https://www.sony.jp/mocopi/}
+    }
     \bibitem{BVH}{
-      ``'',\url{}
+      TMPSwiki，``MOCAPデータファイル'',\url{https://mukai-lab.org/content/MotionCaptureDataFile.pdf}
     }
   }
 \end{thebibliography}
@@ -228,14 +245,14 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
 \bibliographystyle{junsrt} %本文に\cite{}を入れることで，参考文献表示
 
 \appendix
-\chapter{mocopiから出力されるBVHファイルの構造}
+\chapter{mocopiから出力されるBVHファイルの構造}\label{BVH_file}
 BVHファイルはモーションキャプチャデータファイルフォーマットである．
-BVHファイルの特徴を以下にまとめる．
+BVHファイルの特徴を以下にまとめる\cite{BVH}．
 \begin{itemize}
   \item テキスト形式で記述
   \item 右手座標系で，XYZ各軸の扱い（どの軸が鉛直方向に対応するか等）は任意
   \item 関節ノードに関する情報を記述
-  \item 関節回転はオイラー角形式で記述
+  \item 関節回転はオイラー角形式(付録\ref{Euler}を参照)で記述
   \item 回転角度の単位はdegree
   \item スケルトン階層を表すHIERARCHYと，動作データを表すMOTIONの二つから構成
 \end{itemize}
@@ -256,102 +273,101 @@ CHANNELは，関節自由度に続き，位置の自由度 (Xposition，Ypositio
 モーションデータは各フレームごとに一行ずつ，各行にはファイルの冒頭からのCHANNELの登場順に対応する．
 
 \begin{lstlisting}[caption=mocopiのBVHファイル,label=BVH]
-    HIERARCHY
-    ROOT root
+  HIERARCHY
+  ROOT root
+  {
+    OFFSET 0 90.5966 0
+    CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+    JOINT torso_1
     {
-      OFFSET 0 90.5966 0 
+      OFFSET 0 4.93189 -1.1181
       CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-      JOINT torso_1
+      JOINT torso_2
       {
-        OFFSET 0 4.93189 -1.1181
+        OFFSET 0 5.45428 1.04046
         CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-        JOINT torso_2
+        JOINT torso_3
         {
-          OFFSET 0 5.45428 1.04046
+          OFFSET -9.96389e-18 5.81666 0.111686
           CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-          JOINT torso_3
+          JOINT torso_4
           {
-            OFFSET -9.96389e-18 5.81666 0.111686
+            OFFSET -1.07264e-17 6.3178 -0.430704
             CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-            JOINT torso_4
+            JOINT torso_5
             {
-              OFFSET -1.07264e-17 6.3178 -0.430704
+              OFFSET -1.91593e-17 7.38567 -1.4624
               CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-              JOINT torso_5
+              JOINT torso_6
               {
-                OFFSET -1.91593e-17 7.38567 -1.4624
+                OFFSET -2.45986e-17 9.22288 -0.888062
                 CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                JOINT torso_6
+                JOINT torso_7
                 {
-                  OFFSET -2.45986e-17 9.22288 -0.888062
+                  OFFSET -2.82008e-17 10.2464 1.53133
                   CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                  JOINT torso_7
+                  JOINT neck_1
                   {
-                    OFFSET -2.82008e-17 10.2464 1.53133
+                    OFFSET -1.25459e-17 4.64811 0.694664
                     CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                    JOINT neck_1
+                    JOINT neck_2
                     {
-                      OFFSET -1.25459e-17 4.64811 0.694664
+                      OFFSET -1.75924e-17 4.68175 0.4096
                       CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                      JOINT neck_2
+                      JOINT head
                       {
-                        OFFSET -1.75924e-17 4.68175 0.4096
+                        OFFSET -1.9515e-17 4.6908 0.74295
                         CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                        JOINT head
+                        End Site
                         {
-                          OFFSET -1.9515e-17 4.6908 0.74295
+                          OFFSET 0 0.1 0
+                        }
+                      }
+                    }
+                  }
+                  JOINT l_shoulder
+                  {
+                    OFFSET 1.19736 -7.38744 7.31601
+                    CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+                    JOINT l_up_arm
+                    {
+                      OFFSET 12.5803 3.15559 -3.17425
+                      CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+                      JOINT l_low_arm
+                      {
+                        OFFSET 28.3639 0.0580795 0.133078
+                        CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+                        JOINT l_hand
+                        {
+                          OFFSET 23.5335 0.0481878 0.110415
                           CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
                           End Site
                           {
-                            OFFSET 0 0.1 0
+                            OFFSET 0.1 0 0
                           }
                         }
                       }
                     }
-                    JOINT l_shoulder
+                  }
+                  JOINT r_shoulder
+                  {
+                    OFFSET -1.19736 -7.38743 7.31591
+                    CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+                    JOINT r_up_arm
                     {
-                      OFFSET 1.19736 -7.38744 7.31601
+                      OFFSET -12.5803 3.15559 -3.17425
                       CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                      JOINT l_up_arm
+                      JOINT r_low_arm
                       {
-                        OFFSET 12.5803 3.15559 -3.17425
+                        OFFSET -28.3639 0.0580795 0.133078
                         CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                        JOINT l_low_arm
+                        JOINT r_hand
                         {
-                          OFFSET 28.3639 0.0580795 0.133078
+                          OFFSET -23.5335 0.0481876 0.110415
                           CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                          JOINT l_hand
+                          End Site
                           {
-                            OFFSET 23.5335 0.0481878 0.110415
-                            CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                            End Site
-                            {
-                              OFFSET 0.1 0 0
-                            }
-                          }
-                        }
-                      }
-                    }
-                    JOINT r_shoulder
-                    {
-                      OFFSET -1.19736 -7.38743 7.31591
-                      CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                      JOINT r_up_arm
-                      {
-                        OFFSET -12.5803 3.15559 -3.17425
-                        CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                        JOINT r_low_arm
-                        {
-                          OFFSET -28.3639 0.0580795 0.133078
-                          CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                          JOINT r_hand
-                          {
-                            OFFSET -23.5335 0.0481876 0.110415
-                            CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-                            End Site
-                            {
-                              OFFSET -0.1 0 0
-                            }
+                            OFFSET -0.1 0 0
                           }
                         }
                       }
@@ -363,60 +379,61 @@ CHANNELは，関節自由度に続き，位置の自由度 (Xposition，Ypositio
           }
         }
       }
-      JOINT l_up_leg
+    }
+    JOINT l_up_leg
+    {
+      OFFSET 8.96978 -4.08401 1.97395
+      CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+      JOINT l_low_leg
       {
-        OFFSET 8.96978 -4.08401 1.97395
+        OFFSET -0.827718 -37.6515 -0.63625
         CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-        JOINT l_low_leg
+        JOINT l_foot
         {
-          OFFSET -0.827718 -37.6515 -0.63625
+          OFFSET -2.25899 -39.2341 -5.87393
           CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-          JOINT l_foot
+          JOINT l_toes
           {
-            OFFSET -2.25899 -39.2341 -5.87393
+            OFFSET 0.756579 -9.59872 12.1348
             CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-            JOINT l_toes 
+            End Site
             {
-              OFFSET 0.756579 -9.59872 12.1348
-              CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-              End Site
-              {
-                OFFSET 0 0 0.1
-              }
-            }
-          }
-        }
-      }
-      JOINT r_up_leg
-      {
-        OFFSET -8.96978 -4.08401 1.97395
-        CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-        JOINT r_low_leg
-        {
-          OFFSET 0.827718 -37.6515 -0.63625
-          CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-          JOINT r_foot
-          {
-            OFFSET 2.25899 -39.2341 -5.87393
-            CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-            JOINT r_toes
-            {
-              OFFSET -0.756579 -9.59872 12.1348
-              CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
-              End Site
-              {
-                OFFSET 0 0 0.1
-              }
+              OFFSET 0 0 0.1
             }
           }
         }
       }
     }
-    MOTION
-    Frames: 410
-    Frame Time: 0.020000
-    0 90.5966 0 -0 0 -0 0 4.93189 -1.1181 -0 0 -0 0 5.45428 1.04046 -0 0 -0 -9.96389e-18 5.81666 0.111686 -0 0 -0 -1.07264e-17 6.3178 -0.430704 -0 0 -0 -1.91593e-17 7.38567 -1.4624 -0 0 -0 -2.45986e-17 9.22288 -0.888062 -0 0 -0 -2.82008e-17 10.2464 1.53133 -0 0 -0 -1.25459e-17 4.64811 0.694664 -0 0 -0 -1.75924e-17 4.68175 0.4096 -0 0 -0 -1.9515e-17 4.6908 0.74295 -0 0 -0 1.19736 -7.38744 7.31601 -0 0 -0 12.5803 3.15559 -3.17425 -0 0 -0 28.3639 0.0580795 0.133078 -0 0 -0 23.5335 0.0481878 0.110415 -0 0 -0 -1.19736 -7.38743 7.31591 -0 0 -0 -12.5803 3.15559 -3.17425 -0 0 -0 -28.3639 0.0580795 0.133078 -0 0 -0 -23.5335 0.0481876 0.110415 -0 0 -0 8.96978 -4.08401 1.97395 -0 0 -0 -0.827718 -37.6515 -0.63625 -0 0 -0 -2.25899 -39.2341 -5.87393 -0 0 -0 0.756579 -9.59872 12.1348 -0 0 -0 -8.96978 -4.08401 1.97395 -0 0 -0 0.827718 -37.6515 -0.63625 -0 0 -0 2.25899 -39.2341 -5.87393 -0 0 -0 -0.756579 -9.59872 12.1348 -0 0 -0 
+    JOINT r_up_leg
+    {
+      OFFSET -8.96978 -4.08401 1.97395
+      CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+      JOINT r_low_leg
+      {
+        OFFSET 0.827718 -37.6515 -0.63625
+        CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+        JOINT r_foot
+        {
+          OFFSET 2.25899 -39.2341 -5.87393
+          CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+          JOINT r_toes
+          {
+            OFFSET -0.756579 -9.59872 12.1348
+            CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+            End Site
+            {
+              OFFSET 0 0 0.1
+            }
+          }
+        }
+      }
+    }
+  }
+  MOTION
+  Frames: 1193
+  Frame Time: 0.016667
+  0 90.5966 0 -0 0 -0 0 4.93189 -1.1181 -0 0 -0 0 5.45428 1.04046 -0 0 -0 -9.96389e-18 5.81666 0.111686 -0 0 -0 -1.07264e-17 6.3178 -0.430704 -0 0 -0 -1.91593e-17 7.38567 -1.4624 -0 0 -0 -2.45986e-17 9.22288 -0.888062 -0 0 -0 -2.82008e-17 10.2464 1.53133 -0 0 -0 -1.25459e-17 4.64811 0.694664 -0 0 -0 -1.75924e-17 4.68175 0.4096 -0 0 -0 -1.9515e-17 4.6908 0.74295 -0 0 -0 1.19736 -7.38744 7.31601 -0 0 -0 12.5803 3.15559 -3.17425 -0 0 -0 28.3639 0.0580795 0.133078 -0 0 -0 23.5335 0.0481878 0.110415 -0 0 -0 -1.19736 -7.38743 7.31591 -0 0 -0 -12.5803 3.15559 -3.17425 -0 0 -0 -28.3639 0.0580795 0.133078 -0 0 -0 -23.5335 0.0481876 0.110415 -0 0 -0 8.96978 -4.08401 1.97395 -0 0 -0 -0.827718 -37.6515 -0.63625 -0 0 -0 -2.25899 -39.2341 -5.87393 -0 0 -0 0.756579 -9.59872 12.1348 -0 0 -0 -8.96978 -4.08401 1.97395 -0 0 -0 0.827718 -37.6515 -0.63625 -0 0 -0 2.25899 -39.2341 -5.87393 -0 0 -0 -0.756579 -9.59872 12.1348 -0 0 -0   
 \end{lstlisting}
-% \chapter{オイラー角形式}
+\chapter{オイラー角形式}\label{Euler}
 
 \end{document}
