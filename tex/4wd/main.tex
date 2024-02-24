@@ -94,11 +94,11 @@ RGB画像を入力する方法とRGB画像に加えてデプス情報を入力�
 \chapter{研究内容・方法}
 人の動作の三次元骨格推定を行う方法として，画像処理による方法やモーションセンサによる方法がある．それぞれの方法について簡単にまとめたものを表\ref{3D_1}に示す．
 画像処理による三次元骨格推定は撮影するカメラに，色情報を記録できる一般的なRGBカメラを用いる方法と，
-物体のデプスも取得可能なRGBDカメラを用いる方法がある(\ref{3Dskeleton})．
+物体のデプスも取得可能なRGBDカメラを用いる方法がある(\ref{3Dskeleton}節)．
 
 モーションセンサによる方法は，光学式や慣性式などがある．
 光学式は体表面にマーカーを取り付けそのマーカーを複数台のカメラで取り込むことで骨格を高精度に推定できるが広い計測空間が必要になる．
-慣性式は加速度，角速度，方位を測定できるセンサを体表面の指定箇所に取り付けることで骨格を推定する(\ref{motion})．
+慣性式は加速度，角速度，方位を測定できるセンサを体表面の指定箇所に取り付けることで骨格を推定する(\ref{motion}節)．
 
 %%%あまりにも急展開
 
@@ -123,12 +123,40 @@ RGB画像を入力する方法とRGB画像に加えてデプス情報を入力�
 センサを装着しない肘や膝などの関節部を直接測定することはできないが，
 機械学習を用いることで図\ref{mocopi}に示すような27個の関節位置を推定している．
 
-mocopiのモーションデータはBVHファイルで出力される．(付録\ref{BVH_file}を参照)
+mocopiは専用のスマホアプリでモーションを収録することでBVHファイル(付録\ref{BVH_file}を参照)での書き出しが可能である．
+書き出したBVHファイルはiphoneの場合，mocopiフォルダのMotionData配下，Androidスマホの場合，ユーザーが初回保存時に指定したフォルダ配下の保存される．
+
+本研究ではホストとなるスマホにiPhone\,SE(第2世代)とGoogle\,Pixel\,8を用いた．
+しかし，Google\,Pixel\,8ではモーションセンサとの接続が不安定となってしまうため，測定にはiPhone\,SE(第2世代)をホストに用いた．
 
 \section{画像処理による三次元骨格推定}\label{3Dskeleton}
 画像処理を用いて三次元骨格推定をしている様子を図\ref{image_3D}に示す．
 本研究では画像入力装置としてRGBDカメラであるIntel RealSense D415(以下RealSense)を使用する．
-カメラの解像度は最大1280$\times$720\,px，フレームレートは60\,fpsであり，デプスセンサの測定範囲は50\,cmから3\,mである．
+RealSenseのスペックを\ref{D415}に示す．
+\begin{table}[t]
+  \centering
+  \caption{Intel RealSense D415のスペック}
+  \begin{tabular}{l|l}
+    \hline
+    {\small 使用環境}                                  & {\small 屋内/屋外}                                     \\
+    {\small 深度技術}                                  & {\small Active IR stereo(ローリングシャッター)}              \\
+    {\small 主要Intel RealSenseコンポーネント}              & {\small Intel RealSense Vision Processor D4}       \\
+                                                   & {\small Intel RealSense module D410}               \\
+    {\small 深度センサ視野角(水平 $\times$ 垂直 $\times$ 斜め)}  & {\small 69.4°$\times$ 42.5°$\times$ 77°(±3°)}      \\
+    {\small 出力解像度(DepthStream)}                    & {\small 最大1280 $\times$ 720}                       \\
+    {\small 出力フレームレート(DepthStream) }               & {\small 最大90\,fps}                                 \\
+    {\small 最小深度距離(Min-Z)}                         & {\small 0.3\,m}                                    \\
+    {\small シャッタータイプ}                              & {\small ローリングシャッター}                                \\
+    {\small 最大レンジ}                                 & {\small 約10 m(較正，背景，照度状況による)}                      \\
+    {\small 解像度およびフレームレート(RGBセンサ)}                 & {\small 1920 $\times$ 1080@30\,fps }               \\
+    {\small RGBセンサ視野角(水平 $\times$ 垂直 $\times$ 斜め)} & {\small 69.4° $\times$ 42.5° $\times$ 77°(±3°)}    \\
+    {\small 本体寸法(長さ $\times$ 奥行き $\times$ 高さ)}     & {\small 99 mm $\times$ 20 mm $\times$ 23 mm}       \\
+    {\small コネクタ}                                  & {\small USB 3.0 Type-C}                            \\
+    {\small 取付機構}                                  & {\small 1 $\times$ 1/4-20 UNCネジ穴、2 $\times$ M3ネジ穴} \\
+    {\small 測定原理}                                  & {\small アクティブステレオ法}                                \\\hline
+  \end{tabular}
+  \label{D415}
+\end{table}
 
 画像処理による方法として2つの方法を実装する．
 
@@ -176,8 +204,8 @@ mocopiのモーションデータはBVHファイルで出力される．(付録\
 
 \chapter{研究結果}
 \section{実験方法}
-全身運動をしている一名の被験者(男子学生)が(\ref{kyari})に示す骨格情報のキャリブレーションに必要なポーズを行い，正しくキャリブレーションできているか骨格データを評価する．
-手を広げた状態から手を合わせるポーズになるまでは170フレームで行われている．
+一名の被験者(男子学生)が\ref{kyari}節に示す骨格情報のキャリブレーションに必要なポーズを行い，正しくキャリブレーションできているか骨格データを評価する．
+座標軸のキャリブレーションのポーズである手を広げた状態から，時間軸の基準となる両手が最接近した状態になるまでは170フレームで行われている．
 手を広げたポーズを取ったとき，へそを原点，体の中心から右手首までの距離を1としたx-z平面で表す．
 \section{解析結果}
 mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi}，mediapipeにより取得した両手首の骨格座標情報を図\ref{fig:1_media}に示す．
@@ -238,6 +266,9 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
     }
     \bibitem{BVH}{
       TMPSwiki，``MOCAPデータファイル'',\url{https://mukai-lab.org/content/MotionCaptureDataFile.pdf}
+    }
+    \bibitem{RS}{
+      Intel，``Depth Camera D415''，\url{https://www.intelrealsense.com/depth-camera-d415/}
     }
   }
 \end{thebibliography}
