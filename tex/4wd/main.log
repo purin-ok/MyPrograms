@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  25 FEB 2024 01:50
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  26 FEB 2024 04:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,7 +347,11 @@ File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count307
 \g__pdf_backend_link_int=\count308
 \g__pdf_backend_link_sf_int=\count309
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `mediapipe' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
@@ -460,27 +464,18 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 File: img/TechSpec_02.png Graphic file (type bmp)
 <img/TechSpec_02.png>
 
-Overfull \hbox (4.27396pt too wide) in paragraph at lines 171--172
+Overfull \hbox (4.27396pt too wide) in paragraph at lines 175--176
  [][] 
  []
 
 File: img/media.png Graphic file (type bmp)
 <img/media.png>
-
-Overfull \hbox (4.27396pt too wide) in paragraph at lines 177--178
- [][] 
- []
-
 File: img/nuitrack.png Graphic file (type bmp)
 <img/nuitrack.png>
-
-Overfull \hbox (4.27396pt too wide) in paragraph at lines 183--184
- [][] 
- []
-
+[3]
 File: img/image_3D.png Graphic file (type bmp)
 <img/image_3D.png>
-[3] [4] [5] [6]
+ [4] [5]
 第3章
 File: img/1_mocopi.png Graphic file (type bmp)
 <img/1_mocopi.png>
@@ -489,47 +484,51 @@ File: img/1_media.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7
+[6
 
-] [8]
+] [7]
 第4章
-[9
+[8
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 258.
+(Font)              scaled to size 8.64899pt on input line 263.
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 []\OT1/cmr/m/n/9 TMPSwiki\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``MO-CAP \JY1/mc/m/n/9 デ ータフ ァイル\OT1/cmr/m/n/9 '',$\OT1/cmtt/m/n/9 https : / / mukai-[]lab . org / content /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--274
-[]\OT1/cmr/m/n/9 Intel\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``Depth Cam-era D415''\JY1/mc/m/n/9 ， $\OT1/cmtt/m/n/9 https : / / www . intelrealsense . com /
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
+[]\OT1/cmr/m/n/9 3DiVi\JY1/mc/m/n/9 ， \OT1/cmr/m/n/9 ``Nu-itrackSDK''\JY1/mc/m/n/9 ， $\OT1/cmtt/m/n/9 https : / / www . aerotap . com / nuiTrack / doc / Overview _ page .
  []
 
 No file main.bbl.
-[10
+[9
 
 ]
 付録A
-[11
+[10
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 307.
- [12] [13] [14] [15] [16] [17]
+(Font)              scaled to size 6.72699pt on input line 321.
+ [11] [12] [13] [14] [15] [16]
 付録B
-[18
+[17
 
-] (./main.aux) ) 
+] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6324 strings out of 476550
- 99033 string characters out of 5806803
- 2285334 words of memory out of 5000000
- 26831 multiletter control sequences out of 15000+600000
+ 6326 strings out of 476550
+ 99053 string characters out of 5806803
+ 2280334 words of memory out of 5000000
+ 26833 multiletter control sequences out of 15000+600000
  532681 words of font info for 124 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  57i,13n,63p,971b,1960s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.dvi (20 pages, 37792 bytes).
+Output written on main.dvi (19 pages, 40468 bytes).

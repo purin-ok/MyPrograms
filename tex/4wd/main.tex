@@ -153,16 +153,20 @@ RealSenseのスペックを\ref{D415}に示す．
     {\small 本体寸法(長さ $\times$ 奥行き $\times$ 高さ)}     & {\small 99 mm $\times$ 20 mm $\times$ 23 mm}       \\
     {\small コネクタ}                                  & {\small USB 3.0 Type-C}                            \\
     {\small 取付機構}                                  & {\small 1 $\times$ 1/4-20 UNCネジ穴、2 $\times$ M3ネジ穴} \\
-    {\small 測定原理}                                  & {\small アクティブステレオ法}                                \\\hline
+    {\small 測定原理}                                  & {\small アクティブステレオ法}                                \\\hline%(付録\ref{active})
   \end{tabular}
   \label{D415}
 \end{table}
+アクティブステレオ法とは，プロジェクタから投影するパターンの画像と，カメラの画像との間でマッチングを行うことで距離を計測する方式である．
+投影するパターンは不可視の赤外線を利用している．
 
 画像処理による方法として2つの方法を実装する．
 
-1つ目はカラー画像を入力としてGoogleが提供するオープンソースの機械学習ライブラリMediaPipe Poseを用いることで図\ref{RGB}に示す33個の関節の三次元骨格情報を取得する方法である．
+1つ目はカラー画像を入力としてGoogleが提供するオープンソースの機械学習ライブラリMediaPipe Pose\cite{mediapipe}を用いることで図\ref{RGB}に示す33個の関節の三次元骨格情報を取得する方法である．
+これは三次元の骨格情報と二次元画像を関連付けたデータを元に機械学習をすることで，二次元画像から三次元の関節の位置情報を推定することを可能にしている．
 
-2つ目はカラー画像とデプス情報を入力として3DiVi Incが提供するライブラリNuitrackを用いることで図\ref{RGBD}に示す19個の関節の三次元骨格情報を取得する方法である．
+2つ目はカラー画像とデプス情報を入力として3DiVi Incが提供するライブラリNuitrack\cite{nuitrack}を用いることで図\ref{RGBD}に示す19個の関節の三次元骨格情報を取得する方法である．
+これは機械学習と3DiVi社独自のアルゴリズムによって，RGBD画像から三次元の関節の位置情報を推定できる．
 
 \begin{figure}[t]
   \centering
@@ -174,13 +178,13 @@ RealSenseのスペックを\ref{D415}に示す．
   \end{minipage}
   \begin{minipage}[]{0.45\hsize}
     \centering
-    \includegraphics[width=6cm]{img/media.png}
+    \includegraphics[width=5cm]{img/media.png}
     \subcaption{MediaPipe Poseで取得できる関節位置}
     \label{RGB}
   \end{minipage}\\
   \begin{minipage}[]{0.45\hsize}
     \centering
-    \includegraphics[width=6cm]{img/nuitrack.png}
+    \includegraphics[width=5cm]{img/nuitrack.png}
     \subcaption{Nuitrackで取得できる関節位置}
     \label{RGBD}
   \end{minipage}
@@ -189,7 +193,7 @@ RealSenseのスペックを\ref{D415}に示す．
 \end{figure}
 \begin{figure}[b]
   \centering
-  \includegraphics[width=10cm]{img/image_3D.png}
+  \includegraphics[width=5cm]{img/image_3D.png}
   \caption{画像処理による骨格推定の様子}
   \label{image_3D}
 \end{figure}
@@ -226,14 +230,15 @@ mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi
     \label{fig:1_media}
   \end{minipage}
 \end{figure}
-今回行った運動では，へそより前に右手首が存在しているため，z軸方向の値が負になることはありえない．
-また，へその前まで腕を持ってきているので，正しく計測できていれば原点を中心とした半径位置の円に似た軌道を描くはずである．
+今回行った運動では，カメラから見てへそより前に両手首があるので，z軸方向の値が負になることはありえない．
+また，へその前まで腕を持ってきているので，正しく計測できていれば両手首の座標をx-z平面に示した際の軌跡は原点を中心とした半径1の円に似た軌道を描くはずである．
 
-MediaPipe Poseはノイズはあるが，ある程度正確に測定できることがわかった．
-また，奥行き方向に歪んでいることもわかった．
+MediaPipe Poseはノイズはあるが，体に対し平行な向きはある程度正確に測定できることがわかった．
+しかし，奥行き方向に歪んでいることもわかった．
 
 mocopiは実際の骨格の三次元位置より，動作の滑らかさを優先していることがわかった．
-動かした際の人間らしくない動きをなくすためだと考えられる．
+動かした際の人間らしくない動きをなくすためではないかと考えられる．
+
 
 \chapter{まとめ}
 本研究では，キャリブレーションの方法として2つのポーズを続けて行い，3種類の手法を定量的に比較するためのキャリブレーションを試みた．
@@ -268,7 +273,16 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
       TMPSwiki，``MOCAPデータファイル'',\url{https://mukai-lab.org/content/MotionCaptureDataFile.pdf}
     }
     \bibitem{RS}{
-      Intel，``Depth Camera D415''，\url{https://www.intelrealsense.com/depth-camera-d415/}
+      Intel，``Depth\,Camera\,D415''，\url{https://www.intelrealsense.com/depth-camera-d415/}
+    }
+    \bibitem{mediapipe}{
+      Google，``MediaPipe''，\url{https://developers.google.com/mediapipe}
+    }
+    \bibitem{nuitrack}{
+      3DiVi，``Nuitrack\,SDK''，\url{https://www.aerotap.com/nuiTrack/doc/Overview_page.html}
+    }
+    \bibitem{オイラー}{
+      L.D.ランダウ，E.M.リフシッツ，``力学''，pp.138--139
     }
   }
 \end{thebibliography}
@@ -281,10 +295,10 @@ BVHファイルはモーションキャプチャデータファイルフォー�
 BVHファイルの特徴を以下にまとめる\cite{BVH}．
 \begin{itemize}
   \item テキスト形式で記述
-  \item 右手座標系で，XYZ各軸の扱い（どの軸が鉛直方向に対応するか等）は任意
+  \item 右手座標系で，xyz各軸の扱い（どの軸が鉛直方向に対応するか等）はファイルの仕様としての指定はない
   \item 関節ノードに関する情報を記述
   \item 関節回転はオイラー角形式(付録\ref{Euler}を参照)で記述
-  \item 回転角度の単位はdegree
+  \item 位置の単位はcm，回転角度の単位はdegree
   \item スケルトン階層を表すHIERARCHYと，動作データを表すMOTIONの二つから構成
 \end{itemize}
 mocopiから出力されたBVHファイルは，右手座標系でY軸が座標系内の鉛直方向としている．
@@ -465,6 +479,17 @@ CHANNELは，関節自由度に続き，位置の自由度 (Xposition，Ypositio
   Frame Time: 0.016667
   0 90.5966 0 -0 0 -0 0 4.93189 -1.1181 -0 0 -0 0 5.45428 1.04046 -0 0 -0 -9.96389e-18 5.81666 0.111686 -0 0 -0 -1.07264e-17 6.3178 -0.430704 -0 0 -0 -1.91593e-17 7.38567 -1.4624 -0 0 -0 -2.45986e-17 9.22288 -0.888062 -0 0 -0 -2.82008e-17 10.2464 1.53133 -0 0 -0 -1.25459e-17 4.64811 0.694664 -0 0 -0 -1.75924e-17 4.68175 0.4096 -0 0 -0 -1.9515e-17 4.6908 0.74295 -0 0 -0 1.19736 -7.38744 7.31601 -0 0 -0 12.5803 3.15559 -3.17425 -0 0 -0 28.3639 0.0580795 0.133078 -0 0 -0 23.5335 0.0481878 0.110415 -0 0 -0 -1.19736 -7.38743 7.31591 -0 0 -0 -12.5803 3.15559 -3.17425 -0 0 -0 -28.3639 0.0580795 0.133078 -0 0 -0 -23.5335 0.0481876 0.110415 -0 0 -0 8.96978 -4.08401 1.97395 -0 0 -0 -0.827718 -37.6515 -0.63625 -0 0 -0 -2.25899 -39.2341 -5.87393 -0 0 -0 0.756579 -9.59872 12.1348 -0 0 -0 -8.96978 -4.08401 1.97395 -0 0 -0 0.827718 -37.6515 -0.63625 -0 0 -0 2.25899 -39.2341 -5.87393 -0 0 -0 -0.756579 -9.59872 12.1348 -0 0 -0   
 \end{lstlisting}
+% \chapter{アクティブステレオ法}\label{active}
+% アクティブステレオ法とは，\ref{}入力装置から
 \chapter{オイラー角形式}\label{Euler}
+オイラー角\cite{オイラー}とは，三次元ユークリッド空間中の2つの直交座標系の関係を表現する方法の一つである．
+レインハルト・オイラーによって考案されたもので，剛体に固定された座標系を考えることで剛体の姿勢を表すことができる．
 
+オイラー角は3つの角度の組で表され，オイラー角で繋がれる2つの座標系のうち地上に固定された座標系を(x,y,z)，剛体に固定された座標系を(X,Y,Z)で表すとした場合，以下のような手順でオイラー角を求めることができる．
+\begin{enumerate}
+  \item z軸とZ軸のなす角度を$\beta$とする
+  \item $\beta$が0°または180°ではない場合には、x-y平面とX-Y平面は一つの直線で交わる。この交線をNとする
+  \item x軸と交線Nのなす角度を$\alpha$とし、X軸と交線Nのなす角度を$\gamma$とする
+\end{enumerate}
+この時($\alpha,\beta,\gamma$)がオイラー角である．オイラー角は座標軸まわりの回転を繰り返すことで表すこともできる．
 \end{document}
