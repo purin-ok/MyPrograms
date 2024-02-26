@@ -106,13 +106,13 @@ RGB画像を入力する方法とRGB画像に加えてデプス情報を入力�
 \begin{table}[b!]
   \centering
   \caption{動作を計測する方法の種類と特徴}
-  \begin{tabular}{l|ll|ll}
+  \begin{tabular}{c|cc|cc}
     \hline
-                  & \multicolumn{2}{c|}{\small{カメラ}}       & \multicolumn{2}{c}{\small{モーションセンサ}}                                                  \\ \cline{2-5}
-                  & \multicolumn{1}{c|}{\small{RGB}}       & \small{RGBD}                         & \multicolumn{1}{c|}{\small{光学式}} & \small{慣性式} \\ \hline
-    \small{センサ装着} & \multicolumn{1}{c|}{\small{不要}}        & \small{不要}                           & \multicolumn{1}{c|}{\small{必要}}  & \small{必要}  \\
-    \small{外から撮影} & \multicolumn{1}{c|}{\small{必要}}        & \small{必要}                           & \multicolumn{1}{c|}{\small{必要}}  & \small{不要}  \\
-    \small{必要台数}  & \multicolumn{1}{c|}{\small{1$\sim$数台}} & \small{1台}                           & \multicolumn{1}{c|}{\small{複数}}  & \small{0}   \\ \hline
+                  & \multicolumn{2}{c|}{\small{カメラ}}       & \multicolumn{2}{c}{\small{モーションセンサ}}                                                     \\ \cline{2-5}
+                  & \multicolumn{1}{c|}{\small{RGB}}       & {\small{RGBD}}                       & \multicolumn{1}{c|c}{\small{光学式}} & {\small{慣性式}} \\ \hline
+    \small{センサ装着} & \multicolumn{1}{c|}{\small{不要}}        & {\small{不要}}                         & \multicolumn{1}{c|}{\small{必要}}   & {\small{必要}}  \\
+    \small{外から撮影} & \multicolumn{1}{c|}{\small{必要}}        & {\small{必要}}                         & \multicolumn{1}{c|}{\small{必要}}   & {\small{不要}}  \\
+    \small{必要台数}  & \multicolumn{1}{c|}{\small{1$\sim$数台}} & {\small{1台}}                         & \multicolumn{1}{c|}{\small{複数}}   & {\small{0}}   \\ \hline
   \end{tabular}
   \label{3D_1}
 \end{table}
@@ -172,19 +172,19 @@ RealSenseのスペックを\ref{D415}に示す．
   \centering
   \begin{minipage}[]{0.45\hsize}
     \centering
-    \includegraphics[width=6cm]{img/TechSpec_02.png}
+    \includegraphics[width=4cm]{img/TechSpec_02.png}
     \subcaption{mocopiで取得できる関節位置}
     \label{mocopi}
   \end{minipage}
   \begin{minipage}[]{0.45\hsize}
     \centering
-    \includegraphics[width=5cm]{img/media.png}
+    \includegraphics[width=4cm]{img/media.png}
     \subcaption{MediaPipe Poseで取得できる関節位置}
     \label{RGB}
   \end{minipage}\\
   \begin{minipage}[]{0.45\hsize}
     \centering
-    \includegraphics[width=5cm]{img/nuitrack.png}
+    \includegraphics[width=4cm]{img/nuitrack.png}
     \subcaption{Nuitrackで取得できる関節位置}
     \label{RGBD}
   \end{minipage}
@@ -193,7 +193,7 @@ RealSenseのスペックを\ref{D415}に示す．
 \end{figure}
 \begin{figure}[b]
   \centering
-  \includegraphics[width=5cm]{img/image_3D.png}
+  \includegraphics[width=9cm]{img/image_3D.png}
   \caption{画像処理による骨格推定の様子}
   \label{image_3D}
 \end{figure}
@@ -212,7 +212,7 @@ RealSenseのスペックを\ref{D415}に示す．
 座標軸のキャリブレーションのポーズである手を広げた状態から，時間軸の基準となる両手が最接近した状態になるまでは170フレームで行われている．
 手を広げたポーズを取ったとき，へそを原点，体の中心から右手首までの距離を1としたx-z平面で表す．
 \section{解析結果}
-mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi}，mediapipeにより取得した両手首の骨格座標情報を図\ref{fig:1_media}に示す．
+mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi}，MediaPipe Poseにより取得した両手首の骨格座標情報を図\ref{fig:1_media}に示す．
 右手の軌跡が青，左手の軌跡が橙である．
 
 \begin{figure}[h]
@@ -226,24 +226,23 @@ mocopiにより取得した右手首の骨格座標情報を図\ref{fig:1_mocopi
   \begin{minipage}{10cm}
     \centering
     \includegraphics[width=10cm]{img/1_media.png}
-    \caption{mediapipeで得た両手首の位置情報}
+    \caption{MediaPepe Poseで得た両手首の位置情報}
     \label{fig:1_media}
   \end{minipage}
 \end{figure}
 今回行った運動では，カメラから見てへそより前に両手首があるので，z軸方向の値が負になることはありえない．
 また，へその前まで腕を持ってきているので，正しく計測できていれば両手首の座標をx-z平面に示した際の軌跡は原点を中心とした半径1の円に似た軌道を描くはずである．
 
-MediaPipe Poseはノイズはあるが，体に対し平行な向きはある程度正確に測定できることがわかった．
-しかし，奥行き方向に歪んでいることもわかった．
-
 mocopiは実際の骨格の三次元位置より，動作の滑らかさを優先していることがわかった．
 動かした際の人間らしくない動きをなくすためではないかと考えられる．
 
-
+MediaPipe Poseは多少のノイズがあるが，体に対し平行な向きはある程度正確に測定できることがわかった．
+しかし，奥行き方向に歪んでいることもわかった．
 \chapter{まとめ}
 本研究では，キャリブレーションの方法として2つのポーズを続けて行い，3種類の手法を定量的に比較するためのキャリブレーションを試みた．
-RGBカメラによる方法では機械学習を用いて奥行き情報を取得できる方法を用いたが，慣性式モーションキャプチャデバイスで取得した骨格データよりノイズが大きくなることが確認できた．
 また，mocopiによる方法では各骨格の三次元位置より動作の滑らかさを優先している事がわかった．
+RGBカメラによる方法では機械学習を用いて奥行き情報を取得できる方法を用いたが，慣性式モーションキャプチャデバイスで取得した骨格データよりノイズが大きくなることが確認できた．
+
 
 % 今後の課題として，RGBDカメラを用いて撮影したデータから推定した座標データに対してキャリブレーションを行った場合についても．
 % RGBDによる方法では現在問題の修正中であるがRGBDによる方法を用いることで．デプス情報を元に正しく測定できるのではないかと考えられる．
@@ -257,10 +256,6 @@ RGBカメラによる方法では機械学習を用いて奥行き情報を取�
   \small{
     \bibitem{turugi}{
       剱 一輝，``柔道競技の3Dアーカイブ化''，令和4年度長岡高専専攻科論文，2023.
-    }
-    \bibitem{mediapipe}{
-      Google，``mediapipe''，\\
-      \url{https://developers.google.com/mediapipe}
     }
     \bibitem{depth}{
       北川リサ，伊藤貴之，``競技かるたにおける払いの動作の三次元ボーン表示による可視化''，情報処理学会第85回全国大会，
