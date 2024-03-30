@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  27 FEB 2024 14:20
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.4.19)  27 FEB 2024 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,18 +538,18 @@ LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 付録B
 [19
 
-] [20]
+]
 付録C
-[21
+[20
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6377 strings out of 478133
- 99952 string characters out of 5841535
+ 6378 strings out of 478133
+ 99957 string characters out of 5841535
  2273481 words of memory out of 5000000
- 26614 multiletter control sequences out of 15000+600000
+ 26615 multiletter control sequences out of 15000+600000
  532681 words of font info for 124 fonts, out of 8000000 for 9000
  41 hyphenation exceptions out of 8191
  55i,13n,63p,988b,1960s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.dvi (23 pages, 44080 bytes).
+Output written on main.dvi (22 pages, 43892 bytes).
