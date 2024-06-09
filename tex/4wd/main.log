@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  27 FEB 2024 08:44
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.24)  27 FEB 2024 08:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,7 +462,7 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 <inserted text> 
                 \endgroup 
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -473,7 +473,7 @@ my insertion and my current dilemma will both disappear.
 \@preamble ...fil \setbox \adl@box \hbox {\@sharp 
                                                   \unskip }\adl@colhtdp \unh...
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
@@ -483,7 +483,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 <inserted text> 
                 }
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -494,7 +494,7 @@ my insertion and my current dilemma will both disappear.
 <inserted text> 
                 }
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -505,14 +505,14 @@ my insertion and my current dilemma will both disappear.
 <inserted text> 
                 \cr 
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I'm guessing that you meant to end an alignment here.
 
 ! Missing { inserted.
 <inserted text> 
                 {
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -521,7 +521,7 @@ Try to go on, since this might almost work.
 <inserted text> 
                 }
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -532,7 +532,7 @@ my insertion and my current dilemma will both disappear.
 <inserted text> 
                 $
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -543,7 +543,7 @@ my insertion and my current dilemma will both disappear.
 <inserted text> 
                 }
 l.112 ...   & \multicolumn{1}{c|c}{\small{光学式}}
-                                                   & \multicolumn{1}{c}{\sma...
+                                                   & {\small{慣性式}} \\ \hline
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -552,7 +552,7 @@ my insertion and my current dilemma will both disappear.
 
 ! Misplaced alignment tab character &.
 l.112 ... & \multicolumn{1}{c|c}{\small{光学式}} &
-                                                   \multicolumn{1}{c}{\small...
+                                                   {\small{慣性式}} \\ \hline
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -560,40 +560,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.112 ...式}} & \multicolumn{1}{c}{\small{慣性式}}
-                                                   \\ \hline
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.112 ...式}} & \multicolumn{1}{c}{\small{慣性式}}
-                                                   \\ \hline
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@mkpream ...ass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.112 ...式}} & \multicolumn{1}{c}{\small{慣性式}}
-                                                   \\ \hline
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ! Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \ifadl@zwhrule \vskip -\arrayrulewidth \el...
-l.112 ...lticolumn{1}{c}{\small{慣性式}} \\ \hline
+l.112 ...all{光学式}} & {\small{慣性式}} \\ \hline
                                                   
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -601,7 +571,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Undefined control sequence.
 \adl@rowsL ->(\adl@connect 
                            /26214);(/1048576);
-l.112 ...lticolumn{1}{c}{\small{慣性式}} \\ \hline
+l.112 ...all{光学式}} & {\small{慣性式}} \\ \hline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -612,7 +582,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \adl@connect 
                         
-l.112 ...lticolumn{1}{c}{\small{慣性式}} \\ \hline
+l.112 ...all{光学式}} & {\small{慣性式}} \\ \hline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -623,7 +593,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@rowsR ->(\adl@connect 
                            /26214);(\@elt {3}{0}{0}{\relax }{\relax }\@elt {...
-l.112 ...lticolumn{1}{c}{\small{慣性式}} \\ \hline
+l.112 ...all{光学式}} & {\small{慣性式}} \\ \hline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -634,7 +604,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \adl@connect 
                         
-l.112 ...lticolumn{1}{c}{\small{慣性式}} \\ \hline
+l.112 ...all{光学式}} & {\small{慣性式}} \\ \hline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -684,7 +654,7 @@ and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.113 ...multicolumn{1}{c|}{\small{不要}}        &
-                                                   {\small{不要}}       & \m...
+                                                   {\small{不要}}           ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -693,7 +663,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.113 ...ll{不要}}        & {\small{不要}}       &
+l.113 ... {\small{不要}}                         &
                                                    \multicolumn{1}{c|}{\smal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -706,7 +676,7 @@ might try typing `S' now just to see what is salvageable.
 \multispan ->\omit 
                    \@multispan 
 l.113 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{必要}}  \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
@@ -714,7 +684,7 @@ an alignment. Proceed, and I'll ignore this case.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
 l.113 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{必要}}  \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -725,7 +695,7 @@ and I'll forget about whatever was undefined.
 \@classi ->\ifcase \@lastchclass \@acol 
                                         \@arrayrule \or \@addtopreamble {\hs...
 l.113 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{必要}}  \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -734,43 +704,13 @@ and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.113 ...  & \multicolumn{1}{c|}{\small{必要}}   &
-                                                   \multicolumn{1}{c}{\small...
+                                                   {\small{必要}}  \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
 up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
-
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.113 ...要}}   & \multicolumn{1}{c}{\small{必要}}
-                                                    \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.113 ...要}}   & \multicolumn{1}{c}{\small{必要}}
-                                                    \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@mkpream ...ass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.113 ...要}}   & \multicolumn{1}{c}{\small{必要}}
-                                                    \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.114     \small{外から撮影} &
@@ -814,7 +754,7 @@ and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.114 ...multicolumn{1}{c|}{\small{必要}}        &
-                                                   {\small{必要}}       & \m...
+                                                   {\small{必要}}           ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -823,7 +763,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.114 ...ll{必要}}        & {\small{必要}}       &
+l.114 ... {\small{必要}}                         &
                                                    \multicolumn{1}{c|}{\smal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -836,7 +776,7 @@ might try typing `S' now just to see what is salvageable.
 \multispan ->\omit 
                    \@multispan 
 l.114 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{不要}}  \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
@@ -844,7 +784,7 @@ an alignment. Proceed, and I'll ignore this case.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
 l.114 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{不要}}  \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -855,7 +795,7 @@ and I'll forget about whatever was undefined.
 \@classi ->\ifcase \@lastchclass \@acol 
                                         \@arrayrule \or \@addtopreamble {\hs...
 l.114 ...      & \multicolumn{1}{c|}{\small{必要}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{不要}}  \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -864,43 +804,13 @@ and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.114 ...  & \multicolumn{1}{c|}{\small{必要}}   &
-                                                   \multicolumn{1}{c}{\small...
+                                                   {\small{不要}}  \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
 up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
-
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.114 ...要}}   & \multicolumn{1}{c}{\small{不要}}
-                                                    \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.114 ...要}}   & \multicolumn{1}{c}{\small{不要}}
-                                                    \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@mkpream ...ass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.114 ...要}}   & \multicolumn{1}{c}{\small{不要}}
-                                                    \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.115     \small{必要台数}  &
@@ -916,7 +826,7 @@ might try typing `S' now just to see what is salvageable.
 \multispan ->\omit 
                    \@multispan 
 l.115 ... \multicolumn{1}{c|}{\small{1$\sim$数台}}
-                                                   & {\small{1台}}       & \...
+                                                   & {\small{1台}}          ...
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
@@ -924,7 +834,7 @@ an alignment. Proceed, and I'll ignore this case.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
 l.115 ... \multicolumn{1}{c|}{\small{1$\sim$数台}}
-                                                   & {\small{1台}}       & \...
+                                                   & {\small{1台}}          ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -935,7 +845,7 @@ and I'll forget about whatever was undefined.
 \@classi ->\ifcase \@lastchclass \@acol 
                                         \@arrayrule \or \@addtopreamble {\hs...
 l.115 ... \multicolumn{1}{c|}{\small{1$\sim$数台}}
-                                                   & {\small{1台}}       & \...
+                                                   & {\small{1台}}          ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -944,7 +854,7 @@ and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
 l.115 ...multicolumn{1}{c|}{\small{1$\sim$数台}} &
-                                                   {\small{1台}}       & \mu...
+                                                   {\small{1台}}            ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -953,7 +863,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.115 ...all{1$\sim$数台}} & {\small{1台}}       &
+l.115 ...& {\small{1台}}                         &
                                                    \multicolumn{1}{c|}{\smal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -966,100 +876,8 @@ might try typing `S' now just to see what is salvageable.
 \multispan ->\omit 
                    \@multispan 
 l.115 ...      & \multicolumn{1}{c|}{\small{複数}}
-                                                     & \multicolumn{1}{c}{\s...
+                                                     & {\small{0}}   \\ \hline
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.115 ...      & \multicolumn{1}{c|}{\small{複数}}
-                                                     & \multicolumn{1}{c}{\s...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\@classi ->\ifcase \@lastchclass \@acol 
-                                        \@arrayrule \or \@addtopreamble {\hs...
-l.115 ...      & \multicolumn{1}{c|}{\small{複数}}
-                                                     & \multicolumn{1}{c}{\s...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Misplaced alignment tab character &.
-l.115 ...  & \multicolumn{1}{c|}{\small{複数}}   &
-                                                   \multicolumn{1}{c}{\small...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.115 ...{複数}}   & \multicolumn{1}{c}{\small{0}}
-                                                     \\ \hline
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.115 ...{複数}}   & \multicolumn{1}{c}{\small{0}}
-                                                     \\ \hline
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@mkpream ...ass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.115 ...{複数}}   & \multicolumn{1}{c}{\small{0}}
-                                                     \\ \hline
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \ifadl@zwhrule \vskip -\arrayrulewidth \el...
-l.115 ...\multicolumn{1}{c}{\small{0}}   \\ \hline
-                                                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.115 ...\multicolumn{1}{c}{\small{0}}   \\ \hline
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \adl@connect 
-                        
-l.115 ...\multicolumn{1}{c}{\small{0}}   \\ \hline
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Mispl
+! Und

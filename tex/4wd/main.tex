@@ -108,11 +108,11 @@ RGB画像を入力する方法とRGB画像に加えてデプス情報を入力�
   \caption{動作を計測する方法の種類と特徴}
   \begin{tabular}{c|cc|cc}
     \hline
-                  & \multicolumn{2}{c|}{\small{カメラ}}       & \multicolumn{2}{c}{\small{モーションセンサ}}                                                     \\ \cline{2-5}
-                  & \multicolumn{1}{c|}{\small{RGB}}       & {\small{RGBD}}                       & \multicolumn{1}{c|c}{\small{光学式}} & {\small{慣性式}} \\ \hline
-    \small{センサ装着} & \multicolumn{1}{c|}{\small{不要}}        & {\small{不要}}                         & \multicolumn{1}{c|}{\small{必要}}   & {\small{必要}}  \\
-    \small{外から撮影} & \multicolumn{1}{c|}{\small{必要}}        & {\small{必要}}                         & \multicolumn{1}{c|}{\small{必要}}   & {\small{不要}}  \\
-    \small{必要台数}  & \multicolumn{1}{c|}{\small{1$\sim$数台}} & {\small{1台}}                         & \multicolumn{1}{c|}{\small{複数}}   & {\small{0}}   \\ \hline
+                  & \multicolumn{2}{c|}{\small{カメラ}}       & \multicolumn{2}{c}{\small{モーションセンサ}}                                                   \\ \cline{2-5}
+                  & \multicolumn{1}{c|}{\small{RGB}}       & \small{RGBD}                         & \multicolumn{1}{c|c}{\small{光学式}} & \small{慣性式} \\ \hline
+    \small{センサ装着} & \multicolumn{1}{c|}{\small{不要}}        & \small{不要}                           & \multicolumn{1}{c|}{\small{必要}}   & \small{必要}  \\
+    \small{外から撮影} & \multicolumn{1}{c|}{\small{必要}}        & \small{必要}                           & \multicolumn{1}{c|}{\small{必要}}   & \small{不要}  \\
+    \small{必要台数}  & \multicolumn{1}{c|}{\small{1$\sim$数台}} & \small{1台}                           & \multicolumn{1}{c|}{\small{複数}}   & \small{0}   \\ \hline
   \end{tabular}
   \label{3D_1}
 \end{table}
@@ -200,7 +200,7 @@ RealSenseのスペックを\ref{D415}に示す．
 \section{キャリブレーション}\label{kyari}
 推定方法によって骨格座標のスケールや基準となる座標系が違うので定量的に比較評価するためには座標系を統一する必要がある．
 そこで計測開始時に，両腕を水平に上げるポーズを取ることにする．水平に上げた両手首の距離を元にスケールを合わせる．
-また，へその位置を原点として，頭に向かう方向をy軸，右手から左手に向かう方向をx軸，これらに軸の直行する方向をz軸と定める．
+また，へその位置を原点として，頭に向かう方向をy軸，右手から左手に向かう方向をx軸，これらに軸の直交する方向をz軸と定める．
 
 動作の比較を行うには同期を取る必要があるがmocopiは同期計測ができない．
 そこで座標系を合わせるポーズの後で両手を伸ばしたまま胸の前で合わせるポーズをする．

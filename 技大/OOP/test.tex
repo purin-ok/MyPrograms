@@ -1,0 +1,112 @@
+\documentclass[titlepage]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings}
+\usepackage{here}
+\usepackage{amsmath}
+
+%
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  % commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex,
+  language=c
+}
+\renewcommand{\lstlistingname}{ソースコード}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+\begin{document}
+\title{オブジェクト指向プログラミング\\第6回レポート課題}
+\author{24336488 本間三暉}
+\maketitle
+\section{課題1：ソースコードのリファクタリング}
+課題2までのリファクタリングを行ったソースコードをソースコード\ref{main}に示す．
+\begin{lstlisting}[caption=main,label=main]
+  public class Main {
+    public static void main(String[] args) {
+        // 入力
+        double x = 2;
+        // 出力用変数の定義///
+        double fx=0;
+        // 重み
+        double w10 = -4.0, w11 = 3.0;
+        double w20 = 1.0, w21 = 1.5;
+        // バイアス
+        double beta0 = -1.0, beta1 = 1.5, beta2 = -2.0;
+        // 基底関数の計算
+        double u1 = calculateU(x,w10,w11);
+        double u2 = calculateU(x,w20,w21);
+        System.out.printf("u1 = %.1f,u2 = %.1f\n", u1,u2);
+        // 活性化関数の適用
+        double g_u1 = 0, g_u2 = 0;
+        g_u1 = calculateActivation(u1);
+
+        g_u2 = calculateActivation(u2);
+
+        System.out.printf("g(u1) = %.1f,g(u2) = %.1f\n", g_u1,g_u2);
+        // 出力の計算
+        fx = calculateB(beta,0.0) + calculateB(beta1,g_u1) + calculateB(beta2,g_u2);
+        // 結果の表示
+        System.out.printf("f(x) = %.1f\n", fx);
+    }
+
+    public static double calculateActivation(double u){
+        if(u > 0){
+            return u;
+        }else{
+            return 0;
+        }
+    }
+
+    public static double calculateU(double x,double w0,double w1){ // 
+        return w0 + w1 * x;
+    }
+    
+    public static double calculateB(double beta,double g_u){// バイアスをかける関数
+        return beta*g_u;
+    }
+}
+\end{lstlisting}
+課題1は示したとおりである．
+\section{課題2：次のリファクタリングとして考えられる事を提案し、コード例を示しなさい。}
+課題1に続くリファクタリングとして，ソースコード\ref{main}に示すcalculateB関数のような関数を実装をすると良いと考える．
+\section{課題3：課題2以外で、考えられるリファクタリングを項目として2つ以上提示しなさい。}
+リファクタリング項目として以下のようなものが考えられる．
+\begin{itemize}
+  \item コメントアウトの整理
+  \item 変数の定義部を一箇所にまとめる
+  \item 定数の利用
+  \item 変数名の改善
+\end{itemize}
+\section{課題4：課題3のリファクタリングは行うべきか否か立場を明らかにした上で、理由を述べてください。}
+課題3で挙げたリファクタリング項目について以下のように考える．
+\subsection{コメントアウトの整理}
+明らかに行うべきである．
+コメントを書くことで未来の自分や他の人がコードを見たときに可読性が上がり，構造を掴むことに集中できる．
+しかし，書きすぎても逆効果で，自明なコードにコメントを追加するのではなく，ある程度難解な処理に対して簡潔でわかりやすいコメントを付ける必要がある．
+\subsection{変数の定義部を一箇所にまとめる}
+今回は50行にも満たないのでどこに変数定義を書いても読めるので無理に行う必要はない．
+必要になったときに変数を定義していると今回の10倍や100倍もあるようなコードで
+その変数を同じコード内で複数回使う場合に変数を探すところから始めることになってしまい，著しく可読性が下がり無駄な時間がかかってしまう．
+\subsection{定数の利用}
+今回のような，値が一度しか利用されない場合や変更される可能性が少ない場合は行うべきでない．
+しかし，重みやバイアスなど明らかな固定値があり，処理によって値を変更する事がある場合は定義の段階で定数として定義し意味のある名前をつけると可読性が上がると考える．
+\subsection{変数名の改善}
+今回はしなくても問題ない．
+長いコードの場合，意味のある変数名をつけることで，一目で変数がどのような意味で使われているかわかるようになり可読性が上がると考える．
+しかし，三単語以上の変数や長い英単語，あまりメジャーでない英単語を用いた変数名では逆に可読性が下がるため，ある程度の妥協も必要である．
+\end{document}
