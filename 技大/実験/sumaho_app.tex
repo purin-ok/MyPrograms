@@ -1,5 +1,6 @@
-\documentclass[titlepage]{jarticle}
+\documentclass[titlepage,dvipdfmx]{jarticle}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{pdfpages}
 \usepackage{listings}
 \usepackage{here}
 \usepackage{amsmath}
@@ -34,19 +35,28 @@
 Gameプログラムの開発を通して、オブジェクト指向プログラミングに関する技術を習得する。
 \section{システムの概要}
 %・新キャラクタの動作をわかりやすく記述してください。
-私が作成した新キャラクターは隠しブロックで，最初は現れておらず，隠しブロックがある場所をPlayerが下から衝突することで出現する．
-出現時，Playerは隠しブロックより上に行くことはせず，速度を失う．
+私が作成した新キャラクターは隠しブロックである．このキャラクターは最初は現れておらず，隠しブロックがある場所にPlayerが上向きの慣性をもった状態で衝突することで出現する．
+出現時，Playerは隠しブロックより上に行くことはせず，速度を失い落ちていく．それと同時にPlayerはスコアを20手に入れる．
+出現後はPlatformと同じようにPlayerが下向きの慣性を持っている状態でnewCharacterに衝突することでPlayerがジャンプする．
 また，出現時は図\ref{newCharacter}のような姿をしている．
 \begin{figure}[H]
   \centering
-  \includegraphics[width=6cm]{img/newCharacter.png}
-  \caption{新キャラクター出現時の}
+  \includegraphics[width=6cm]{img/new_character.png}
+  \caption{新キャラクター出現時イメージ}
   \label{newCharacter}
 \end{figure}
 \section{システムの構成}
 % ・新キャラクタ、および新キャラクタと関連を持つキャラクタをクラス図で示し、
 % 新キャラクタの属性、メソッド、および他のキャラクタとの関係を
 % わかりやすく説明してください。
+新キャラクターの関係図を図\ref{class}に示す．
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{img/class.png}
+  \caption{新キャラクタークラス図}
+  \label{class}
+\end{figure}
+
 \section{考察}
 % ・今回のGame プログラム作成を踏まえて、以下を記述してください。
 % ①オブジェクト指向プログラミングの長所
