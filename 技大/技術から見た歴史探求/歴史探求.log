@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  25 JUN 2024 15:41
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  25 JUN 2024 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,22 +370,22 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 98.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 98.
- [1] [2] [3] (./歴史探求.aux)
+ [1] [2] [3] [4] (./歴史探求.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `歴史探求.out' has not changed.
-(rerunfilecheck)             Checksum: 313883DEBC00948CF173872F2EDF2122;643.
+(rerunfilecheck)             Checksum: 5707F1ED72429015937FC873E3EBBAF1;735.
  ) 
 Here is how much of TeX's memory you used:
  10682 strings out of 474774
  163464 string characters out of 5758801
- 1926032 words of memory out of 5000000
+ 1925032 words of memory out of 5000000
  32938 multiletter control sequences out of 15000+600000
  566300 words of font info for 70 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 72i,7n,79p,342b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,7n,79p,342b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 歴史探求.dvi (4 pages, 17180 bytes).
+Output written on 歴史探求.dvi (5 pages, 19164 bytes).
