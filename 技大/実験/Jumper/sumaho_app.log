@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  23 JUN 2024 21:52
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  28 JUN 2024 00:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/honma_mitsuki/作業/MyPrograms/技大/実験/sumaho_app
-(/Users/honma_mitsuki/作業/MyPrograms/技大/実験/sumaho_app.tex
+**/Users/honma_mitsuki/作業/MyPrograms/技大/実験/Jumper/sumaho_app
+(/Users/honma_mitsuki/作業/MyPrograms/技大/実験/Jumper/sumaho_app.tex
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -291,14 +291,18 @@ pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  4973 strings out of 474774
- 74011 string characters out of 5758801
+ 74039 string characters out of 5758801
  1992032 words of memory out of 5000000
  27298 multiletter control sequences out of 15000+600000
  565646 words of font info for 68 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 67i,5n,79p,328b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,5n,79p,335b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on sumaho_app.dvi (5 pages, 12424 bytes).
