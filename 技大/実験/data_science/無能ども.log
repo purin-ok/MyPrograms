@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  5 JUL 2024 19:08
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  7 JUL 2024 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,26 +580,29 @@ LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 54.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 59.
+(Font)              scaled to size 4.805pt on input line 60.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 59.
- [1] [2] [3] (./無能ども.aux)
+(Font)              scaled to size 4.805pt on input line 60.
+ [1] [2]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 113.
+ [3] [4] (./無能ども.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `無能ども.out' has not changed.
-(rerunfilecheck)             Checksum: 0E9412A7AF5860B63AFDDCD237528DEB;1562.
+(rerunfilecheck)             Checksum: 804947715B7D2FDF41B686895EDF9A18;1697.
  )
 (\end occurred when \ifx on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 16939 strings out of 474774
- 321108 string characters out of 5758801
- 1929032 words of memory out of 5000000
- 39086 multiletter control sequences out of 15000+600000
- 573378 words of font info for 106 fonts, out of 8000000 for 9000
+ 16946 strings out of 474774
+ 321226 string characters out of 5758801
+ 1931032 words of memory out of 5000000
+ 39091 multiletter control sequences out of 15000+600000
+ 574207 words of font info for 109 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  87i,9n,93p,355b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 無能ども.dvi (4 pages, 13544 bytes).
+Output written on 無能ども.dvi (5 pages, 21780 bytes).
