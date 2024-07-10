@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  28 JUN 2024 00:51
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  10 JUL 2024 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/honma_mitsuki/作業/MyPrograms/技大/技術から見た歴史探求/歴史探求
-(/Users/honma_mitsuki/作業/MyPrograms/技大/技術から見た歴史探求/歴史探求.tex
+**/Users/honma_mitsuki/作業/MyPrograms/技大/技術から見た歴史探求/からみた
+(/Users/honma_mitsuki/作業/MyPrograms/技大/技術から見た歴史探求/からみた.tex
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -281,8 +281,8 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count298
 \g__pdf_backend_link_int=\count299
 \g__pdf_backend_link_sf_int=\count300
-) (./歴史探求.aux)
-\openout1 = `歴史探求.aux'.
+) (./からみた.aux)
+\openout1 = `からみた.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
@@ -308,9 +308,9 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
 \c@lstlisting=\count301
 Package hyperref Info: Link coloring OFF on input line 44.
- (./歴史探求.out) (./歴史探求.out)
+ (./からみた.out) (./からみた.out)
 \@outlinefile=\write3
-\openout3 = `歴史探求.out'.
+\openout3 = `からみた.out'.
 
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 (Font)              scaled to size 16.60605pt on input line 49.
@@ -353,13 +353,13 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 99.
- [1] [2] [3] [4] (./歴史探求.aux)
+ [1] [2] [3] [4] (./からみた.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `歴史探求.out' has not changed.
+Package rerunfilecheck Info: File `からみた.out' has not changed.
 (rerunfilecheck)             Checksum: 5707F1ED72429015937FC873E3EBBAF1;735.
  ) 
 Here is how much of TeX's memory you used:
@@ -371,4 +371,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  72i,7n,79p,330b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 歴史探求.dvi (5 pages, 17876 bytes).
+Output written on からみた.dvi (5 pages, 17876 bytes).
