@@ -1,5 +1,6 @@
-%% title.sty
+%% title_kyoudou.sty
 %% <2024-06-26>
+%% 共同実験者用
 
 %% タイトルページ作成
 % maketitle 用の要素の定義
@@ -35,10 +36,19 @@
             学籍番号 & \@mynumber \\
             氏名   & \@author   % author を挿入
           \end{tabular}\par}%
+      \vskip 3em
+        {\Large
+          {\bfseries 共同実験者}\\
+          \vskip 1.5em
+          \begingroup%
+          \renewcommand{\arraystretch}{0.6}%
+          \begin{tabular}[t]{rl}\@coauthor\end{tabular}%
+          \endgroup%
+        }
       \vskip 1.5em % 開け幅を規定
       % {\large \@date \par} % date の大きさ規定
     \end{center}%
-    \vspace{9cm}
+    % \vspace{9cm}
     \par
     \@thanks\vfil\null
   \end{titlepage}%
