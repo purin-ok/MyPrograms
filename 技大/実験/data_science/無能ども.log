@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  10 JUL 2024 09:38
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  15 JUL 2024 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,7 +586,7 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
  [1] [2]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 113.
- [3] [4] [5] [6] (./無能ども.aux)
+ [3] [4] [5] [6] [7] (./無能ども.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -597,12 +597,12 @@ Package rerunfilecheck Info: File `無能ども.out' has not changed.
  )
 (\end occurred when \ifx on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 16957 strings out of 474774
- 321377 string characters out of 5758801
- 1931032 words of memory out of 5000000
- 39102 multiletter control sequences out of 15000+600000
+ 16962 strings out of 474774
+ 321437 string characters out of 5758801
+ 1932032 words of memory out of 5000000
+ 39107 multiletter control sequences out of 15000+600000
  574207 words of font info for 109 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  87i,10n,93p,355b,1008s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 無能ども.dvi (7 pages, 32536 bytes).
+Output written on 無能ども.dvi (8 pages, 39236 bytes).
