@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  15 JUL 2024 15:12
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  16 JUL 2024 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,16 +575,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `論理回路.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 4DDFE532C6934EB257CD189214861376;540.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 16888 strings out of 474774
- 320565 string characters out of 5758801
- 1923032 words of memory out of 5000000
- 39047 multiletter control sequences out of 15000+600000
- 570158 words of font info for 91 fonts, out of 8000000 for 9000
+ 16896 strings out of 474774
+ 320633 string characters out of 5758801
+ 1924032 words of memory out of 5000000
+ 39054 multiletter control sequences out of 15000+600000
+ 570465 words of font info for 92 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  87i,6n,93p,392b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 論理回路.dvi (2 pages, 1972 bytes).
+Output written on 論理回路.dvi (2 pages, 3436 bytes).

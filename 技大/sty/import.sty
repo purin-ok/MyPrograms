@@ -18,12 +18,23 @@
 \usepackage[dvipdfmx]{color}
 % TeX文書中に描画コマンドで色々書く感じのやつ．多分ベクター画像っぽい個としてる.graphicsと喧嘩してしまったので消す
 % \usepackage{tikz}
+% サブキャプション使うためのやつ
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+\captionsetup[subfigure]{labelformat=simple}
+% 頭をいれるときのフォーマットをいじる
+% \renewcommand{\thesubfigure}{(\alph{subfigure})} % 図のサブキャプション引用時に括弧
 
-%% 氷
+%% 表
 % セル結合
 \usepackage{multirow}
 % 横罫線をかくやつ
 \usepackage{booktabs}
+% サブキャプション使うためのやつ
+\captionsetup[subtable]{labelformat=simple}
+% 表をいれるときのフォーマットをいじる
+\renewcommand{\thesubtable}{(\alph{subtable})} % 表のサブキャプション引用時に括弧
 
 %% url関連
 \usepackage[hyphens]{url} % 先にurlパッケージ読込
@@ -73,8 +84,9 @@
 \usepackage{pdfpages}
 
 %% 参考ページ %%%後から見返してわかるようにこれも精査しておきたい
-%% https://qiita.com/ZoneTsuyoshi/items/c87e9ea2a76b552773d2 %% 良さげな事が書いてあるやつ
-%% https://texwiki.texjp.org/TikZ                            %% tikzについて
-%% https://konoyonohana.blog.fc2.com/blog-entry-339.html     %% booktabsについて
-%% https://mathlandscape.com/latex-hyperref/                 %% hyperrefについて
-%% https://abenori.blogspot.com/2015/07/pdfpages.html        %% pdfpagesについて
+%% https://qiita.com/ZoneTsuyoshi/items/c87e9ea2a76b552773d2    %% 良さげな事が書いてあるやつ
+%% https://texwiki.texjp.org/TikZ                               %% tikzについて
+%% https://konoyonohana.blog.fc2.com/blog-entry-339.html        %% booktabsについて
+%% https://mathlandscape.com/latex-hyperref/                    %% hyperrefについて
+%% https://abenori.blogspot.com/2015/07/pdfpages.html           %% pdfpagesについて
+%% https://atatat.hatenablog.com/entry/cloud_latex18_subcaption %% subcaptionについて
