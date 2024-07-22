@@ -21,10 +21,10 @@
 % \team{10}
 % 共同実験者 % もし共同実験者が必要なやつならtitle_kyoudou.styを入れる
 \coauthor{%
- \textbf{学籍番号:}24332587 & \textbf{氏名:}浅見圭介 \\
- \textbf{学籍番号:}24332990 & \textbf{氏名:}内田晴己\\
- \textbf{学籍番号:}24333290 & \textbf{氏名:}小笠原優心\\
- \textbf{学籍番号:}24336466 & \textbf{氏名:}松浦瑛太\\
+ \textbf{学籍番号:}24332587 & \textbf{氏名:}浅見圭介  \\
+ \textbf{学籍番号:}24332990 & \textbf{氏名:}内田晴己  \\
+ \textbf{学籍番号:}24333290 & \textbf{氏名:}小笠原優心 \\
+ \textbf{学籍番号:}24336466 & \textbf{氏名:}松浦瑛太  \\
 }
 %
 % 記載例：
@@ -50,11 +50,21 @@
 そこで，私達はADSDよりも手軽なアプローチとして運転初心者の人間が危険な道に入って事故を起こすのを防止することを目的として，
 Driving-saverというシステムを提案する．
 Driving-saverは車内カメラと専用マップアプリを用いて運転中に危険を通知する．
-車内カメラを用いて車幅感覚を計測し，道路端とある一定以上近づいたら運転者に音で警告する．
+車内カメラを用いて車幅間隔を計測し，道路端とある一定以上近づいたら運転者に音で警告する．
 また，そうやって集めたデータを用いて事故の起きやすい場所をマップ上に表示する．
 \section{実現方法の検討}
 実現方法について検討する．
 \subsection{システムの全体構成}
+システムの全体をユースケース図に起こしたものを図\ref{ユースケース図}に示す．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/usecase.drawio.png}
+  \caption{ユースケース図}
+  \label{ユースケース図}
+\end{figure}
+
+
 \subsection{各構成要素の機能}
 \subsection{通信方法}
 \section{各要素の設計}
@@ -65,17 +75,12 @@ Driving-saverは車内カメラと専用マップアプリを用いて運転中�
 
 % 参考文献
 \begin{thebibliography}{99}
-  \bibitem{自動車}
+  \bibitem{自動車} 「初心運転者の運転意識と実態に関する調査研究」自動車安全運転センター\\
+  \url{https://www.jsdc.or.jp/Portals/0/pdf/library/research/h02_1.pdf}
+
 \end{thebibliography}
 
 \end{document}
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=\textwidth]{img/usecase.drawio.png}
-%   \caption{ユースケース図}
-%   \label{ユースケース図}
-% \end{figure}
 
 % \begin{figure}[H]
 %   \centering
