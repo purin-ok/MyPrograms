@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 JUL 2024 12:39
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 JUL 2024 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/honma_mitsuki/作業/MyPrograms/技大/ヒューマンインターフェース/ヒューマン
-(/Users/honma_mitsuki/作業/MyPrograms/技大/ヒューマンインターフェース/ヒューマン.tex
+**/Users/honma_mitsuki/作業/MyPrograms/技大/ヒューマンインターフェース/R6_ヒューマン_過去レポ用
+(/Users/honma_mitsuki/作業/MyPrograms/技大/ヒューマンインターフェース/R6_ヒューマン_過去レポ用.tex
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -480,8 +480,9 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count331
 \g__pdf_backend_link_int=\count332
 \g__pdf_backend_link_sf_int=\count333
-) (./ヒューマン.aux)
-\openout1 = `ヒューマン.aux'.
+)
+No file R6_ヒューマン_過去レポ用.aux.
+\openout1 = `R6_ヒューマン_過去レポ用.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -505,7 +506,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -546,11 +546,13 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 23.
-(./ヒューマン.out) (./ヒューマン.out)
 \@outlinefile=\write3
-\openout3 = `ヒューマン.out'.
+\openout3 = `R6_ヒューマン_過去レポ用.out'.
 
- (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 23.
@@ -607,30 +609,59 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 28.
- [1] [2] [3] [4] [5] [6] [7]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 225.
+(Font)              scaled to size 9.60999pt on input line 30.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 30.
+
+
+LaTeX Warning: Citation `VR' on page 1 undefined on input line 30.
+
+
+LaTeX Warning: Citation `AR' on page 1 undefined on input line 35.
+
+
+LaTeX Warning: Citation `MR' on page 1 undefined on input line 43.
+
+[1] [2] [3] [4] [5] [6] [7]
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 225.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 225.
- [8] (./ヒューマン.aux)
+ [8] (./R6_ヒューマン_過去レポ用.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ヒューマン.out' has not changed.
-(rerunfilecheck)             Checksum: 39A739DADE89A2D544AFCF69879F907E;16265.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `R6_ヒューマン_過去レポ用.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `R6_ヒューマン_過去レポ用.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  39A739DADE89A2D544AFCF69879F907E;16265.
  )
 (\end occurred when \ifx on line 6 was incomplete) 
 Here is how much of TeX's memory you used:
- 18316 strings out of 474774
- 347948 string characters out of 5758801
+ 18302 strings out of 474774
+ 347932 string characters out of 5758801
  1930032 words of memory out of 5000000
- 40462 multiletter control sequences out of 15000+600000
+ 40454 multiletter control sequences out of 15000+600000
  573155 words of font info for 105 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,677b,1020s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,422b,1020s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ヒューマン.dvi (9 pages, 50924 bytes).
+Output written on R6_ヒューマン_過去レポ用.dvi (9 pages, 35656 bytes).
