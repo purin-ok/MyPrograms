@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 JUL 2024 17:01
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 JUL 2024 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -625,23 +625,31 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 36.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 36.
- [1] [2] (./環境.aux)
+ [1] [2]
+File: img/2023EV.png Graphic file (type bmp)
+<img/2023EV.png>
+ [3]
+File: img/EV_graph.jpeg Graphic file (type bmp)
+<img/EV_graph.jpeg>
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 126.
+ [4] [5] (./環境.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `環境.out' has not changed.
-(rerunfilecheck)             Checksum: B817138562FEB529EED89DF1BF002747;1210.
+(rerunfilecheck)             Checksum: 692D2745EE92E48F40D8D8796B02FE50;1927.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18340 strings out of 474774
- 348124 string characters out of 5758801
- 1927032 words of memory out of 5000000
- 40480 multiletter control sequences out of 15000+600000
- 573967 words of font info for 109 fonts, out of 8000000 for 9000
+ 18363 strings out of 474774
+ 348510 string characters out of 5758801
+ 1928032 words of memory out of 5000000
+ 40499 multiletter control sequences out of 15000+600000
+ 574324 words of font info for 111 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,8n,93p,370b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,8n,93p,370b,1036s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 環境.dvi (3 pages, 10116 bytes).
+Output written on 環境.dvi (6 pages, 21764 bytes).
