@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  29 JUL 2024 21:01
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 JUL 2024 12:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -607,30 +607,30 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 28.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 28.
- [1] [2] [3] [4]
+ [1] [2] [3] [4] [5] [6] [7]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 225.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 225.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 225.
- [5] (./ヒューマン.aux)
+ [8] (./ヒューマン.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ヒューマン.out' has not changed.
-(rerunfilecheck)             Checksum: 284FEC718DD3E799A393B7729FA1868B;4021.
+(rerunfilecheck)             Checksum: 39A739DADE89A2D544AFCF69879F907E;16265.
  )
 (\end occurred when \ifx on line 6 was incomplete) 
 Here is how much of TeX's memory you used:
- 18309 strings out of 474774
- 347868 string characters out of 5758801
+ 18316 strings out of 474774
+ 347948 string characters out of 5758801
  1930032 words of memory out of 5000000
- 40455 multiletter control sequences out of 15000+600000
+ 40462 multiletter control sequences out of 15000+600000
  573155 words of font info for 105 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,527b,998s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,677b,1020s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ヒューマン.dvi (6 pages, 30076 bytes).
+Output written on ヒューマン.dvi (9 pages, 50924 bytes).
