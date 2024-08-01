@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  26 JUL 2024 09:40
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  31 JUL 2024 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,29 +629,32 @@ File: img/class_fig.png Graphic file (type bmp)
 File: img/ER_fig.png Graphic file (type bmp)
 <img/ER_fig.png>
  [2] [3]
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 110.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 110.
+(Font)              scaled to size 4.805pt on input line 122.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 110.
- [4] (./仕様書.aux)
+(Font)              scaled to size 4.805pt on input line 122.
+File: img/hardware.png Graphic file (type bmp)
+<img/hardware.png>
+ [4]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 153.
+ [5] [6] (./仕様書.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `仕様書.out' has not changed.
-(rerunfilecheck)             Checksum: 2E19E8D6527A9B0D17BD572D3486E161;1056.
+(rerunfilecheck)             Checksum: D2078E330E5EA56D286E6D3CD4543E24;1170.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18359 strings out of 474774
- 348702 string characters out of 5758801
- 1924032 words of memory out of 5000000
- 40494 multiletter control sequences out of 15000+600000
- 574324 words of font info for 111 fonts, out of 8000000 for 9000
+ 18377 strings out of 474774
+ 349012 string characters out of 5758801
+ 1926032 words of memory out of 5000000
+ 40510 multiletter control sequences out of 15000+600000
+ 574659 words of font info for 112 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,384b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,431b,1032s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 仕様書.dvi (5 pages, 11160 bytes).
+Output written on 仕様書.dvi (7 pages, 20572 bytes).
