@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  1 AUG 2024 13:12
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  5 AUG 2024 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -603,27 +603,73 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
  [1
 
 ]
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 48.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 48.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 48.
- [1] (./論理回路.aux)
+(Font)              scaled to size 11.53198pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 56.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 56.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 64.
+ [1] [2] [3]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 201.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 201.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 201.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 201.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 201.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 201.
+ [4]
+File: img/2_qc.png Graphic file (type bmp)
+<img/2_qc.png>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 219.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 220.
+ [5] [6]
+File: img/3_qc.png Graphic file (type bmp)
+<img/3_qc.png>
+ [7] [8]
+File: img/4_qc.png Graphic file (type bmp)
+<img/4_qc.png>
+ [9] [10]
+File: img/2_circle.png Graphic file (type bmp)
+<img/2_circle.png>
+File: img/2_kairyou_python.png Graphic file (type bmp)
+<img/2_kairyou_python.png>
+ [11]
+File: img/3_circle.png Graphic file (type bmp)
+<img/3_circle.png>
+File: img/3_kairyou_python.png Graphic file (type bmp)
+<img/3_kairyou_python.png>
+ [12] [13]
+File: img/4_circle.png Graphic file (type bmp)
+<img/4_circle.png>
+File: img/4_kairyoou_python.png Graphic file (type bmp)
+<img/4_kairyoou_python.png>
+ [14] [15] [16] (./論理回路.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `論理回路.out' has not changed.
-(rerunfilecheck)             Checksum: 4DDFE532C6934EB257CD189214861376;540.
+(rerunfilecheck)             Checksum: B457A02DE991BBF13346086AC83CD55A;1705.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18299 strings out of 474774
- 347857 string characters out of 5758801
- 1924032 words of memory out of 5000000
- 40445 multiletter control sequences out of 15000+600000
- 572210 words of font info for 100 fonts, out of 8000000 for 9000
+ 18788 strings out of 474774
+ 353178 string characters out of 5758801
+ 2080032 words of memory out of 5000000
+ 40917 multiletter control sequences out of 15000+600000
+ 574818 words of font info for 113 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,424b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,93p,424b,2578s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 論理回路.dvi (2 pages, 3844 bytes).
+Output written on 論理回路.dvi (17 pages, 68512 bytes).
