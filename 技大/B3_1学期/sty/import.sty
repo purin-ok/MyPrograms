@@ -1,0 +1,92 @@
+%% import.sty
+%% <2024-07-04>
+
+%% 外枠削減 %%% jarticleじゃなくて，jsarticle使うといい感じの幅になる
+
+\RequirePackage{geometry}
+
+% \zw と \zh の定義
+\providecommand{\zw}{zw}
+\providecommand{\zh}{zh}
+
+\geometry{left=30mm,right=30mm,top=30mm,bottom=30mm}
+
+%% 画像関連
+% 画像読み込みを可能にする
+\usepackage[dvipdfmx]{graphicx}
+% これないと画像が表示されない
+\usepackage[dvipdfmx]{color}
+% TeX文書中に描画コマンドで色々書く感じのやつ．多分ベクター画像っぽい個としてる.graphicsと喧嘩してしまったので消す
+% \usepackage{tikz}
+% サブキャプション使うためのやつ
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+\captionsetup[subfigure]{labelformat=simple}
+% 頭をいれるときのフォーマットをいじる
+\renewcommand{\thesubfigure}{(\alph{subfigure})} % 図のサブキャプション引用時に括弧
+
+%% 表
+% セル結合
+\usepackage{multirow}
+% 横罫線をかくやつ
+\usepackage{booktabs}
+% サブキャプション使うためのやつ
+\captionsetup[subtable]{labelformat=simple}
+% 表をいれるときのフォーマットをいじる
+\renewcommand{\thesubtable}{(\alph{subtable})} % 表のサブキャプション引用時に括弧
+
+%% url関連
+\usepackage[hyphens]{url} % 先にurlパッケージ読込
+% ハイパーリンク化
+\usepackage[hidelinks,dvipdfmx]{hyperref}
+
+%% 数式  %%%後で精査
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{array}
+\DeclareSIUnit[number-unit-product=]\percent{\char`\%}
+
+
+%% 挿入ソースコードの設定
+% lstlistingを使えるようにする．
+\usepackage{listings}
+% lstlistingの描画設定
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex,
+  language=java
+}
+% キャプションの"Listing 1:~"みたいに描画されるところを"ソースコード 1:~"に変更
+\renewcommand{\lstlistingname}{ソースコード}
+
+%% 便利系
+% 位置決定コマンド"H"を使えるようにする
+\usepackage{here}
+% PDFを読み込めるようにする %%maketitleせずにこれで表紙読み込めば良き
+\usepackage{pdfpages}
+
+%% 参考ページ %%%後から見返してわかるようにこれも精査しておきたい
+%% https://qiita.com/ZoneTsuyoshi/items/c87e9ea2a76b552773d2    %% 良さげな事が書いてあるやつ
+%% https://texwiki.texjp.org/TikZ                               %% tikzについて
+%% https://konoyonohana.blog.fc2.com/blog-entry-339.html        %% booktabsについて
+%% https://mathlandscape.com/latex-hyperref/                    %% hyperrefについて
+%% https://abenori.blogspot.com/2015/07/pdfpages.html           %% pdfpagesについて
+%% https://atatat.hatenablog.com/entry/cloud_latex18_subcaption %% subcaptionについて

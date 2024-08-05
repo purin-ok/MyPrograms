@@ -1,0 +1,82 @@
+%% title_kyoudou.sty
+%% <2024-06-26>
+%% 共同実験者用
+
+%% タイトルページ作成
+% maketitle 用の要素の定義
+\newcommand*{\subject}[1]{\newcommand*{\@subject}{#1}}  % 教科
+\newcommand*{\class}[1]{\newcommand*{\@class}{#1}}      % 分野
+\newcommand*{\grade}[1]{\newcommand*{\@grade}{#1}}      % 学年 
+\newcommand*{\mynumber}[1]{\newcommand*{\@mynumber}{#1}}  % 教科
+% \newcommand*{\team}[1]{\newcommand*{\@team}{#1}}      % 班
+\newcommand*{\expdate}[1]{\newcommand*{\@expdate}{#1}}  % 提出日
+\newcommand{\coauthor}[1]{\newcommand{\@coauthor}{#1}}  % 共同実験者
+% \titlepageコマンドの書き換え
+\if@titlepage
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \let\footnote\thanks
+    \null\vfil
+    % \vskip em % ここで調整
+    \begin{flushright}
+      \large\@expdate\\
+      \large\@subject レポート
+    \end{flushright}
+    \vskip 120\jsc@mpt %60\jsc@mpt % 開け幅を規定
+    \begin{center}%
+      {\Huge \@title \par} % title の大きさを規定
+      \vskip 6em%3em % 開け幅を規定
+        {\Large % author の大きさを規定
+          % \lineskip .75em
+          \@class\hspace{0.5\zw}\@grade\\
+          % \vspace{0.5rem}
+          \begin{tabular}[t]{>{\bfseries}l@{\hspace{0.5\zw}：\hspace{0.5\zw}}l}%
+            学籍番号 & \@mynumber \\
+            氏名   & \@author   % author を挿入
+          \end{tabular}\par}%
+      \vskip 3em
+        {\Large
+          {\bfseries 共同実験者}\\
+          \vskip 1.5em
+          \begingroup%
+          \renewcommand{\arraystretch}{0.6}%
+          \begin{tabular}[t]{rl}\@coauthor\end{tabular}%
+          \endgroup%
+        }
+      \vskip 1.5em % 開け幅を規定
+      % {\large \@date \par} % date の大きさ規定
+    \end{center}%
+    % \vspace{9cm}
+    \par
+    \@thanks\vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+  %
+  \global\let\@subject\relax
+  \global\let\@mynumber\relax
+  \global\let\@class\relax
+  \global\let\@grade\relax
+  \global\let\@team\relax
+  \global\let\@expdate\relax
+  \global\let\@coauthor\relax
+  \global\let\grade\relax
+  \global\let\team\relax
+  \global\let\expdate\relax
+  \global\let\coauthor\relax
+}%
+%% 参考ページ %%%後から見返してわかるようにこれも精査しておきたい
+%% http://aquarius10.cse.kyutech.ac.jp/~otabe/koho/node11.html#SECTION00034000000000000000
+%% ↑タイトルページについて
+%% 
