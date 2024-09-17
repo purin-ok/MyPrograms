@@ -36,6 +36,37 @@
 % 表をいれるときのフォーマットをいじる
 \renewcommand{\thesubtable}{(\alph{subtable})} % 表のサブキャプション引用時に括弧
 
+%% 文献引用
+% 上付きで [1],[2]
+% ---------------------------------------------------------------------
+\def\@cite#1#2{\leavevmode\unskip
+\ifnum\lastpenalty=\z@\penalty\@highpenalty\fi
+\,\smash{%
+  $^{\mbox{\tiny {[\multiply\@highpenalty 3 #1%
+              \if@tempswa,\penalty\@highpenalty\ #2\fi %(
+              }]}}$}\spacefactor\@m}
+%
+% 本文中での文献引用
+% 標準サイズで [1],[2]
+% ---------------------------------------------------------------------
+\let\org@cite\@cite
+\def\cite{\@ifnextchar[% ]
+  {\@tempswatrue\let\@cite\org@cite\@citex}
+  {\@tempswafalse\let\@cite\org@cite\@citex[]}}
+\def\Cite{\@ifnextchar[% ]
+  {\@tempswatrue\let\@cite\@Cite\@citex}
+  {\@tempswafalse\let\@cite\@Cite\@citex[]}}
+
+\def\@Cite#1#2{\leavevmode %% \unskip
+\ifnum\lastpenalty=\z@\penalty\@highpenalty\fi% highpenalty before
+[{\multiply\@highpenalty 3 #1%             % triple-highpenalties within
+    \if@tempswa,\penalty\@highpenalty\ #2\fi % and before note.%(
+  }]\spacefactor\@m}
+%
+% 行間の調整
+% ---------------------------------------------------------------------
+
+
 %% url関連
 \usepackage[hyphens]{url} % 先にurlパッケージ読込
 % ハイパーリンク化
