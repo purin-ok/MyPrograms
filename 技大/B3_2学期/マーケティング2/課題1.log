@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  20 SEP 2024 16:16
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  23 SEP 2024 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,52 +646,58 @@ LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 43.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 54.
+(Font)              scaled to size 4.62341pt on input line 57.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 54.
+(Font)              scaled to size 4.805pt on input line 57.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 54.
+(Font)              scaled to size 4.62341pt on input line 57.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 65.
+(Font)              scaled to size 11.09619pt on input line 68.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 65.
+(Font)              scaled to size 11.09619pt on input line 68.
  [1]
-File: img/pMap.png Graphic file (type bmp)
-<img/pMap.png>
+File: img/pMap2.png Graphic file (type bmp)
+<img/pMap2.png>
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 86.
+(Font)              scaled to size 8.32214pt on input line 87.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 86.
+(Font)              scaled to size 8.32214pt on input line 87.
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 86.
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 87.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 86.
+(Font)              scaled to size 8.32214pt on input line 87.
 LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 86.
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 87.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 86.
- [2] [3]
+(Font)              scaled to size 8.32214pt on input line 87.
+ [2]
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 130.
+ [3] [4] [5]
+File: img/pMap3.png Graphic file (type bmp)
+<img/pMap3.png>
+ [6] [7] [8]
 LaTeX Font Info:    Font shape `JT1/cidj/m/1' will be
-(Font)              scaled to size 9.24683pt on input line 172.
+(Font)              scaled to size 9.24683pt on input line 292.
 LaTeX Font Info:    Font shape `JY1/cidj/m/1' will be
-(Font)              scaled to size 9.24683pt on input line 172.
- [4] [5] (./課題1.aux)
+(Font)              scaled to size 9.24683pt on input line 292.
+ [9] (./課題1.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `課題1.out' has not changed.
-(rerunfilecheck)             Checksum: E0B4433D3CC44A25839C0A250CF95808;2936.
+(rerunfilecheck)             Checksum: 8F5B58E61BAD057AEFE214E1939D072A;5385.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 20122 strings out of 474774
- 369849 string characters out of 5758801
- 1927032 words of memory out of 5000000
- 42247 multiletter control sequences out of 15000+600000
- 574610 words of font info for 123 fonts, out of 8000000 for 9000
+ 20138 strings out of 474774
+ 370082 string characters out of 5758801
+ 1929032 words of memory out of 5000000
+ 42262 multiletter control sequences out of 15000+600000
+ 574711 words of font info for 124 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,735b,1029s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,93p,1177b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 課題1.dvi (6 pages, 24220 bytes).
+Output written on 課題1.dvi (10 pages, 45072 bytes).
