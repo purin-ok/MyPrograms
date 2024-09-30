@@ -1,0 +1,17 @@
+div {
+  position: relative;
+  left: 50px;
+}
+
+.message {
+  font-family: "ＭＳ ゴシック";
+  text-align: center;
+}
+
+#title {
+ background-color: #00CCFF;
+}
+
+#hello {
+  background-color: yellow;
+}
