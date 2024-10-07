@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+#image{
+  position : absolute;
+  top : 200px;
+  left : 0px;
+  height : 200px;
+  width : 200px;
+  border: 20px solid;
+  border-color: pink;
+  border-radius: 10px;
+}
+
+#color{
+  display: flex;
+}
+
+
