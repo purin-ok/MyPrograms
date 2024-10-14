@@ -44,15 +44,16 @@
         <tr>
           <th>Q1.好きな中東の国はどこですか？</th>
           <td>
-            <select name="country">
-              <option value="saudi">サウジアラビア</option>
-              <option value="uae">アラブ首長国連邦</option>
-              <option value="turkey">トルコ</option>
-              <option value="egypt">エジプト</option>
+            <select id="country-id" name="country">
+              <option value="">選択してください</option>
+              <option value="サウジアラビア">サウジアラビア</option>
+              <option value="アラブ首長国連邦">アラブ首長国連邦</option>
+              <option value="トルコ">トルコ</option>
+              <option value="エジプト">エジプト</option>
             </select>
           </td>
           <td><!---->
-            <div id="down-ans">
+            <div id="country-ans">
 
             </div>
           </td>
@@ -62,8 +63,8 @@
         <tr>
           <th>Q2.2023年パレスチナ・イスラエル戦争で正義はどちらにありますか？</th>
           <td>
-            <input type="radio" name="justice" value="1"><lavel id="Israel-value" class="input-text">イスラエル</lavel> 
-            <input type="radio" name="justice" value="0"><lavel id="Hamas-value" class="input-text">ハマス</lavel>
+            <input type="radio" name="justice" value="イスラエル" onchange="showRadioValue(this)"><label id="Israel-value">イスラエル</label>
+            <input type="radio" name="justice" value="ハマス" onchange="showRadioValue(this)"><label id="Hamas-value">ハマス</label>
           </td>
           <td><!---->
             <div id="radio-ans">
@@ -76,10 +77,10 @@
         <tr>
           <th>Q3.次のうちあなたが知っている中東の紛争を選んでください</th>
           <td>
-            <input type="checkbox" name="know" value="1978"><lavel class="input-text">クルド・トルコ紛争(1978-現在)</label><br>
-            <input type="checkbox" name="know" value="2006"><lavel class="input-text">イラン・イスラエル代理戦争</lavel><br>
-            <input type="checkbox" name="know" value="2011"><lavel class="input-text">シリア内戦</lavel><br>
-            <input type="checkbox" name="know" value="2023"><lavel class="input-text">2023年パレスチナ・イスラエル戦争</lavel><br>
+            <input type="checkbox" name="know" value="クルド・トルコ紛争(1978-現在)">クルド・トルコ紛争(1978-現在)<br>
+            <input type="checkbox" name="know" value="イラン・イスラエル代理戦争">イラン・イスラエル代理戦争<br>
+            <input type="checkbox" name="know" value="シリア内戦">シリア内戦<br>
+            <input type="checkbox" name="know" value="2023年パレスチナ・イスラエル戦争">2023年パレスチナ・イスラエル戦争<br>
           </td>
           <td><!---->
             <div id="checkbox-ans">
@@ -92,12 +93,13 @@
         <tr>
           <th>Q4.中東の問題が起こった一番の原因はどこにあると思いますか？</th>
           <td>
-            <select name="problem">
-              <option value="ourself">中東に住んでいる人々自身</option>
-              <option value="religion">宗教</option>
-              <option value="europe">ヨーロッパの主要国</option>
-              <option value="thought">世界大戦当時の思想</option>
-              <option value="other">その他</option>
+            <select id="problem-select" name="problem">
+              <option value="">選択してください</option>
+              <option value="中東に住んでいる人々自身">中東に住んでいる人々自身</option>
+              <option value="宗教">宗教</option>
+              <option value="ヨーロッパの主要国">ヨーロッパの主要国</option>
+              <option value="世界大戦当時の思想">世界大戦当時の思想</option>
+              <option value="その他">その他</option>
             </select>
           </td>
           <td><!---->
