@@ -1,0 +1,56 @@
+\documentclass[titlepage,a4paper]{jsarticle}
+\usepackage{../../../sty/import}% 各種パッケージインポート
+\usepackage{../../../sty/title}% タイトルページの変更
+\renewcommand{\thesection}{課題\arabic{section}}
+\setcounter{section}{12}
+% 右上側に名前，学籍番号，提出日の記述が必要なので，急遽付け足し
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+  \lhead{10/26情報社会と著作権課題}
+  \rhead{
+    \begin{tabular}[t]{>{\bfseries}l@{\hspace{0.5\zw}：\hspace{0.5\zw}}l}
+      氏名   & 本間三暉\\
+      学籍番号 & 24336488\\
+      提出日  & \today
+    \end{tabular}
+  }
+%% タイトルページの変数
+% レポートタイトル
+\title{情報と著作権課題13〜18}
+% 提出日
+\expdate{\today}
+% 科目名
+\subject{情報社会と著作権}
+% 分野
+\class{情報経営システム工学分野}
+% 学年
+\grade{B3}
+% 学籍番号
+\mynumber{24336488}
+% 記述者
+\author{本間三暉}
+
+\begin{document}
+% titleページ作成
+\maketitle
+\section{私的利用のための複製に関する「過程内など限られた範囲内」という要件について，
+  数人のグループがこの要件に当てはまる場合と当てはまらない場合を調べて回答してください．}
+
+\section{言語の著作物を引用し，それに対する自分の批評を述べてください．引用部分の明確化，主従関係，必要最低限度の分量，出所の明示に留意すること．}
+
+\section{プログラムに関する著作権法10条3項の内容を調べて回答してください．
+  同項に規定される「プログラミング言語」，「規約」，「開放」のそれぞれの用語の意味についても調べて回答してください．}
+
+\section{パブリシティ県の侵害が問題となった事件を調べ，その概要を回答してください．}
+
+\section{芸人などの発する，いわゆる一発ギャグに著作権としての創作性が認められるかどうか，検討して回答してください．
+  なお，この課題に言う一発ギャグとは，例えばIKKO氏の「どんだけ〜」，平野ノラ氏の「おったまげ〜/しもしも〜？」，
+  小島よしお氏の「そんなの関係ねぇ」，といった，主に言葉が主体となるものを考えることとする}
+
+\section{いわゆるプリクラ機で作成した写真は創作性が認められるかを検討し，理由を付して回答してください．}
+% 参考文献
+\begin{thebibliography}{99}
+  \bibitem{}
+\end{thebibliography}
+
+\end{document}
