@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  29 OCT 2024 10:57
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  2 NOV 2024 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,17 +615,23 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 56.
+(Font)              scaled to size 4.805pt on input line 39.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 56.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 56.
+(Font)              scaled to size 4.805pt on input line 39.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 39.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 56.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 56.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 56.
+(Font)              scaled to size 11.53198pt on input line 45.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 64.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 64.
 
 
 Package fancyhdr Warning: \headheight is too small (20.0pt): 
@@ -634,30 +640,47 @@ Package fancyhdr Warning: \headheight is too small (20.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-28.0pt}.
 
-[1] (./kadai4.aux)
+[1]
+
+Package fancyhdr Warning: \headheight is too small (20.0pt): 
+(fancyhdr)                Make it at least 48.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{48.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-28.0pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (20.0pt): 
+(fancyhdr)                Make it at least 48.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{48.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-28.0pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (20.0pt): 
+(fancyhdr)                Make it at least 48.0pt, for example:
+(fancyhdr)                \setlength{\headheight}{48.0pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-28.0pt}.
+
+[4] (./kadai4.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `kadai4.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `kadai4.out':
-(rerunfilecheck)             Before: FE43B4C794BF86D706F992EBDAB5FA21;3221
-(rerunfilecheck)             After:  E6FFA04A3CA9B3421226CFA7B93CA3A4;3594.
+Package rerunfilecheck Info: File `kadai4.out' has not changed.
+(rerunfilecheck)             Checksum: DD65F75E801620DC7B9778D201665B4D;3740.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18488 strings out of 474774
- 350333 string characters out of 5758801
- 1925032 words of memory out of 5000000
- 40633 multiletter control sequences out of 15000+600000
- 572399 words of font info for 101 fonts, out of 8000000 for 9000
+ 18500 strings out of 474774
+ 350435 string characters out of 5758801
+ 1928032 words of memory out of 5000000
+ 40644 multiletter control sequences out of 15000+600000
+ 573344 words of font info for 106 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,17n,93p,1075b,949s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,18n,93p,1075b,949s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on kadai4.dvi (2 pages, 7432 bytes).
+Output written on kadai4.dvi (5 pages, 25552 bytes).

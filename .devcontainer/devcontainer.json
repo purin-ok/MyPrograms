@@ -9,12 +9,13 @@
   "forwardPorts": [8080],
 
   // コンテナ内での作業ディレクトリ
-  "workspaceFolder": "/workspaces/MyPrograms/技大/B3_2学期/情報システム工学演習/Web開発",
+  // "workspaceFolder": "/workspaces/MyPrograms/技大/B3_2学期/情報システム工学演習/Web開発/05_servlet",
+  "workspaceFolder": "/usr/local/tomcat#",
 
   // ホストの作業フォルダをコンテナ内のwebapps/hogeにマウント
   // /hogeは好きな名称にしてください
   "mounts": [
-    "source=${localWorkspaceFolder},target=/usr/local/tomcat/webapps/hoge,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder},target=/usr/local/tomcat/webapps/TestWebs,type=bind,consistency=cached"
   ],
 
   // VSCode用のカスタマイズ設定
