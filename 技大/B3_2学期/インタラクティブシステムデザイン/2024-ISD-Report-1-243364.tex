@@ -1,0 +1,60 @@
+\documentclass[titlepage,a4paper]{jsarticle}
+\usepackage{../../sty/import}% 各種パッケージインポート
+\usepackage{../../sty/title}% タイトルページの変更
+\renewcommand{\thesubsection}{\thesection-\arabic{subsection})}
+%% タイトルページの変数
+% レポートタイトル
+\title{インタラクティブ・システム・デザイン期末課題}
+% 提出日
+\expdate{\today}
+% 科目名
+\subject{インタラクティブ・システム・デザイン}
+% 分野
+\class{情報経営システム工学分野}
+% 学年
+\grade{B3}
+% 学籍番号
+\mynumber{24336488}
+% 記述者
+\author{本間三暉}
+
+\begin{document}
+% titleページ作成
+\maketitle
+
+\section{デザイン解の形式として可能なものを，3個，あげなさい（各20文字以内）}
+\subsection{ }
+\begin{itemize}
+  \item メニュー選択形式(8文字)
+  \item 音声入力形式(6文字)
+  \item ジェスチャ操作形式(9文字)
+\end{itemize}
+
+\subsection{ }
+\begin{itemize}
+  \item タスク分析に基づく選択(12文字)
+  \item ユーザビリティ重視の選択(14文字)
+  \item 環境適応型選択(9文字)
+\end{itemize}
+
+\subsection{ }
+\begin{itemize}
+  \item プロトタイプ評価(9文字)
+  \item ユーザニーズ調査(9文字)
+  \item タスク遂行観察(8文字)
+\end{itemize}
+
+\section{そして，どのように選択を行うのか，また，その選択を行うのに問題定義の他の側面（「ユーザ」と「支援のレベル」）が寄与するのかについて検討しなさい}
+\renewcommand{\thesubsection}{\thesection)}
+\subsection{ }
+デザイン解の選択はユーザビリティとタスクの性質に基づき行う．
+例えば「ジェスチャ操作形式」は直感的だが，操作環境が制約される場合に不適となる．
+ここで問題定義の側面「ユーザ」と「支援のレベル」が寄与する．
+タスク遂行中のユーザ特性や要求される支援のレベル（例：迅速性や正確性）がデザイン形式を選ぶ基準となる．
+また，インタラクティブシステムの評価を通じ，最適な解を導出するプロセスが必要である．(193文字)
+% 参考文献
+\begin{thebibliography}{99}
+  \bibitem{index}インタラクティブ・システム・デザイン資料
+\end{thebibliography}
+
+\end{document}
