@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  18 DEC 2024 06:04
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  18 DEC 2024 06:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/honma_mitsuki/作業/MyPrograms/技大/B3_2学期/インタラクティブシステムデザイン/2024-ISD-Report-1-243364
-(/Users/honma_mitsuki/作業/MyPrograms/技大/B3_2学期/インタラクティブシステムデザイン/2024-ISD-Report-1-243364.tex
+**/Users/honma_mitsuki/作業/MyPrograms/技大/B3_2学期/インタラクティブシステムデザイン/2024-ISD-Report-2-243364
+(/Users/honma_mitsuki/作業/MyPrograms/技大/B3_2学期/インタラクティブシステムデザイン/2024-ISD-Report-2-243364.tex
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -480,8 +480,8 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count331
 \g__pdf_backend_link_int=\count332
 \g__pdf_backend_link_sf_int=\count333
-) (./2024-ISD-Report-1-243364.aux)
-\openout1 = `2024-ISD-Report-1-243364.aux'.
+) (./2024-ISD-Report-2-243364.aux)
+\openout1 = `2024-ISD-Report-2-243364.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -546,9 +546,9 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 21.
-(./2024-ISD-Report-1-243364.out) (./2024-ISD-Report-1-243364.out)
+(./2024-ISD-Report-2-243364.out) (./2024-ISD-Report-2-243364.out)
 \@outlinefile=\write3
-\openout3 = `2024-ISD-Report-1-243364.out'.
+\openout3 = `2024-ISD-Report-2-243364.out'.
 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
@@ -604,26 +604,26 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 34.
+(Font)              scaled to size 11.53198pt on input line 36.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 34.
- [1] (./2024-ISD-Report-1-243364.aux)
+(Font)              scaled to size 11.53198pt on input line 36.
+ [1] [2] (./2024-ISD-Report-2-243364.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `2024-ISD-Report-1-243364.out' has not changed.
-(rerunfilecheck)             Checksum: 4372869C2583907F80F6B376A17279A5;1082.
+Package rerunfilecheck Info: File `2024-ISD-Report-2-243364.out' has not changed.
+(rerunfilecheck)             Checksum: 73DA98B9A6011094FDE70AEA2EDA6AEC;912.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18294 strings out of 474774
- 348042 string characters out of 5758801
- 1925032 words of memory out of 5000000
- 40448 multiletter control sequences out of 15000+600000
+ 18295 strings out of 474774
+ 348053 string characters out of 5758801
+ 1926032 words of memory out of 5000000
+ 40449 multiletter control sequences out of 15000+600000
  571053 words of font info for 95 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,621b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,435b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2024-ISD-Report-1-243364.dvi (2 pages, 5744 bytes).
+Output written on 2024-ISD-Report-2-243364.dvi (3 pages, 7640 bytes).
