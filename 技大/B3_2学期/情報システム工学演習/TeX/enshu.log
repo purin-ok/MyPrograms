@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  20 DEC 2024 14:15
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  27 DEC 2024 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,26 +604,120 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 46.
+(Font)              scaled to size 11.53198pt on input line 38.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 46.
- [1] (./enshu.aux)
+(Font)              scaled to size 11.53198pt on input line 38.
+File: img/genri/web.png Graphic file (type bmp)
+<img/genri/web.png>
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 43.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 43.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 43.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 43.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 49.
+ [1]
+File: img/genri/app.png Graphic file (type bmp)
+<img/genri/app.png>
+File: img/move/web1.png Graphic file (type bmp)
+<img/move/web1.png>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 107.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 107.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 107.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 107.
+File: img/move/web2.png Graphic file (type bmp)
+<img/move/web2.png>
+File: img/move/web3.png Graphic file (type bmp)
+<img/move/web3.png>
+ [2]
+File: img/move/app1.png Graphic file (type bmp)
+<img/move/app1.png>
+File: img/move/app2.png Graphic file (type bmp)
+<img/move/app2.png>
+File: img/move/app3.png Graphic file (type bmp)
+<img/move/app3.png>
+File: img/move/app4.png Graphic file (type bmp)
+<img/move/app4.png>
+File: img/move/app5.png Graphic file (type bmp)
+<img/move/app5.png>
+ [3] [4]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 209.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 209.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 209.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 209.
+ [5]
+File: img/security/before_1.png Graphic file (type bmp)
+<img/security/before_1.png>
+File: img/security/after_1.png Graphic file (type bmp)
+<img/security/after_1.png>
+File: img/security/before_2.png Graphic file (type bmp)
+<img/security/before_2.png>
+File: img/security/after_2.png Graphic file (type bmp)
+<img/security/after_2.png>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 255.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 256.
+ [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 389.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 389.
+File: img/security/back.png Graphic file (type bmp)
+<img/security/back.png>
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 394.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 403.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 403.
+File: img/security/yahoo.png Graphic file (type bmp)
+<img/security/yahoo.png>
+ [9]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 413.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 413.
+File: img/security/app_yahoo.png Graphic file (type bmp)
+<img/security/app_yahoo.png>
+ [10]
+File: img/security/alert.png Graphic file (type bmp)
+<img/security/alert.png>
+ [11] [12] (./enshu.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `enshu.out' has not changed.
-(rerunfilecheck)             Checksum: 043A5E24C2B307C50BDD14E6EC67D6DF;600.
+(rerunfilecheck)             Checksum: CDBA3D127665D8B7B59EBD6231287A1C;1112.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18293 strings out of 474774
- 347666 string characters out of 5758801
- 1924032 words of memory out of 5000000
- 40447 multiletter control sequences out of 15000+600000
- 571053 words of font info for 95 fonts, out of 8000000 for 9000
+ 18849 strings out of 474774
+ 354943 string characters out of 5758801
+ 2090032 words of memory out of 5000000
+ 40959 multiletter control sequences out of 15000+600000
+ 575998 words of font info for 118 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,405b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,8n,93p,405b,2570s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on enshu.dvi (2 pages, 5584 bytes).
+Output written on enshu.dvi (13 pages, 53092 bytes).
