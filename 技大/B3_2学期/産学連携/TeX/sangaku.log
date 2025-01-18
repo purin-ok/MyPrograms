@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 SEP 2024 11:27
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.euc) (TeX Live 2024) (preloaded format=platex 2024.6.19)  30 DEC 2024 10:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,8 +469,8 @@ Package pdfpages Warning: I will use a dummy \includepdf command
 \AM@lof@heading=\toks31
 \c@AM@survey=\count329
 \AM@templatesizebox=\box88
-)) (../../../sty/title.sty)
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 37.
+)) (../../../sty/title_team.sty)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 30.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \l__pdf_internal_box=\box89
@@ -483,28 +483,28 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 ) (./sangaku.aux)
 \openout1 = `sangaku.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -545,7 +545,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 30.
 (./sangaku.out) (./sangaku.out)
 \@outlinefile=\write3
 \openout3 = `sangaku.out'.
@@ -553,7 +553,7 @@ Package hyperref Info: Link coloring OFF on input line 37.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 37.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 30.
 \c@lstlisting=\count334
  (/usr/local/texlive/2024/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -565,60 +565,81 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (dvipdfmx) on input line 123.
 ))
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 39.
+(Font)              scaled to size 11.53198pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 39.
+(Font)              scaled to size 11.53198pt on input line 32.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 23.90964pt on input line 39.
+(Font)              scaled to size 23.90964pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 23.90964pt on input line 39.
+(Font)              scaled to size 23.90964pt on input line 32.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 39.
+(Font)              scaled to size 13.83836pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 39.
+(Font)              scaled to size 13.83836pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              scaled to size 6.72699pt on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 39.
+(Font)              scaled to size 13.83836pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 39.
+(Font)              scaled to size 9.60999pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 39.
+(Font)              scaled to size 6.72699pt on input line 32.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 39.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 39.
+(Font)              scaled to size 13.83836pt on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 39.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 39.
+(Font)              scaled to size 13.83836pt on input line 32.
  [1
 
-] [1] (./sangaku.aux)
+]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 48.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 51.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 51.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 64.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 64.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 65.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 65.
+ [1] [2] [3] [4] (./sangaku.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `sangaku.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: D17BA6571D7EE15CA216D59A43B49CB8;1523.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 18288 strings out of 474774
- 347616 string characters out of 5758801
- 1922032 words of memory out of 5000000
- 40442 multiletter control sequences out of 15000+600000
- 570465 words of font info for 92 fonts, out of 8000000 for 9000
+ 18313 strings out of 474774
+ 348031 string characters out of 5758801
+ 1926032 words of memory out of 5000000
+ 40460 multiletter control sequences out of 15000+600000
+ 573700 words of font info for 107 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 87i,6n,93p,389b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,6n,93p,551b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on sangaku.dvi (2 pages, 1868 bytes).
+Output written on sangaku.dvi (5 pages, 22784 bytes).

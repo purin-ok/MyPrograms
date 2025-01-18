@@ -1,0 +1,44 @@
+/* 行，セル，ドロップダウンリスト，入力用セル，送信ボタンに対して変更を加える */
+
+/*
+セルに対して，
+・右寄せ
+・背景色の指定
+*/
+th {
+  text-align: right;
+  background-color: #f2f2f2;
+}
+
+/*
+行に対して，
+・センタリング
+・背景色の設定
+*/
+#headers{
+  font-size: 20px;
+  text-align: center;
+  background-color: aqua;
+}
+#footers{
+  text-align: center;
+  background-color: aquamarine;
+}
+
+/*
+ドロップダウンリストに対して
+・文字の色を設定
+*/
+input,select,textarea{
+  color:blue;
+}
+
+
+.input-text{
+  color:rgb(97, 55, 4);
+}
+
+button{
+  color:chocolate;
+  background-color:#FFFF00;
+}

@@ -1,0 +1,61 @@
+
+input{
+  accent-color:#00FF00;
+}
+/*
+10/04 チェックボックス等はチェック前から色を変えないといけないらしいので諦めてやる．
+チェックボックスをウニョウニョしなきゃらしい．確か
+*/
+
+/* チェックボックスのスタイル */
+input[type="checkbox"] {
+  /* 標準のチェックボックスの見た目を消す */
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #FF0000;  /* 外枠の色 */
+  border-radius: 3px;
+  background-color: #00FF00;  /* 背景色（未選択時） */
+  cursor: pointer;
+  vertical-align: middle;  /* ラベルと垂直に中央揃え */
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4CAF50;  /* チェック後の色 */
+  border: 1px solid #4CAF50;  /* チェック後の外枠の色 */
+}
+
+input[type="checkbox"]:checked::before {
+  content: '✔';
+  display: block;
+  text-align: center;
+  color: white;  /* チェックマークの色 */
+  font-size: 0.9em;
+  /* line-height: 1em; */
+}
+
+/* ラジオボタンのスタイル */
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #FF0000;  /* 外枠の色 */
+  border-radius: 50%;  /* ラジオボタンを丸くする */
+  background-color: #00FF00;  /* 背景色（未選択時） */
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #2196F3;  /* チェック後の色 */
+  border: 2px solid #2196F3;  /* チェック後の外枠の色 */
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;  /* チェック後の内部の色 */
+  margin: 1px auto;
+}
